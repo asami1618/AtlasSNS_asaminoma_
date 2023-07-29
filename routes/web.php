@@ -40,4 +40,4 @@ Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
 // 新規登録
-Route::get('/Users','UsersController@users');
+Route::get('/top/login','UsersController@users');

@@ -14,7 +14,7 @@ class UsersController extends Controller
         return view('users.search');
     }
     //下記追記 7/23
-    public function users()
+    public function index()
     {
         $users = Users::get();
         return view('web.php',['users'=>$users]);
