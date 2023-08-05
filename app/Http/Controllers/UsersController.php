@@ -13,10 +13,14 @@ class UsersController extends Controller
     public function search(){
         return view('users.search');
     }
-    //下記追記 7/23
+    public function login()
+    {
+        $users = Users::get();
+        return view('web.php',['users'=>$users]);    
+    }
     public function index()
     {
         $users = Users::get();
-        return view('web.php',['users'=>$users]);
+        return view('web.php');
     }
 }

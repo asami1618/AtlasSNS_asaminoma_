@@ -39,5 +39,8 @@ Route::get('/search','UsersController@index');
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
-// 新規登録
-Route::get('/top/login','UsersController@users');
+// ログアウト機能
+Route::get('/logout','Auth\LoginController@logout');
+
+// 新規登録用　view
+Route::get('/register', 'Auth\RegisterController@registerView');
