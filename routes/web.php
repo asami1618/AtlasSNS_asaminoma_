@@ -23,7 +23,8 @@
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register', 'Auth\RegisterController@register');
+// 新規登録用　view
+Route::get('/register', 'Auth\RegisterController@registerView');
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/added', 'Auth\RegisterController@added');
@@ -41,6 +42,3 @@ Route::get('/follower-list','PostsController@index');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');
-
-// 新規登録用　view
-Route::get('/register', 'Auth\RegisterController@registerView');
