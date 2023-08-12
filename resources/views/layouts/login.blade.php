@@ -5,7 +5,7 @@
     <!--IEブラウザ対策-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="ページの内容を表す文章" />
-    <title></title>
+    <title>AtlasSNS</title>
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
     <!--スマホ,タブレット対応-->
@@ -22,16 +22,18 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/logo.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
+            <h1><a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}"></a></h1>
+            <div class="side_user">
+                <div id="accordion" class="accordion-container">
+                    <div class="accordion-title js-accordion-title">
+                    <p>{{ Auth::user()->username }}  さん <img src="{{ asset('/images/icon1.png') }}"></p>
+                        <ul class="menu">
+                            <li><a class="home" href="{{ URL::to('/top') }}">ホーム</a></li>
+                            <li><a class="profile" href="{{ URL::to('/profile') }}">プロフィール</a></li>
+                            <li><a class="center" href="/logout">ログアウト</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -58,7 +60,7 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>

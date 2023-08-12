@@ -20,3 +20,44 @@ header{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
+
+/* アコーディオンメニュー */
+.accordion-container {
+    display: flex;
+    width: 100%;
+    text-align:center;
+    border-top: none;
+    outline: 0;
+    cursor: pointer;
+}
+
+/* #menu{
+    display: none;
+    position: absolute; 
+} */
+
+.accordion-container .accordion-title {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0px;
+    font-size: 1.25rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.accordion-title .menu{
+    margin: 0 auto;
+}
+
+.accordion-title:after {
+    content: "";
+    position: absolute;
+}
+
+
+
+
+
+
+
+
