@@ -52,6 +52,11 @@ header{
 .accordion-title:after {
     content: "";
     position: absolute;
+    right: 40px;
+    top: 3px;
+    width: 8px;
+    height: 8px;
+    border-top: solid 2ppx #fff;
 }
 
 

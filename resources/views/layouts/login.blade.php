@@ -8,6 +8,7 @@
     <title>AtlasSNS</title>
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
+    <link rel="stylesheet" href="{{ asset('js/script.js') }} ">
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
@@ -61,6 +62,6 @@
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="{{ asset('/js/script.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
