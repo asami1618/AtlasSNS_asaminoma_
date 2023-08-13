@@ -39,10 +39,9 @@ header{
 .accordion-container .accordion-title {
     display: flex;
     margin-left: auto;
-    margin-right: 30px;
-    font-size: 1.5rem;
+    margin-right: 0px;
+    font-size: 1.25rem;
     font-weight: normal;
-    color: #fff;
     cursor: pointer;
 }
 
