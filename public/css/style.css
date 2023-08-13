@@ -31,11 +31,6 @@ header{
     cursor: pointer;
 }
 
-/* #menu{
-    display: none;
-    position: absolute; 
-} */
-
 .accordion-container .accordion-title {
     display: flex;
     margin-left: auto;
