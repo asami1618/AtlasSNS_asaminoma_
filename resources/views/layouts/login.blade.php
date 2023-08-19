@@ -25,7 +25,7 @@
         <div id = "head">
             <h1><a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}"></a></h1>
             <div class="side_user">
-                <div id="accordion" class="accordion-container">
+                <div id=accordion class="accordion-container">
                     <div class="accordion-title js-accordion-title">
                     <p>{{ Auth::user()->username }}  さん <img src="{{ asset('/images/icon1.png') }}"></p>
                         <ul class="menu">
@@ -35,7 +35,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>    
         </div>
     </header>
     <div id="row">

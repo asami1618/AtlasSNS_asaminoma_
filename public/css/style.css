@@ -22,6 +22,11 @@ header{
 }
 
 /* アコーディオンメニュー */
+.accordion_menu{
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+
 .accordion-container {
     display: flex;
     width: 100%;
@@ -42,10 +47,11 @@ header{
 
 .accordion-title .menu{
     margin: 0 auto;
-    display: none;
+    /* display: none; */
 }
 
-.accordion-title:after {
+/* 閉じた状態 */
+.accordion-title.menu:after {
     content: "";
     position: absolute;
     right: 40px;
