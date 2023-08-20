@@ -20,6 +20,7 @@
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
 </head>
+
 <body>
     <header>
         <div id = "head">
@@ -53,12 +54,12 @@
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="{{ URL::to('/followList') }}"><button>フォローリスト</button></a></p>
                 <div>
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href=""><button>フォロワーリスト</button></a></p>
             </div>
             <p class="btn"><a href="">ユーザー検索</a></p>
         </div>
