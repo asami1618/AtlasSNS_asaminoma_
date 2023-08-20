@@ -1,6 +1,14 @@
 @extends('layouts.login')
 
 @section('content')
-<h2>機能を実装していきましょう。</h2>
+<div class="container">
+    <h2>機能を実装していきましょう。</h2>
+    {!! Form::open(['url' => '/posts/index']) !!}
+
+
+</div>
+
+
+
 
 @endsection

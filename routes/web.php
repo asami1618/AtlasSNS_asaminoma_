@@ -41,3 +41,8 @@ Route::get('/follower-list','PostsController@index')->middleware('auth');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout')->middleware('auth');
+
+// 投稿フォーム 表示用
+Route::get('/posts','PostsController@index')->name('posts.index');
+// 投稿を押した時
+Route::post('posts','PostsController@post01')->name('posts.post01');
