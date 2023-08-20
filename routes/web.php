@@ -31,14 +31,13 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
-Route::get('/top','PostsController@index');
+Route::get('/top','PostsController@index')->middleware('auth');
+Route::get('/profile','UsersController@profile')->middleware('auth');
 
-Route::get('/profile','UsersController@profile');
+Route::get('/search','UsersController@index')->middleware('auth');
 
-Route::get('/search','UsersController@index');
-
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
+Route::get('/follow-list','PostsController@index')->middleware('auth');
+Route::get('/follower-list','PostsController@index')->middleware('auth');
 
 // ログアウト機能
-Route::get('/logout','Auth\LoginController@logout');
+Route::get('/logout','Auth\LoginController@logout')->middleware('auth');

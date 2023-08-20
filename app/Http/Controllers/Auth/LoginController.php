@@ -54,6 +54,7 @@ class LoginController extends Controller
     // ログアウト機能
     public function logout(Request $request){
         Auth::logout();
-        return redirect('login');
+        return redirect('auth.login');
     }
+    
 }
