@@ -22,11 +22,6 @@ header{
 }
 
 /* アコーディオンメニュー */
-.accordion_menu{
-    width: 100%;
-    border-bottom: 1px solid #fff;
-}
-
 .accordion-container {
     display: flex;
     width: 100%;
@@ -38,6 +33,7 @@ header{
 
 .accordion-container .accordion-title {
     display: flex;
+    color: #fff;
     margin-left: auto;
     margin-right: 0px;
     font-size: 1.25rem;
@@ -45,10 +41,10 @@ header{
     cursor: pointer;
 }
 
-.accordion-title .menu{
+/* .accordion-title .menu{
     margin: 0 auto;
-    /* display: none; */
-}
+    display: none;
+} */
 
 /* 閉じた状態 */
 .accordion-title.menu:after {
@@ -61,6 +57,42 @@ header{
     border-top: solid 2ppx #fff;
 }
 
+/* button{
+    position: relative;
+    border: none;
+    width: 100%;
+    background-color: inherit;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    padding: 15px 0 15px 20px;
+    font-size:1em;
+}
+button:hover{
+    background-color: #fff;
+}
+
+button::before,
+button::after{
+    content:"";
+    position: absolute;
+    top: 20px;
+    width: 1.5px;
+    height: 8px;
+    background-color: #fff;
+    transition: .5s;
+}
+
+button::before{
+    transform: rotate(-45deg);
+    right: 35px;
+}
+
+button::after{
+    transform: rotate(45deg);
+    right: 30px;
+}
+ */
 
 
 

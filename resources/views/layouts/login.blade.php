@@ -24,14 +24,18 @@
     <header>
         <div id = "head">
             <h1><a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}"></a></h1>
-            <div class="side_user">
-                <div id=accordion class="accordion-container">
+            <div id="accordion">
+                <div class="accordion-container">
                     <div class="accordion-title js-accordion-title">
                     <p>{{ Auth::user()->username }}  さん <img src="{{ asset('/images/icon1.png') }}"></p>
                         <ul class="menu">
-                            <li><a class="home" href="{{ URL::to('/top') }}">ホーム</a></li>
-                            <li><a class="profile" href="{{ URL::to('/profile') }}">プロフィール</a></li>
-                            <li><a class="center" href="/logout">ログアウト</a></li>
+                            <li>
+                                <button class="accordion_btn" type="button">
+                                    <li><a class="home" href="{{ URL::to('/top') }}">HOME</a></li>
+                                    <li><a class="profile" href="{{ URL::to('/profile') }}">プロフィール</a></li>
+                                    <li><a class="center" href="/logout">ログアウト</a></li>
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
