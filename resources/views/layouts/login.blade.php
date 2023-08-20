@@ -59,9 +59,9 @@
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href=""><button>フォロワーリスト</button></a></p>
+                <p class="btn"><a href="{{ URL::to('/followerList') }}"><button>フォロワーリスト</button></a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="btn"><a href=""><button>ユーザー検索</button></a></p>
         </div>
     </div>
     <footer>
