@@ -28,7 +28,7 @@
             <div id="accordion">
                 <div class="accordion-container">
                     <div class="accordion-title js-accordion-title">
-                    <p>{{ Auth::user()->username }}  さん <img src="{{ asset('/images/icon1.png') }}" ></p>
+                    <p>{{ Auth::user()->username }}  さん <img src="{{ asset('/images/icon1.png') }}" width="50" height="50"></p>
                         <ul class="menu">
                             <li>
                                 <button class="accordion_btn" type="button">
