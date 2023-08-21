@@ -24,11 +24,11 @@
 <body>
     <header>
         <div id = "head">
-            <h1><a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}"></a></h1>
+            <h1><a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" width="110" height="40"></a></h1>
             <div id="accordion">
                 <div class="accordion-container">
                     <div class="accordion-title js-accordion-title">
-                    <p>{{ Auth::user()->username }}  さん <img src="{{ asset('/images/icon1.png') }}"></p>
+                    <p>{{ Auth::user()->username }}  さん <img src="{{ asset('/images/icon1.png') }}" ></p>
                         <ul class="menu">
                             <li>
                                 <button class="accordion_btn" type="button">
