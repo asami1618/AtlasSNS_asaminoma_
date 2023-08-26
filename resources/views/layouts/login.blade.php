@@ -34,7 +34,7 @@
                                 <button class="accordion_btn" type="button">
                                     <li><a class="home" href="{{ URL::to('/top') }}">HOME</a></li>
                                     <li><a class="profile" href="{{ URL::to('/profile') }}">プロフィール</a></li>
-                                    <li><a class="center" href="/logout">ログアウト</a></li>
+                                    <li><a class="center" href="{{ URL::to('/logout') }}">ログアウト</a></li>
                                 </button>
                             </li>
                         </ul>
@@ -61,7 +61,7 @@
                 </div>
                 <p class="btn"><a href="{{ URL::to('/followerList') }}"><button>フォロワーリスト</button></a></p>
             </div>
-            <p class="btn"><a href=""><button>ユーザー検索</button></a></p>
+            <p class="btn"><a href="{{ URL::to('/search') }}"><button>ユーザー検索</button></a></p>
         </div>
     </div>
     <footer>

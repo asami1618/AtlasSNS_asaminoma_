@@ -1,7 +1,7 @@
 @extends('layouts.login')
 
 @section('content')
-{!! Form::open(['url' => '/followwrList']) !!}
+{!! Form::open(['url' => '/followerList']) !!}
 
 {!! Form::close() !!}
 

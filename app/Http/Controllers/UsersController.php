@@ -18,9 +18,9 @@ class UsersController extends Controller
         $users = Users::get();
         return view('web.php',['users'=>$users]);    
     }
-    public function index()
-    {
-        $users = Users::get();
-        return view('web.php');
-    }
+    // public function index()
+    // {
+    //     $users = Users::get();
+    //     return view('web.php');
+    // }
 }

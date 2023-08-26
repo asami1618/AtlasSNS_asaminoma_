@@ -35,8 +35,9 @@ Route::get('/top','PostsController@index')->middleware('auth');
 Route::get('/profile','UsersController@profile')->middleware('auth');
 
 Route::get('/search','UsersController@index')->middleware('auth');
+Route::get('/search','UsersController@search');
 
-Route::get('/follow-list','PostsController@index')->middleware('auth');
+Route::get('/follow-list','FollowsController@followList')->middleware('auth');
 Route::get('/follower-list','PostsController@index')->middleware('auth');
 
 // ログアウト機能
@@ -46,5 +47,6 @@ Route::get('/logout','Auth\LoginController@logout')->middleware('auth');
 Route::get('/posts','PostsController@index')->name('posts.index');
 // 投稿を押した時
 Route::post('/posts','PostsController@post01')->name('posts.post01');
+
 
 
