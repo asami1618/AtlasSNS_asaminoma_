@@ -17,6 +17,8 @@
 // Route::get('/home', 'HomeController@index')->name('home');
 
 //Auth::routes();
+
+
 //ログイン中のページ
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/top','PostsController@index');
