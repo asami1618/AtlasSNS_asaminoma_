@@ -54,14 +54,14 @@
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="{{ URL::to('/followList') }}"><button>フォローリスト</button></a></p>
+                <p class="btn"><a href="/follow-list'"><button>フォローリスト</button></a></p>
                 <div>
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="{{ URL::to('/followerList') }}"><button>フォロワーリスト</button></a></p>
+                <p class="btn"><a href="/follower-list"><button>フォロワーリスト</button></a></p>
             </div>
-            <p class="btn"><a href="{{ URL::to('/search') }}"><button>ユーザー検索</button></a></p>
+            <p class="pull-right"><a class="but but-success" href="/search"><button>ユーザー検索</button></a></p>
         </div>
     </div>
     <footer>

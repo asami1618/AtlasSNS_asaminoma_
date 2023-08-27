@@ -34,19 +34,18 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::get('/top','PostsController@index')->middleware('auth');
 Route::get('/profile','UsersController@profile')->middleware('auth');
 
-Route::get('/search','UsersController@index')->middleware('auth');
-Route::get('/search','UsersController@search');
+Route::get('/search','UsersController@search')->middleware('auth');
 
+// フォローリスト　フォロワーリスト
 Route::get('/follow-list','FollowsController@followList')->middleware('auth');
-Route::get('/follower-list','PostsController@index')->middleware('auth');
+Route::get('/follower-list','FollowsController@followerList')->middleware('auth');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout')->middleware('auth');
 
 // 投稿フォーム 表示用
-Route::get('/posts','PostsController@index')->name('posts.index');
+// Route::get('/posts','PostsController@index')->name('posts.index');
 // 投稿を押した時
-Route::post('/posts','PostsController@post01')->name('posts.post01');
-
+// Route::post('/posts','PostsController@post01')->name('posts.post01');
 
 
