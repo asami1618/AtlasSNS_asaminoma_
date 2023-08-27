@@ -30,7 +30,8 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::get('/login', 'Auth\LoginController@login')->name('login'); //->name('login')　追記
+
 Route::post('/login', 'Auth\LoginController@login');
 
 // 新規登録用　view
