@@ -17,10 +17,18 @@
 // Route::get('/home', 'HomeController@index')->name('home');
 
 //Auth::routes();
+//ログイン中のページ
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/top','PostsController@index');
 
+    Route::get('/profile','UsersController@profile'); //プロフィール
+    Route::get('/search','UsersController@search'); //検索
+    Route::get('/follow-list','FollowsController@followList'); //フォローリスト
+    Route::get('/follower-list','FollowsController@followerList'); //フォロワーリスト
+});
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
+Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
 // 新規登録用　view
@@ -30,18 +38,8 @@ Route::post('/register', 'Auth\RegisterController@register');
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
-//ログイン中のページ
-Route::get('/top','PostsController@index')->middleware('auth');
-Route::get('/profile','UsersController@profile')->middleware('auth');
-
-Route::get('/search','UsersController@search')->middleware('auth');
-
-// フォローリスト　フォロワーリスト
-Route::get('/follow-list','FollowsController@followList')->middleware('auth');
-Route::get('/follower-list','FollowsController@followerList')->middleware('auth');
-
 // ログアウト機能
-Route::get('/logout','Auth\LoginController@logout')->middleware('auth');
+Route::get('/logout','Auth\LoginController@logout');
 
 // 投稿フォーム 表示用
 // Route::get('/posts','PostsController@index')->name('posts.index');
