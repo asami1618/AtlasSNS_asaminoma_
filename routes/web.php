@@ -50,3 +50,5 @@ Route::get('/logout','Auth\LoginController@logout');
 // Route::post('/posts','PostsController@post01')->name('posts.post01');
 
 
+
+
