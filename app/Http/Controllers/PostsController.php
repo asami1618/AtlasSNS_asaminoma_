@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\post;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class PostsController extends Controller
 {
-    //投稿フォーム　表示
-    public function index(){
+    //　投稿表示
+    public function index(Request $request){
         return view('posts/index');
     }
-    // 新規投稿　
+    // 新規投稿
     public function added(Request $request){
-        $posts = Post::get(); //postsテーブル取得
-        return redirect('posts/index');
+        $id = $request->input('newPost');
+        $user_id = $request->input('newPost');
+        $post = $request->input('newPost');
+        Author::create(['id','user_id','post' => $id, $user_id, $post]);
+        return back();
     }
 }
+
