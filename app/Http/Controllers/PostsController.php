@@ -15,10 +15,10 @@ class PostsController extends Controller
     }
     // 新規投稿
     public function added(Request $request){
-        $id = $request->input('newPost');
-        $user_id = $request->input('newPost');
+        $id = $request->input('id');
+        $user_id = $request->input('user_id');
         $post = $request->input('newPost');
-        POSTS::create(['id','user_id','post' => $id, $user_id, $post]);
+        Post::create(['id','user_id','post' => $id, $user_id, $post]);
         return back();
     }
 }
