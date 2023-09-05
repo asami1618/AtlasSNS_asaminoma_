@@ -37,8 +37,8 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::get('/register', 'Auth\RegisterController@registerView');
 Route::post('/register', 'Auth\RegisterController@register');
 
-Route::get('/added', 'Auth\PostsController@added');
-Route::post('/added', 'Auth\PostsController@added');
+Route::get('/added', 'PostsController@added');
+Route::post('/added', 'PostsController@added');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');
