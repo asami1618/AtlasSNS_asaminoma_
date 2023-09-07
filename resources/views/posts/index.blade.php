@@ -6,7 +6,7 @@
     {!! Form::open(['url' => '/added']) !!}
     {{Form::token()}}
     <div class="form-group">
-    {!! Form::input('id','user_id', null, ['newPost','class' => 'form-control','placeholder' => '投稿内容' ]) !!}
+    {!! Form::input('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容' ]) !!}
     </div>
     <button type="submit" class="btn btn-success pull-right">追加</button>
     {!! Form::close() !!}
