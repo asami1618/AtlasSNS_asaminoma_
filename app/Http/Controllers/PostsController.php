@@ -18,7 +18,7 @@ class PostsController extends Controller
     {
         $id = $request->input('id');
         $user_id = $request->input('user_id');
-        $post = $request->input('post');
+        $post = $request->input('newPost');
 
         Post::create([
             $id => 'id',
