@@ -37,6 +37,7 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::get('/register', 'Auth\RegisterController@registerView');
 Route::post('/register', 'Auth\RegisterController@register');
 
+//　新規投稿　
 Route::get('/added', 'PostsController@added');
 Route::post('/added', 'PostsController@added');
 
