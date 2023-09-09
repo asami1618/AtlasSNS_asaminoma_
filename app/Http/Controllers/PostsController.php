@@ -14,11 +14,11 @@ class PostsController extends Controller
         return view('posts/index');
     }
     // 新規投稿
-    public function added(Request $request){
-        $id = $request->input('id');
+    public function added(Request $request)
+    {
         $user_id = $request->input('user_id');
         $post = $request->input('newPost');
-        Post::create(['text','newPost'=> $id, $user_id]);
+        Post::create(['text','newPost','null'=> $user_id,$post]);
         return back();
     }
 }

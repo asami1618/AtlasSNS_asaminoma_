@@ -10,7 +10,7 @@ class Post extends Model
 {
     // 9/3 追記
     // カラムにデータ挿入の許可をする
-    protected $fillable = ['id','user_id','post'];
+    protected $fillable = ['user_id','post'];
 
     //リレーション
     public function posts(){
