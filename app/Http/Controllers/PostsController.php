@@ -17,10 +17,10 @@ class PostsController extends Controller
     public function added(Request $request)
     {
         $id = $request->input('id');
-        $user_id = $request->input('user_id');
+        $user_id = $request->input('username');
         $post = $request->input('newPost');
 
-        Post::create(['id'=> $id]);
+        Post::create(['id','user_id', 'post' => $id, $user_id ,$post]);
         return back();
     }
 }
