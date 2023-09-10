@@ -20,11 +20,7 @@ class PostsController extends Controller
         $user_id = $request->input('user_id');
         $post = $request->input('newPost');
 
-        Post::create([
-            $id => 'id',
-            $user_id => 'user_id',
-            $post => 'post',
-        ]);
+        Post::create(['id'=> $id]);
         return back();
     }
 }
