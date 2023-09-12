@@ -20,7 +20,11 @@ class PostsController extends Controller
         $user_id = $request->input('username');
         $post = $request->input('newPost');
 
-        Post::create(['id','user_id', 'post' => $id, $user_id ,$post]);
+        Post::create([
+            'id' => 'ID番号',
+            'user_id' => 'だれの投稿か',
+            'post' => '投稿内容'
+            ]);
         return back();
     }
 }
