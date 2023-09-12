@@ -12,7 +12,7 @@ class Post extends Model
     // カラムにデータ挿入の許可をする
     // $fillable -> レコードを追加して良いカラムを設定(ホワイトリスト)
     protected $fillable = [
-        'id', 'user_id', 'newPost'
+        'id', 'user_id', 'post'
     ];
     // $guarded -> レコードを追加しないカラムを設定(ブラックリスト)
     //protected $guarded = [];
