@@ -38,8 +38,8 @@ Route::get('/register', 'Auth\RegisterController@registerView');
 Route::post('/register', 'Auth\RegisterController@register');
 
 //　新規投稿　
-Route::get('/added', 'PostsController@added');
-Route::post('/added', 'PostsController@added');
+Route::get('/added', 'PostsController@added')->middleware('auth');
+Route::post('/added', 'PostsController@added')->middleware('auth');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');
