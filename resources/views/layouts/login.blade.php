@@ -56,13 +56,13 @@
                 </tr>
                 @foreach ( $posts as $post)
                 <tr>
-                    <th>{{ $post->id }}</th>
-                    <th>{{ $post->user_id }}</th>
-                    <th>{{ $post->post }}</th>
-                    <th>{{ $post->created_at }}</th>
+                    <td>{{ $post->id }}</td>
+                    <td>{{ $post->user_id }}</td>
+                    <td>{{ $post->post }}</td>
+                    <td>{{ $post->created_at }}</td>
                 </tr>
-            </table>
                 @endforeach
+            </table>
 
         </div >
         <div id="side-bar">
