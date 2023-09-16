@@ -17,14 +17,14 @@ class PostsController extends Controller
     // 新規投稿
     public function added(Request $request)
     {
-        $id = $request->input('id');
-        $user_id = $request->input('userId');
+        // $id = $request->input('id');
+        // $user_id = $request->input('userId');
         $post = $request->input('newPost');
 
         Post::create([
-            'id' => Auth::user()->id,
-            'userId' => 'user_id',
-            'newPost' => 'post'
+            // 'id' => Auth::user()->id,
+            'user_id' => Auth::id(),
+            'post' => $post
             ]);
         return back();
     }
