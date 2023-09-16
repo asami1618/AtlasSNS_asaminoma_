@@ -46,6 +46,24 @@
     <div id="row">
         <div id="container">
             @yield('content')
+            <h2 class="page-header">投稿一覧</h2>
+            <table class='table table-hover'>
+                <tr>
+                    <th>{{ Auth::user()->username }}</th>
+                    <th>No</th>
+                    <th>投稿内容</th>
+                    <th>投稿日時</th>
+                </tr>
+                @foreach ( $posts as $post)
+                <tr>
+                    <th>{{ $post->id }}</th>
+                    <th>{{ $post->user_id }}</th>
+                    <th>{{ $post->post }}</th>
+                    <th>{{ $post->created_at }}</th>
+                </tr>
+            </table>
+                @endforeach
+
         </div >
         <div id="side-bar">
             <div id="confirm">

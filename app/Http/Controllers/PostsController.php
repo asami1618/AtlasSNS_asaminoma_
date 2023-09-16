@@ -11,12 +11,14 @@ use Illuminate\Support\Facades\Auth;
 class PostsController extends Controller
 {
     //　投稿表示
-    public function index(Request $request){
-        return view('posts/index');
+    public function index()
+    {
+        $post = Post::get();
+        return view('posts.index',['posts' => $post]);
     }
     // 新規投稿
     public function added(Request $request)
-    {
+    {        
         // $id = $request->input('id');
         // $user_id = $request->input('userId');
         $post = $request->input('newPost');
