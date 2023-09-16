@@ -13,19 +13,20 @@ class PostsController extends Controller
     //　投稿表示
     public function index()
     {
-        $post = Post::get();
-        return view('posts.index',['posts' => $post]);
+        $post = Post::get(); //postモデル(postsテーブル)からレコード情報を取得
+        return view('posts.index',['posts' => $post]); 
+        //viewヘルパを使用し、()の中に画面表示したいファイル名と受け渡したい変数名を記述
     }
     // 新規投稿
     public function added(Request $request)
     {        
-        // $id = $request->input('id');
+        // $id = $request->input('id');←新規登録の際は$id不要
         // $user_id = $request->input('userId');
-        $post = $request->input('newPost');
+        $post = $request->input('newPost');// $request内にフォームで入力した内容が入る→$post
 
         Post::create([
             // 'id' => Auth::user()->id,
-            'user_id' => Auth::id(),
+            'user_id' => Auth::id(),// Auth認証はidのみ記述を簡単にできる。それ以外は28行目の記述。
             'post' => $post
             ]);
         return back();
