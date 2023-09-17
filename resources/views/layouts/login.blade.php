@@ -46,35 +46,6 @@
     <div id="row">
         <div id="container">
             @yield('content')
-            <div class="modalopen" data-target="modal01"></div>
-            <div class="modal-main js-modal" id="modal01">
-                <div class="modal-innner"> 
-                    <div class="inner-content">
-                        <p class="inner-text"></p>
-                        <button ></button>
-                        <p class="send-button modalClose"></p>
-                    </div>
-                </div>
-            </div>
-            <h2 class="page-header">投稿一覧</h2>
-            <table class='table table-hover'>
-                <tr>
-                    <th>{{ Auth::user()->username }}</th>
-                    <th>No</th>
-                    <th>投稿内容</th>
-                    <th>投稿日時</th>
-                </tr>
-                @foreach ( $posts as $post)
-                <tr>
-                    <td>{{ $post->id }}</td>
-                    <td>{{ $post->user_id }}</td>
-                    <td>{{ $post->post }}</td>
-                    <td>{{ $post->created_at }}</td>
-                    <td><img src="{{ asset('/images/edit.png') }}" width="40" height="40"></td>
-                </tr>
-                @endforeach
-            </table>
-        </div >
         <div id="side-bar">
             <div id="confirm">
                 <p>〇〇さんの</p>
