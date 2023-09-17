@@ -12,6 +12,7 @@
 
     {!! Form::close() !!}
 </div>
+<!-- モーダル -->
 <div class="modalopen" data-target="modal01"></div>
             <div class="modal-main js-modal" id="modal01">
                 <div class="modal-innner"> 
@@ -36,7 +37,7 @@
                     <td>{{ $post->user_id }}</td>
                     <td>{{ $post->post }}</td>
                     <td>{{ $post->created_at }}</td>
-                    <td><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></td>
+                    <td><a class="btn btn-primary" href="/post/{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
                     <td><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></td>
                 </tr>
                 @endforeach
