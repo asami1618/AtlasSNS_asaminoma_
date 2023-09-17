@@ -22,12 +22,33 @@ header{
 }
 
 /* モーダル */
-.modal-main{
+/*　モーダルウィンドウ */
+.modal-main{ 
     display: none;
 }
 
+/* モーダル背景 */
 .modal-inner{
     display: flex;
+}
+
+/* モーダル内の要素全体 */
+.inner-content{
+
+}
+
+/* タイトル */
+.inner-title{
+
+}
+
+/* 紹介文 */
+.inner-text{
+
+}
+
+.modal-Close{
+
 }
 
 /* アコーディオンメニュー */
