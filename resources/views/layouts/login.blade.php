@@ -63,8 +63,16 @@
                 </tr>
                 @endforeach
             </table>
-
         </div >
+        <div class="modalopen" data-target="modal01"></div>
+            <div class="modal-main js-modal" id="modal01">
+                <div class="modal-innner">
+                    <div class="inner-content">
+                        <p class="inner-text"></p>
+                        <p class="send-button modalClose"></p>
+                    </div>
+                </div>
+            </div>
         <div id="side-bar">
             <div id="confirm">
                 <p>〇〇さんの</p>

@@ -37,8 +37,9 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::get('/register', 'Auth\RegisterController@registerView');
 Route::post('/register', 'Auth\RegisterController@register');
 
-//　新規投稿　
-Route::get('/added', 'PostsController@added')->middleware('auth');
+//　新規投稿　一覧表示→24行目
+// Route::get('/added', 'PostsController@added')->middleware('auth');
+// 投稿機能
 Route::post('/added', 'PostsController@added')->middleware('auth');
 
 // ログアウト機能

@@ -21,7 +21,14 @@ header{
     border-left: 1px solid #727272;
 }
 
+/* モーダル */
+.modal-main{
+    display: none;
+}
 
+.modal-inner{
+    display: flex;
+}
 
 /* アコーディオンメニュー */
 .accordion-container {
