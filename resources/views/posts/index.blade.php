@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-    <h2>機能を実装していきましょう。</h2>
     {!! Form::open(['url' => '/added']) !!}
     {{Form::token()}}
     <div class="form-group">
@@ -13,36 +12,41 @@
     {!! Form::close() !!}
 </div>
 <!-- モーダル -->
-<div class="modalopen" data-target="modal01"></div>
-            <div class="modal-main js-modal" id="modal01">
-                <div class="modal-innner"> 
-                    <div class="inner-content">
-                        <p class="inner-text"></p>
-                        
-                        <p class="send-button modalClose"></p>
-                    </div>
-                </div>
-            </div>
-            <h2 class="page-header">投稿一覧</h2>
-            <table class='table table-hover'>
-                <tr>
-                    <th>{{ Auth::user()->username }}</th>
-                    <th>No</th>
-                    <th>投稿内容</th>
-                    <th>投稿日時</th>
-                </tr>
-                @foreach ( $posts as $post)
-                <tr>
-                    <td>{{ $post->id }}</td>
-                    <td>{{ $post->user_id }}</td>
-                    <td>{{ $post->post }}</td>
-                    <td>{{ $post->created_at }}</td>
-                    <td><a class="btn btn-primary" href="/post/{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
-                    <td><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></td>
-                </tr>
-                @endforeach
-            </table>
-        </div >
-
+<body>
+        <!-- モーダルの中身 -->
+        <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+            <form action="" method="">
+                <textarea name="" class="modal_post"></textarea>
+                <input type="hidden" name="" class="modal_id" value="">
+                <input type="submit" value="更新">
+                {{ csrf_field() }}
+            </form>
+            <a class="js-modal-close" href="">閉じる</a>
+        </div>
+    </div> 
+        <h2 class="page-header">投稿一覧</h2>
+        <table class='table table-hover'>
+            <tr>
+                <th>{{ Auth::user()->username }}</th>
+                <th>No</th>
+                <th>投稿内容</th>
+                <th>投稿日時</th>
+                <th></th>
+            </tr>
+            @foreach ( $posts as $post)
+            <tr>
+                <td>{{ $post->id }}</td>
+                <td>{{ $post->user_id }}</td>
+                <td>{{ $post->post }}</td>
+                <td>{{ $post->created_at }}</td>
+                <td><a class="js-modal-open" href="/post/{{ $post->id }}" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
+                <td><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></td>
+            </tr>
+            @endforeach
+        </table>
+    </div >
+</body>
 
 @endsection

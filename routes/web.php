@@ -45,6 +45,9 @@ Route::post('/added', 'PostsController@added')->middleware('auth');
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');
 
+//モーダル機能
+Route::get('/post','PostsController@modal');
+
 
 
 

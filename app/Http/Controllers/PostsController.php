@@ -31,5 +31,8 @@ class PostsController extends Controller
             ]);
         return back();
     }
+    public function modal(){
+        return view('posts.index'); 
+    }
 }
 
