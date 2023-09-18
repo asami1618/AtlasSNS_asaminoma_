@@ -31,8 +31,10 @@ class PostsController extends Controller
             ]);
         return back();
     }
-    public function modal(){
-        return view('posts.index'); 
+    public function updateForm($id)
+    {
+        $post = Post::where('id',$id)->first();
+        return view('posts.index',['post' => $post]); 
     }
 }
 

@@ -17,13 +17,14 @@
         <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-            <form action="" method="">
+            {!! Form::open(['url' => '/post/update']) !!}
                 <textarea name="" class="modal_post"></textarea>
                 <input type="hidden" name="" class="modal_id" value="">
                 <input type="submit" value="更新">
                 {{ csrf_field() }}
             </form>
             <a class="js-modal-close" href="">閉じる</a>
+            {!! Form::close() !!}
         </div>
     </div> 
         <h2 class="page-header">投稿一覧</h2>
@@ -41,8 +42,10 @@
                 <td>{{ $post->user_id }}</td>
                 <td>{{ $post->post }}</td>
                 <td>{{ $post->created_at }}</td>
+                <!-- 編集ボタン -->
                 <td><a class="js-modal-open" href="/post/{{ $post->id }}" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
-                <td><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></td>
+                <!-- 削除ボタン -->
+                <td><a class="" ></a><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></td>
             </tr>
             @endforeach
         </table>
