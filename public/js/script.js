@@ -43,6 +43,7 @@ jQuery(function ($) {
 //     });
 // });
 
+// モーダル処理
 $(function(){
     // index.blade45行目→編集ボタン(class="js-modal-open")が押されると動作する
     $('.js-modal-open').on('click',function(){

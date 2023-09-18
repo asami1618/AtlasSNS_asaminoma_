@@ -41,11 +41,11 @@ Route::post('/register', 'Auth\RegisterController@register');
 // Route::get('/added', 'PostsController@added')->middleware('auth');
 // 投稿機能
 Route::post('/added', 'PostsController@added')->middleware('auth');
+// 投稿の更新
+Route::post('/post/update','PostsController@update');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');
-
-Route::post('/post','PostsController@updateForm');
 
 
 

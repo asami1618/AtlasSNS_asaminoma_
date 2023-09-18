@@ -31,10 +31,20 @@ class PostsController extends Controller
             ]);
         return back();
     }
-    public function updateForm($id)
+    // 投稿の更新　
+    public function update(Request $request)
     {
-        $post = Post::where('id',$id)->first();
-        return view('posts.index',['post' => $post]); 
+        // 1つ目の処理
+        $id = $request->input('id');
+        $up_post = $request->input('upPost');
+
+        // 2つ目の処理
+        Post::where('id',$id)->update([
+            'user_id' => Auth::id(),
+            'post' => $up_post
+        ]);
+        // 3つ目の処理
+        return redirect('/index');
     }
 }
 
