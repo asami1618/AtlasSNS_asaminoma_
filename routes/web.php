@@ -43,6 +43,8 @@ Route::post('/register', 'Auth\RegisterController@register');
 Route::post('/added', 'PostsController@added')->middleware('auth');
 // 投稿の更新
 Route::post('/post/update','PostsController@update');
+// 投稿の削除
+Route::post('/post/delete','PostsController@delete');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');

@@ -46,5 +46,10 @@ class PostsController extends Controller
         // 3つ目の処理
         return redirect('/index');
     }
+    public function delete($id)
+    {
+        Post::where('id',$id)->delete();
+        return redirect('/index');
+    }
 }
 
