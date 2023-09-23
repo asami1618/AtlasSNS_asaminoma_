@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Post;
 use Illuminate\Http\Request;
+
+
 
 class UsersController extends Controller
 {

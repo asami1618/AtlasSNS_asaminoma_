@@ -1,6 +1,7 @@
 @extends('layouts.login')
 
 @section('content')
+<!-- 検索機能 -->
 <div class="serch-form">
     <form action="/serch" method="POST">
         @csrf

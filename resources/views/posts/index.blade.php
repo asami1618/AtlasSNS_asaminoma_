@@ -49,12 +49,9 @@
                 <!-- 編集ボタン -->
                 <td><a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
                 <!-- 削除ボタン -->
-                <!-- @method('delete') -->
+                @method('delete')
                 <td>
-                    <form action="" method="POST">
-                    <!-- @csrf -->
-                    <a class="btn btn-danger" href="/post/delete/{{ $post->id }}" post="{{ $post->post }}" post_id="{{ $post->id }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" ><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></a>
-                    <input type="hidden" name="id" class="modal_id" value="DELETE">
+                    <a class="btn btn-danger" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" ><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></a>
                 </td>
             </tr>
             @endforeach

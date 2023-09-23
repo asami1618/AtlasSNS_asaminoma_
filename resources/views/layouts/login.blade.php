@@ -58,9 +58,8 @@
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="/follower-list"><button>フォロワーリスト</button></a></p>
-                <form action="/serch" method="GET">
-                    <p class="pull-right"><a href="/search"><button>ユーザー検索</button></a></p>
+                <div><p class="btn"><a href="/follower-list"><button>フォロワーリスト</button></a></p></div>
+                <div><p class="btn"><a href="/search"><button>ユーザー検索</button></a></p></div>
                 </form>
             </div>
         </div>
