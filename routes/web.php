@@ -42,11 +42,12 @@ Route::post('/register', 'Auth\RegisterController@register');
 // 投稿機能
 Route::post('/added', 'PostsController@added')->middleware('auth');
 // 投稿の更新
-Route::post('/post/update','PostsController@update')->name('postsupdate');
 Route::get('/index','PostsController@update');
+Route::post('/post/update','PostsController@update');
 
 // 投稿の削除
-Route::post('/post/delete','PostsController@delete');
+Route::get('/index','PostsController@delete');
+Route::post('/post/delete','PostsController@delete')->name('id_delete');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');

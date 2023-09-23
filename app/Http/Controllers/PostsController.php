@@ -44,11 +44,12 @@ class PostsController extends Controller
             'post' => $up_post
         ]);
         // 3つ目の処理
-        return redirect('/top');
+        return redirect('/top'); // ←/indexだとエラーになる
     }
     public function delete($id)
     {
         Post::where('id',$id)->delete();
+        // Post::destroy($id);
         return redirect('/top');
     }
 }

@@ -19,16 +19,20 @@
         <div class="modal__content">
             <form action="/post/update" method="POST">
                 <textarea name="upPost" class="modal_post"></textarea>
-                <!-- {!! Form::input('text','upPost', null, ['required','class' => 'form-control']) !!} -->
                 <input type="hidden" name="id" class="modal_id" value="UPDATE">
-                <input type="hidden" name="id" class="modal_id" value="DELETE">
                 <input type="submit" href="/top" value="更新">
                 {{ csrf_field() }}
-                </form>
-                <a class="js-modal-close" href="">閉じる</a>
+            </form>
+            <a class="js-modal-close" href="">閉じる</a>
                 <!-- {!! Form::close() !!} -->
         </div>
     </div> 
+    <div class="delete">
+        <form action="{{ route('id_delete') }}" method="POST">
+            @csrf
+            <input type="hidden" name="id" class="modal_id" value="DELETE">
+        </form>
+    </div>
         <h2 class="page-header">[ 投稿一覧 ]</h2>
         <table class='table table-hover'>
             <tr>
@@ -48,9 +52,10 @@
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
                 <!-- 編集ボタン -->
-                <td><a class="js-modal-open" href="/post/{{ $post->id }}" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
+                <td><a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
                 <!-- 削除ボタン -->
-                <td><a class="btn btn-danger" href="/post/{{ $post->id }}" post="{{ $post->post }}" post_id="{{ $post->id }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" ><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></a></td>
+                @method('delete')
+                <td><a class="btn btn-danger" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" post_id="{{ $post->id }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" ><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></a></td>
             </tr>
             @endforeach
         </table>
