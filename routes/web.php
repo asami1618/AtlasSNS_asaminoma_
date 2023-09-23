@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/profile','UsersController@profile'); //プロフィール
     Route::get('/search','UsersController@search'); //検索
+    Route::post('/serch','UsersController@search');
     Route::get('/follow-list','FollowsController@followList'); //フォローリスト
     Route::get('/follower-list','FollowsController@followerList'); //フォロワーリスト
 });
@@ -46,11 +47,12 @@ Route::get('/index','PostsController@update');
 Route::post('/post/update','PostsController@update');
 
 // 投稿の削除
-Route::get('/index','PostsController@delete');
-Route::post('/post/delete','PostsController@delete')->name('id_delete');
+// Route::post('/post/delete','PostsController@delete')->name('id_delete');
 
 // ログアウト機能
 Route::get('/logout','Auth\LoginController@logout');
+
+
 
 
 

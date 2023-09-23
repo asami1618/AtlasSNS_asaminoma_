@@ -59,8 +59,10 @@
                 <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="/follower-list"><button>フォロワーリスト</button></a></p>
+                <form action="/serch" method="GET">
+                    <p class="pull-right"><a href="/search"><button>ユーザー検索</button></a></p>
+                </form>
             </div>
-            <p class="pull-right"><a class="but but-success" href="/search"><button>ユーザー検索</button></a></p>
         </div>
     </div>
     <footer>

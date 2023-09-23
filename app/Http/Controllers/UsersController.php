@@ -10,11 +10,21 @@ class UsersController extends Controller
     public function profile(){
         return view('users.profile');
     }
-    public function search(){
-        return view('users.search');
+    // 検索処理
+    public function search(Request $request){
+        // 1つ目の処理
+        $keyword = $request->input('keyword');
+        // 2つ目の処理
+        if(!empty($keyword)){
+            $post = Post::where('username', 'like', '%' .$keyword. '%')->get();
+        }else{
+            $post = Post::all();
+        }
+        // 3つ目の処理
+        return view('users.serch');
     }
-    public function login()
-    {
+    // ログイン処理
+    public function login(){
         $users = Users::get();
         return view('web.php',['users'=>$users]);    
     }
@@ -24,3 +34,4 @@ class UsersController extends Controller
         return view('web.php');
     }
 }
+
