@@ -17,6 +17,7 @@ class UsersController extends Controller
     public function search(Request $request){
         // 1つ目の処理
         $keyword = $request->input('keyword');
+        $query = Post::query();
         // 2つ目の処理
         if(!empty($keyword)){
             $post = Post::where('username', 'like', '%' .$keyword. '%')->get();
@@ -24,7 +25,7 @@ class UsersController extends Controller
             $post = Post::all();
         }
         // 3つ目の処理
-        return view('users.serch');
+        return view('users.search');
     }
     // ログイン処理
     public function login(){

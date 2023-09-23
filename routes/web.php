@@ -50,7 +50,7 @@ Route::get('/logout','Auth\LoginController@logout');
 
 // 検索機能
 // Route::get('/search','UsersController@search'); //検索
-Route::post('/serch','UsersController@search');
+Route::post('/search','UsersController@search');
 
 // 削除機能
 Route::get('/post/{id}/delete','PostsController@delete');
