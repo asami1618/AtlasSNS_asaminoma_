@@ -22,14 +22,14 @@
                 <!-- {!! Form::input('text','upPost', null, ['required','class' => 'form-control']) !!} -->
                 <input type="hidden" name="id" class="modal_id" value="UPDATE">
                 <input type="hidden" name="id" class="modal_id" value="DELETE">
-                <input type="submit" value="更新">
+                <input type="submit" href="/top" value="更新">
                 {{ csrf_field() }}
                 </form>
                 <a class="js-modal-close" href="">閉じる</a>
                 <!-- {!! Form::close() !!} -->
         </div>
     </div> 
-        <h2 class="page-header">投稿一覧</h2>
+        <h2 class="page-header">[ 投稿一覧 ]</h2>
         <table class='table table-hover'>
             <tr>
                 <th>{{ Auth::user()->username }}</th>
