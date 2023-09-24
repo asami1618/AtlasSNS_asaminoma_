@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Http\Controllers\Post;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class UsersController extends Controller
             $query->where('username', 'like', '%' .$keyword. '%');
         }
         // 3つ目の処理
-        return view('users.search');
+        return view('users.search',compact('keyword'));
     }
     // ログイン処理
     public function login(){
