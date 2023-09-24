@@ -1,13 +1,15 @@
 @extends('layouts.login')
 
 @section('content')
-<!-- 検索機能 -->
+<!-- 検索フォーム -->
 <div class="search-form">
-    <form action="/search" method="POST">
+    <form class="form-inline" action="{{ url('/search') }}">
         @csrf
-        <input type="search" name="keyword" class="form" placeholder="ユーザー名">
-        <p class="pull-right"><a href="/search"><button>ユーザー検索</button></a></p>
-        <a class="btn btn-success"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a>
+        <div class="form-group">
+            <input type="text" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="ユーザー名">
+        </div>
+        <p class="pull-right"><a href="/search"><button><img src="{{ asset('/images/search.png') }}" width="30" height="30"></button></a></p>
+    </form>
 </div>
 
 @endsection

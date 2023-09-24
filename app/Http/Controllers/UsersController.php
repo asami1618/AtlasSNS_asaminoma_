@@ -17,12 +17,11 @@ class UsersController extends Controller
     public function search(Request $request){
         // 1つ目の処理
         $keyword = $request->input('keyword');
-        $query = Post::query();
-        // 2つ目の処理
-        if(!empty($keyword)){
-            $post = Post::where('username', 'like', '%' .$keyword. '%')->get();
-        }else{
-            $post = Post::all();
+        $query = User::query();
+        // 2つ目の処理 もしキーワードがあったら
+        if(!empty($keyword))
+        {
+            $query->where('username', 'like', '%' .$keyword. '%');
         }
         // 3つ目の処理
         return view('users.search');
