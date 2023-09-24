@@ -12,4 +12,10 @@
     </form>
 </div>
 
+<!--　検索ワード表示 -->
+@if(!empty($keyword))
+<p>検索ワード:{{ $keyword }}</p>
+@endif
+
+
 @endsection

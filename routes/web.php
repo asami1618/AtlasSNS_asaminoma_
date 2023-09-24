@@ -52,6 +52,9 @@ Route::get('/logout','Auth\LoginController@logout');
 // Route::get('/search','UsersController@search'); //検索
 Route::get('/search','UsersController@search');
 
+// 検索結果表示
+Route::get('/search','UsersController@searchview');
+
 // 削除機能
 Route::get('/post/{id}/delete','PostsController@delete');
 

@@ -19,14 +19,26 @@ class UsersController extends Controller
         // 1つ目の処理
         $keyword = $request->input('keyword');
         $query = User::query();
-        // 2つ目の処理 もしキーワードがあったら
-        if(!empty($keyword))
-        {
+        // 2つ目の処理 
+        return view('users.search',compact('keyword'));
+    }
+    // 検索結果表示
+    public function searchview(Request $request){
+        // 1つ目の処理
+        $keyword = $request->input('keyword');
+        $query = User::query(); 
+        // 2つ目の処理
+        if(!empty($keyword)){
             $query->where('username', 'like', '%' .$keyword. '%');
         }
         // 3つ目の処理
         return view('users.search',compact('keyword'));
     }
+    // 3つ目の処理
+
+
+
+
     // ログイン処理
     public function login(){
         $users = Users::get();
