@@ -21,15 +21,13 @@
     <tr>
         <th>ユーザーID</th>
         <th>ログインID</th>
-        <th>パスワード</th>
         <th>名前</th>
     </tr>
-    @foreach( $users as user)
+    @foreach( $users as $user)
     <tr>
-        <td>{{ $user->user_id }}</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ $user->id }}</td>
+        <td>{{ $user->user_id}}</td>
+        <td>{{ $user->username }}</td>
     </tr>
     @endforeach
 </table>
