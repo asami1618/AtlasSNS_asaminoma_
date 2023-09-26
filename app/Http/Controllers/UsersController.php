@@ -20,6 +20,8 @@ class UsersController extends Controller
         $keyword = $request->input('keyword');
         $query = User::query();
         // 2つ目の処理 
+        $users = User::paginate(20);
+        // 3つ目の処理 
         return view('users.search',compact('keyword'));
     }
     // 検索結果表示

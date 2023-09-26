@@ -11,6 +11,29 @@
         <p class="pull-right"><a href="/search"><button><img src="{{ asset('/images/search.png') }}" width="30" height="30"></button></a></p>
     </form>
 </div>
+<head>
+    <title>User list</title>
+</head>
+
+<h1>[ ユーザー 一覧表示 ]</h1>
+
+<table>
+    <tr>
+        <th>ユーザーID</th>
+        <th>ログインID</th>
+        <th>パスワード</th>
+        <th>名前</th>
+    </tr>
+    @foreach( $users as user)
+    <tr>
+        <td>{{ $user->user_id }}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    @endforeach
+</table>
+
 
 <!--　検索ワード表示 -->
 @if(!empty($keyword))
