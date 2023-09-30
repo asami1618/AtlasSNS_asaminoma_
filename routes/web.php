@@ -54,7 +54,7 @@ Route::get('/search','UsersController@search');
 Route::post('/search','UsersController@search');
 
 // 検索結果表示
-Route::get('/search','UsersController@searchview');
+// Route::get('/search','UsersController@searchview');
 
 // 削除機能
 Route::get('/post/{id}/delete','PostsController@delete');

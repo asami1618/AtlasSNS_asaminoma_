@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Controllers\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -17,16 +18,24 @@ class UsersController extends Controller
     // 検索処理
     public function search(Request $request){
         // 1つ目の処理
-        $users = User::paginate(20);
+        // Model::where('column', '!=', 'value')->get(); 見本
+        $users = User::where('id','!=',Auth::id())->get();
+        // 22行目で処理がされなければ29行目へ
+
         $keyword = $request->input('keyword');
         $query = User::query();
+        // dd($request);
         // 2つ目の処理 
-        return view('users.search',compact('keyword'));
+        if(!empty($keyword)){
+            $users = $query->where('username', 'like', '%' .$keyword. '%')->get();
+        }
+        
+        return view('users.search',compact('users','keyword'));
     }
     // 検索結果表示
     public function searchview(Request $request){
         // 1つ目の処理
-        $users = User::paginate(20);
+        $users = User::get();
         $keyword = $request->input('keyword');
         $query = User::query(); 
         // 2つ目の処理
@@ -36,7 +45,6 @@ class UsersController extends Controller
         // 3つ目の処理
         return view('users.search',compact('keyword'));
     }
-    // 3つ目の処理
 
 
 
