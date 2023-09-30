@@ -17,21 +17,6 @@
 
 <h1>[ ユーザー 一覧表示 ]</h1>
 
-<table>
-    <tr>
-        <th>ユーザーID</th>
-        <th>ログインID</th>
-        <th>名前</th>
-    </tr>
-    @foreach( $users as $user)
-    <tr>
-        <td>{{ $user->id }}</td>
-        <td>{{ $user->user_id}}</td>
-        <td>{{ $user->username }}</td>
-    </tr>
-    @endforeach
-</table>
-
 
 <!--　検索ワード表示 -->
 @if(!empty($keyword))

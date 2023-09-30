@@ -51,6 +51,7 @@ Route::get('/logout','Auth\LoginController@logout');
 // 検索機能
 // Route::get('/search','UsersController@search'); //検索
 Route::get('/search','UsersController@search');
+Route::post('/search','UsersController@search');
 
 // 検索結果表示
 Route::get('/search','UsersController@searchview');

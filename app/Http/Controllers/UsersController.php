@@ -17,16 +17,16 @@ class UsersController extends Controller
     // 検索処理
     public function search(Request $request){
         // 1つ目の処理
+        $users = User::paginate(20);
         $keyword = $request->input('keyword');
         $query = User::query();
         // 2つ目の処理 
-        $users = User::paginate(20);
-        // 3つ目の処理 
         return view('users.search',compact('keyword'));
     }
     // 検索結果表示
     public function searchview(Request $request){
         // 1つ目の処理
+        $users = User::paginate(20);
         $keyword = $request->input('keyword');
         $query = User::query(); 
         // 2つ目の処理
