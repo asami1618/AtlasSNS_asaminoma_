@@ -21,7 +21,6 @@ class UsersController extends Controller
         // Model::where('column', '!=', 'value')->get(); 見本
         $users = User::where('id','!=',Auth::id())->get();
         // 22行目で処理がされなければ29行目へ
-
         $keyword = $request->input('keyword');
         $query = User::query();
         // dd($request);
@@ -29,7 +28,7 @@ class UsersController extends Controller
         if(!empty($keyword)){
             $users = $query->where('username', 'like', '%' .$keyword. '%')->get();
         }
-        
+        // 3つ目の処理
         return view('users.search',compact('users','keyword'));
     }
     // 検索結果表示
