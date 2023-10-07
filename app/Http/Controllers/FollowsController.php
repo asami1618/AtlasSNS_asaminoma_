@@ -16,4 +16,19 @@ class FollowsController extends Controller
     public function followerList(){
         return view('follows.followerList');
     }
+
+    // フォローする
+    public function follow(Request $request)
+    {
+        User::firstOrCrete([
+            'followed_id' => $request->post_user,
+            'following_id' => $request->auth_user
+        ]);
+        return true;
+    }
+    // フォロー解除する
+    public function unfollow(Request $request)
+    {
+        
+    }
 }
