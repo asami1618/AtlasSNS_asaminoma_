@@ -29,6 +29,12 @@ class FollowsController extends Controller
     // フォロー解除する
     public function unfollow(Request $request)
     {
-        
+        $follow = User::where('followed_id',$request->post_user)
+        ->where('following_id',$request->auth)->first();
+
+        if($follow){
+            $follow->delete();
+            return false;
+        }
     }
 }
