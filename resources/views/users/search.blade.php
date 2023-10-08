@@ -19,7 +19,8 @@
     <table class="user_table">
     @foreach ( $users as $user)
     <tr>
-        <td>{{ $user->id }}</td>
+        <td><button onclick="follow{{ $user->id }}">フォローする</button></td>
+        <td><button onclick="follow{{ $user->id }}">フォロー解除</button></td>
         <td>{{ $user->username }}</td>
     </tr>
     @endforeach

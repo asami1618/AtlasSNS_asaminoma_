@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     // フォローされているユーザーを取得
     public function followed()
-    {
+    { //多対多のリレーション
         return $this->belongsToMany(
             'App\Models\User',
             'follows',
