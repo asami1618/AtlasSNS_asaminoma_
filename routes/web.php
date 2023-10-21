@@ -59,6 +59,10 @@ Route::post('/search','UsersController@search');
 // 削除機能
 Route::get('/post/{id}/delete','PostsController@delete');
 
+//フォロー機能
+Route::post('/users/{user}/follow','FollowsController@follow');
+Route::post('/users/{user}/unfollow','FollowsController@unfollow');
+
 
 
 

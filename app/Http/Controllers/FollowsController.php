@@ -17,24 +17,29 @@ class FollowsController extends Controller
         return view('follows.followerList');
     }
 
-    // フォローする
-    public function follow(Request $request)
+    // フォロー
+    public function follow(User $user)
     {
-        User::firstOrCrete([
-            'followed_id' => $request->post_user,
-            'following_id' => $request->auth_user
-        ]);
-        return true;
+        $follower = auth()->user();
+        //フォローしているか
+        $is_following = $follower->isFollowing($user->id);
+        if(!$is_following) {
+            //フォローしていなければフォローする
+            $follower->follow($user->id);
+            return back();
+        }
     }
-    // フォロー解除する
-    public function unfollow(Request $request)
-    {
-        $follow = User::where('followed_id',$request->post_user)
-        ->where('following_id',$request->auth)->first();
 
-        if($follow){
-            $follow->delete();
-            return false;
+    // フォロー解除
+    public function unfollow(User $user)
+    {
+        $follower = auth()->user();
+        // フォローしているか
+        $is_following = $follower->isFollowing($user->id);
+        if(!$is_following) {
+            //フォローしていればフォロー解除する
+            $follower->unfollow($user->id);
+            return back();
         }
     }
 }
