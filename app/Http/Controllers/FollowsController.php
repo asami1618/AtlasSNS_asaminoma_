@@ -40,6 +40,8 @@ class FollowsController extends Controller
             ]);
             // フォロー後元のページに戻る
             return redirect('/search');
+        }
+    }
         // $follower = auth()->user();
         // //フォローしているか
         // $is_following = $follower->isFollowing($user->id);
@@ -47,8 +49,6 @@ class FollowsController extends Controller
         //     //フォローしていなければフォローする
         //     $follower->follow($user->id);
         //     return back();
-        }
-    }
 
     // フォロー解除
     public function unfollow($userId)
