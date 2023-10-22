@@ -60,8 +60,8 @@ Route::post('/search','UsersController@search');
 Route::get('/post/{id}/delete','PostsController@delete');
 
 //フォロー機能
-Route::post('/users/{user}/follow','FollowsController@follow');
-Route::post('/users/{user}/unfollow','FollowsController@unfollow');
+Route::post('/follow','FollowsController@follow');
+Route::post('/unfollow','FollowsController@unfollow');
 
 
 
