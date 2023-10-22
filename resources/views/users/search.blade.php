@@ -18,11 +18,23 @@
 <h1>[ ユーザー 一覧表示 ]</h1>
     <table class="user_table">
     @foreach ( $users as $user)
-    <tr>
-        <td><button onclick="follow{{ $user->id }}">フォローする</button></td>
-        <td><button onclick="follow{{ $user->id }}">フォロー解除</button></td>
-        <td>{{ $user->username }}</td>
-    </tr>
+        <tr>
+            <td>{{ $user->username }}</td>
+            <td>
+            @if (auth()->user()->isFollowing($user->id))
+                <form action="{{ route('unfollow' , ['id' => $user->id]) }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" class="btn btn-danger">フォロー解除</button>
+                </form>
+            @else
+                <form action="{{ route('follow' , ['id' => $user->id]) }}" method="POST">
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-primary">フォローする</button>
+                </form>
+            @endif
+            </td>
+        </tr>
     @endforeach
 
 <!--　検索ワード表示 -->

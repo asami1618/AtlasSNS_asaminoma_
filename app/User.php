@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\User;
+use App\follows;
+use App\Http\Controllers\Controller;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -48,3 +51,4 @@ class User extends Authenticatable
         );
     }
 }
+

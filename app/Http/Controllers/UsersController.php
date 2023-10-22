@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\follows;
+use App\Models\follows;
 use App\Http\Controllers\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,16 +47,12 @@ class UsersController extends Controller
     }
 
     public function follow(User $user){
+        //ユーザーを取得するgetAllUsers()メソッドにログインしているユーザーIDを引数で渡す
         $all_users = $user->getAllUsers(auth()->user()->id);
         return view('users.index', [
             'all_users' => $all_users
         ]);
     }
-
-
-
-
-
 
     // ログイン処理
     public function login(){
