@@ -31,24 +31,31 @@ class User extends Authenticatable
     ];
 
     // フォローされているユーザーを取得
-    public function followed()
+    public function follows()
     { //多対多のリレーション
         return $this->belongsToMany(
-            'App\Models\User',
+            'App\User',
             'follows',
             'following_id',
             'followed_id',
         );
     }
     // フォローしているユーザーを取得
-    public function following()
+    public function follower()
     {
         return $this->belongsToMany(
-            'App\Models\User',
+            'App\User',
             'follows',
-            'following_id',
             'followed_id',
+            'following_id',
         );
+    }
+
+    // if文で使う関数をUser.phpに作成
+    //(bool値で返すようにすることで　@if(!isFollowing)　とできる)
+    public function isFollowing(Int $user_id)
+    {
+        return (bool) $this->follows()->where('followed_id' , $user_id )->first();
     }
 }
 

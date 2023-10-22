@@ -4,7 +4,7 @@
 <!-- 検索フォーム -->
 @foreach ($users as $user)
 <div class="search-form">
-    <form action="{{ url('search') }}" method="POST">
+    <form action="{{ url('/search') }}">
         @csrf
         <div class="form-group">
             <input type="search" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="ユーザー名">
@@ -24,16 +24,11 @@
             <td>{{ $user->username }}</td>
             <td>
             @if (auth()->user()->isFollowing($user->id))
-                <form action="{{ route('unfollow' , ['id' => $user->id]) }}" method="POST">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
-                    <button type="submit" class="btn btn-danger">フォロー解除</button>
-                </form>
+            <!-- フォロー解除 -->
+                <a href="{{ route('unfollow' , ['userId' => $user->id]) }}" class="btn unfollow_btn">フォロー解除</a>
             @else
-                <form action="{{ route('follow' , ['id' => $user->id]) }}" method="POST">
-                    {{ csrf_field() }}
-                    <button type="submit" class="btn btn-primary">フォローする</button>
-                </form>
+            <!-- フォローする -->
+                <a href="{{ route('follow' , ['userId' => $user->id]) }}" class="btn follow_btn">フォローする</a>
             @endif
             </td>
         </tr>
