@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\follows;
 use App\Http\Controllers\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -44,6 +45,15 @@ class UsersController extends Controller
         // 3つ目の処理
         return view('users.search',compact('keyword'));
     }
+
+    public function follow(User $user){
+        $all_users = $user->getAllUsers(auth()->user()->id);
+        return view('users.index', [
+            'all_users' => $all_users
+        ]);
+    }
+
+
 
 
 
