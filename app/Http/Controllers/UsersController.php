@@ -49,9 +49,7 @@ class UsersController extends Controller
     public function follow(User $user){
         //ユーザーを取得するgetAllUsers()メソッドにログインしているユーザーIDを引数で渡す
         $all_users = $user->getAllUsers(auth()->user()->id);
-        return view('users.index', [
-            'all_users' => $all_users
-        ]);
+        return view('users.index');
     }
 
     // ログイン処理

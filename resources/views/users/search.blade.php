@@ -1,6 +1,9 @@
 @extends('layouts.login')
 
 @section('content')
+<head>
+    <title>User list</title>
+</head>
 <!-- 検索フォーム -->
 @foreach ($users as $user)
 <div class="search-form">
@@ -13,10 +16,7 @@
     </form>
     
 </div>
-@endforeach
-<head>
-    <title>User list</title>
-</head>
+<!-- @endforeach -->
 
 <h1>[ ユーザー 一覧表示 ]</h1>
     <table class="user_table">
