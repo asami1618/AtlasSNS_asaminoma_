@@ -59,12 +59,12 @@ class FollowsController extends Controller
         $is_following = $follower->isFollowing($userId);
 
         // フォロしていれば下記のフォロー解除を実行
-        if(!$is_following) {
+        if($is_following) {
 
             $loggedInUserId = auth()->user()->id;
             Follow::where([
-                ['followed_id', '!=', $userId],
-                ['following_id', '!=', $loggedInUserId],
+                ['followed_id', '=', $userId],
+                ['following_id', '=', $loggedInUserId],
             ])->delete();
         }       
         return redirect('/search');
