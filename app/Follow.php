@@ -3,7 +3,7 @@
 namespace App;
 
 use App\User;
-use App\follows;
+use App\follow;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 

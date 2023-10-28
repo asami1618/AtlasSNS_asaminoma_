@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\follows;
+use App\Follow;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 
 class FollowsController extends Controller
 {

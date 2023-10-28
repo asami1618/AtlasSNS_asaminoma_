@@ -25,7 +25,7 @@
             <td>{{ $user->username }}</td>
             <td>
             @if (auth()->user()->isFollowing($user->id))
-            <!-- フォロー解除 <a href="{{ route('game.show', $game->id) }}" class="btn btn-primary btn-sm">詳細</a> -->
+            <!-- フォロー解除 -->
                 <a href="{{ route('unfollow' , $user->id) }}" class="btn unfollow_btn">フォロー解除</a>
             @else
             <!-- フォローする -->
