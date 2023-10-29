@@ -5,16 +5,24 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Follow;
 use App\Post;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class FollowsController extends Controller
 {
-    //
-    public function followList(){
+    // フォローリスト
+    public function followList()
+    {
+        // $follows = Auth::User()->follows()->get();
+        // $following_id = Auth::User()->follows()->plunk('followed_id');
+
+        // $posts = Post::with('user')->whereIn('user_id', $following_id)->latest()->get();
         return view('follows.followList');
     }
+
+
+    // フォロワーリスト
     public function followerList(){
         return view('follows.followerList');
     }

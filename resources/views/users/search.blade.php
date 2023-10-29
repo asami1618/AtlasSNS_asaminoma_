@@ -34,7 +34,8 @@
             </td>
         </tr>
     @endforeach
-
+    </table>    
+    
 <!--　検索ワード表示 -->
 @if(!empty($keyword))
 <p>検索ワード:{{ $keyword }}</p>
