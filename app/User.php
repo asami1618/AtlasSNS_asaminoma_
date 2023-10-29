@@ -52,7 +52,7 @@ class User extends Authenticatable
     }
 
     // if文で使う関数をUser.phpに作成(bool値で返すようにすることで　@if(!isFollowing)を使用できる)
-    // フォローしているか　$user_idはログイン中のユーザー
+    // フォローしているか　※$user_idはログイン中のユーザー
     public function isFollowing(Int $user_id)
     {
         return (bool) $this->follows()->where('followed_id' , $user_id )->first();

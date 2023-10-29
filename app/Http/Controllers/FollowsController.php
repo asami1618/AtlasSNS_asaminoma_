@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Follow;
+use App\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,10 @@ class FollowsController extends Controller
     }
     public function followerList(){
         return view('follows.followerList');
+    }
+    public function postCount(){
+        $posts = Post::get();
+        return view('follows.followList', compact('posts'));
     }
 
     // フォロー
@@ -60,7 +65,6 @@ class FollowsController extends Controller
 
         // フォロしていれば下記のフォロー解除を実行
         if($is_following) {
-
             $loggedInUserId = auth()->user()->id;
             Follow::where([
                 ['followed_id', '=', $userId],

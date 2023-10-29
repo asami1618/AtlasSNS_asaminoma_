@@ -39,7 +39,7 @@
                 <th></th>
                 <th></th>
             </tr>
-            @foreach ( $posts as $post)
+            @foreach ( $posts as $post )
             <tr>
                 <td>{{ $post->id }}</td>
                 <td>{{ $post->user_id }}</td>
