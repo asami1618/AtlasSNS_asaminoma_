@@ -42,4 +42,15 @@ class Follow extends Model
     {
         return $this->follows()->where('following_id', $user_id)->first(['id']);
     }
+
+    //フォロー数　取得
+    public function FollowCount($user_id)
+    {
+        return $this->where('following_id', '<>', $user_id)->count();
+    }
+    // フォロワー数　取得
+    public function FollowerCount($user_id)
+    {
+        return $this->where('followed_id', '<>', $user_id)->count();
+    }
 }
