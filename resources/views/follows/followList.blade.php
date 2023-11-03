@@ -5,12 +5,10 @@
 <!-- フォローしている人のアイコン一覧 -->
 <div class="">
     <h1>[ フォローリスト ]</h1>
-    @foreach ($follows as $follow)
-    <ul>
-        <li>
-            <div class="follow_icon"><img src="{{ asset('storage/image'.$follow->user->images) }}" alt="フォローアイコン"></div>
-        </li>
-    </ul>
-    @endforeach
+    <div class="follow_icon">
+        @foreach ($followings as $following)
+        <a><img src="{{ asset('/storage/images/'.$following->user->images) }}" alt="フォローアイコン"></a>
+        @endforeach
+    </div>    
 </div>
 @endsection
