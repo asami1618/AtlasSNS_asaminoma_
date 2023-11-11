@@ -30,17 +30,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // フォローされているユーザーを取得
+    // フォローしているユーザーを取得
     public function follows()
     { //多対多のリレーション
         return $this->belongsToMany(
             'App\User',
             'follows',
-            'following_id',
+            'following_id', 
             'followed_id',
         );
     }
-    // フォローしているユーザーを取得
+    // フォローされているユーザーを取得
     public function follower()
     {
         return $this->belongsToMany(

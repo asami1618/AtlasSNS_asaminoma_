@@ -17,7 +17,7 @@ class FollowsController extends Controller
         // フォローしているユーザーのidを取得
         $following_id = Auth::user()->follows()->pluck('followed_id');
 
-        $followings = Follow::with('user')->whereIn('id', $following_id)->get();
+        $followings = User::whereIn('id', $following_id)->get();
         return view('/follows/followList' , compact('followings'));
     }
 
