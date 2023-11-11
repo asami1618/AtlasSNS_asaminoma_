@@ -23,8 +23,13 @@ class FollowsController extends Controller
 
 
     // フォロワーリスト
-    public function followerList(){
-        return view('follows.followerList');
+    public function followerList()
+    {
+        // フォローされているユーザーのidを取得
+        $followed_id = Auth::user()->follows()->pluck('following_id');
+
+        $followed_users = User::whereIn('id', $followed_id)->get();
+        return view('/follows/followerList' , compact('followed_users'));
     }
     // public function postCount(){
     //     $posts = Post::get();
