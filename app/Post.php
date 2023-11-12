@@ -22,10 +22,10 @@ class Post extends Model
     public function posts(){
         return $this->hasMany('App\post');
     }
-    
+
     // フォローリスト
     public function user(){
-        return $this->hasMany('App\Post');
+        return $this->belongsTo('App\User');
     }
 
 

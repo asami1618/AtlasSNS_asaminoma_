@@ -30,6 +30,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function Post()
+    {
+        return $this->hasMany('App\Post');
+    }
+
     // フォローしているユーザーを取得
     public function follows()
     { //多対多のリレーション

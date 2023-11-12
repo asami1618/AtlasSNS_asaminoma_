@@ -31,6 +31,17 @@ class FollowsController extends Controller
         $followed_users = User::whereIn('id', $followed_id)->get();
         return view('/follows/followerList' , compact('followed_users'));
     }
+
+    // public function followerList_post()
+    // {
+    //     //Postモデル経由でpostsテーブルのレコードを取得
+    //     $posts = Post::get();
+    //     // フォローしているユーザーのidを取得
+    //     $following_id = Auth::user()->follows()->pluck('followed_id');
+    //     // フォローしているユーザーのidを元に投稿内容を取得
+    //     $posts = Post::with('user')->whereIn('user_id', $following_id)->get();
+    //     return view('/follows/followList', compact('posts'))->with('posts',$posts);
+    // }
     // public function postCount(){
     //     $posts = Post::get();
     //     return view('follows.followList', compact('posts'));
