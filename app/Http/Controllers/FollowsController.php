@@ -30,7 +30,9 @@ class FollowsController extends Controller
         $followed_id = Auth::user()->follower()->pluck('following_id');
 
         $followed_users = User::whereIn('id', $followed_id)->get();
-        return view('/follows/followerList' , compact('followed_users'));
+        $posts = Post::with('user')->whereIn('user_id' , $followed_id)->get();
+
+        return view('/follows/followerList' , compact('followed_users','posts'));
     }
 
     // public function followerList_post()
