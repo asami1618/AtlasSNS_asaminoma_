@@ -17,21 +17,11 @@ class FollowsController extends Controller
         // フォローしているユーザーのidを取得
         $following_id = Auth::user()->follows()->pluck('followed_id');
 
-        $followings = User::whereIn('user_id', $following_id)->get();
+        $followings = User::whereIn('id', $following_id)->get();
+        $posts = Post::with('user')->whereIn('user_id' , $following_id)->get();
         // dd($following_id);
-        return view('/follows/followList' , compact('followings'));
+        return view('/follows/followList' , compact('followings','posts'));
     }
-
-    public function followList_view()
-    {
-        // フォローしているユーザーのidを取得
-        $following_id = Auth::user()->follows()->pluck('followed_id');
-
-        $posts = Post::with('user')->whereIn('id' , $following_id)->get();
-        // dd($posts);
-        return view('/follows/followList' , compact('posts'));
-    }
-
 
     // フォロワーリスト
     public function followerList()
