@@ -16,7 +16,7 @@
     <h1>[ 投稿一覧 ]</h1>
         @foreach($posts as $post)
             <p>名前:{{ $post->user->username }}</p>
-            <p>投稿内容:{{ $post->post }}</p>
+            <p>{{ $post->post }}</p>
         @endforeach
 </div>
 
