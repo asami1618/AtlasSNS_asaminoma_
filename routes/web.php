@@ -64,6 +64,7 @@ Route::get('/users/{user}/follow','FollowsController@follow')->name('follow');
 // フォロー解除する
 Route::get('/users/{user}/unfollow','FollowsController@unfollow')->name('unfollow');
 
+Route::get ('/follow-list','FollowsController@followList_view'); //フォローリスト
 
 
 
