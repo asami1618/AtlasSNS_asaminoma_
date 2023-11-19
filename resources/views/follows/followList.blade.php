@@ -14,9 +14,24 @@
 
 <div class="">
     <h1>[ 投稿一覧 ]</h1>
+    <table class='table table-hover'>
         @foreach($posts as $post)
-            <p>名前:{{ $post->user->username }}</p>
-            <p>投稿内容:{{ $post->post }}</p>
+            <tr>
+                <th>[ 名前 ]{{ $post->user->username }}<img src="{{ asset('storage/' .$following->images) }}" alt="フォローアイコン"></th>
+                <th>[ No ]</th>
+                <th>[ 投稿内容 ]</th>
+                <th>[ 投稿日時 ]</th>
+                <th>[ 更新日時 ]</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>{{ $post->id }}</td>
+                <td>{{ $post->user_id }}</td>
+                <td>{{ $post->post }}</td>
+                <td>{{ $post->created_at }}</td>
+                <td>{{ $post->updated_at }}</td>
         @endforeach
+    </table>
 </div>
 @endsection
