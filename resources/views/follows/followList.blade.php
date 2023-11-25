@@ -17,8 +17,7 @@
     <table class='table table-hover'>
         @foreach($posts as $post)
             <tr>
-                <th>[ 名前 ]{{ $post->user->username }}<img src="{{ asset('storage/' .$following->images) }}" alt="フォローアイコン"></th>
-                <th>[ No ]</th>
+                <th>[ ユーザー名 ]{{ $post->user->username }}<a href="{{URL::to('/users/{id}/profile')}}"><img src="{{ asset('storage/' .$following->images) }}" alt="フォローアイコン"></th>
                 <th>[ 投稿内容 ]</th>
                 <th>[ 投稿日時 ]</th>
                 <th>[ 更新日時 ]</th>
@@ -26,7 +25,6 @@
                 <th></th>
             </tr>
             <tr>
-                <td>{{ $post->id }}</td>
                 <td>{{ $post->user_id }}</td>
                 <td>{{ $post->post }}</td>
                 <td>{{ $post->created_at }}</td>

@@ -23,8 +23,6 @@
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/top','PostsController@index');
 
-    Route::get('/profile','UsersController@profile'); //プロフィール
-
     Route::get('/follow-list','FollowsController@followList'); //フォローリスト
     Route::get('/follower-list','FollowsController@followerList'); //フォロワーリスト
 });
@@ -64,7 +62,8 @@ Route::get('/users/{user}/follow','FollowsController@follow')->name('follow');
 // フォロー解除する
 Route::get('/users/{user}/unfollow','FollowsController@unfollow')->name('unfollow');
 
-
+//プロフィール
+Route::get('/users/{id}/profile','UsersController@profile'); 
 
 
 

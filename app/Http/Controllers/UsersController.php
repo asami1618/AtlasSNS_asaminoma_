@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
     //
-    public function profile(){
-        return view('users.profile');
+    public function profile($id)
+    {
+        $data = User::find($id);
+        return view('users.profile' , compact('data'));
     }
+    
     // 検索処理
     public function search(Request $request){
         // 1つ目の処理
@@ -46,17 +49,12 @@ class UsersController extends Controller
         return view('users.search',compact('keyword'));
     }
 
-    public function follow(User $user){
-        //ユーザーを取得するgetAllUsers()メソッドにログインしているユーザーIDを引数で渡す
-        $all_users = $user->getAllUsers(auth()->user()->id);
-        return view('users.search',['all_users' => $all_users]);
-    }
-
     // ログイン処理
     public function login(){
         $users = Users::get();
         return view('web.php',['users'=>$users]);    
     }
+
     public function index()
     {
         $users = Users::get();
