@@ -5,7 +5,6 @@
     <title>User list</title>
 </head>
 <!-- 検索フォーム -->
-@foreach ($users as $user)
 <div class="search-form">
     <form action="{{ url('/search') }}">
         @csrf
@@ -16,7 +15,6 @@
     </form>
     
 </div>
-<!-- @endforeach -->
 
 <h1>[ ユーザー 一覧表示 ]</h1>
     <table class="user_table">
