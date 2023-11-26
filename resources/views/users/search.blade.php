@@ -7,7 +7,6 @@
 <!-- 検索フォーム -->
 <div class="search-form">
     <form action="{{ url('/search') }}">
-        @csrf
         <div class="form-group">
             <input type="search" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="ユーザー名">
         </div>

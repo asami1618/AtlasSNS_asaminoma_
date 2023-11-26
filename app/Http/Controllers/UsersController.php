@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
     //
-    public function profile($userId)
+    public function profile($id)
     {
-        $user = User::find($userId);
+        $user = User::all()->first;
+        return view('users.profile' , compact('user'));
+    }
+
+    public function othersprofile($id)
+    {
+        $user = User::all()->first;
         return view('users.profile' , compact('user'));
     }
 

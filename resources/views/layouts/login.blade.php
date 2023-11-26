@@ -33,7 +33,7 @@
                             <li>
                                 <button class="accordion_btn" type="button">
                                     <li><a class="home" href="{{ URL::to('/top') }}">HOME</a></li>
-                                    <li><a class="profile" href="{{ URL::to('/profile') }}">プロフィール</a></li>
+                                    <li><a class="profile" href="{{ URL::to('/users/{id}/profile') }}">プロフィール</a></li>
                                     <li><a class="center" href="{{ URL::to('/logout') }}">ログアウト</a></li>
                                 </button>
                             </li>
