@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Post;
 use App\Models\follows;
-use App\Http\Controllers\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,14 +15,15 @@ class UsersController extends Controller
     //
     public function profile($id)
     {
-        $user = User::all()->first;
+        $user = Auth::user();
         return view('users.profile' , compact('user'));
     }
 
     public function othersprofile($id)
     {
-        $user = User::all()->first;
-        return view('users.profile' , compact('user'));
+        $users = User::where('id' , $id)->first();
+        $posts = Post::with('user')->where('user_id' , $id)->get();
+        return view('users.profile' , compact('users','posts'));
     }
 
     public function follow($userId)

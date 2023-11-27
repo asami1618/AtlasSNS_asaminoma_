@@ -5,20 +5,21 @@
     <div class="profile">
         @if( Request::routeIs('profile') )
         <div class="my_profile">
-            <img src="{{ asset('storage/' .$user->images ) }}" alt="" width="30" height="30">
+            <img src="{{ asset('storage/' .$user->images ) }}" alt="" width="50" height="50">
         </div>
             <div class="">
-                <p>{{$user->username}}</p>
-                <p>{{$user->bio}}</p>
+                <p>{{ Auth::user()->username }}</p>
             </div>
-        @elseif( Request::routeIs('othersprofile') )
+        @else
+        @foreach($posts as $post)
         <div class="images">
             <img src="{{ asset('storage/' .$user->images ) }}" alt="" width="30" height="30">
         </div>
             <div class="othersProfile">
-                <p>{{$user->username}}</p>
-                <p>{{$user->bio}}</p>
+                <p>{{$post->username}}</p>
+                <p>{{$post->bio}}</p>
             </div>
+        @endforeach
         @endif            
     </div>
 </div>
