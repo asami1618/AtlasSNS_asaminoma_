@@ -13,11 +13,11 @@
         @else
         @foreach($posts as $post)
         <div class="images">
-            <img src="{{ asset('storage/' .$user->images ) }}" alt="" width="30" height="30">
+            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30">
         </div>
             <div class="othersProfile">
-                <p>{{$post->username}}</p>
-                <p>{{$post->bio}}</p>
+                <p>{{ $post->user->username }}</p>
+                <p>{{ $post->bio }}</p>
             </div>
         @endforeach
         @endif            
