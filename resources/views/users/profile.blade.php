@@ -4,7 +4,7 @@
 <!-- ログインユーザーのプロフィール -->
     @if( Request::routeIs('profile') )
         <div class="my_profile">
-            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="50" height="50">
+            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
         </div>
             <div class="">
                 <p>{{ Auth::user()->username }}</p>
@@ -14,15 +14,17 @@
 <!-- 他ユーザーのプロフィール -->
 <div class="container">
     <div class="profile">
-        @foreach($posts as $post)
         <div class="images">
-            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30">
+            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
         </div>
             <div class="othersProfile">
-                <p>{{ $post->user->username }}</p>
-                <p><textarea name="introduction"></textarea></p>
+            @foreach($users as $user)
+                <tr>
+                    <td>{{ $users->username }}</td>
+                </tr>
+            @endforeach
             </div>
-        @endforeach
+
 
         <div>
             @if (auth()->user()->isFollowing($users->id))
