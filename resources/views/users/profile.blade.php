@@ -1,16 +1,19 @@
 @extends('layouts.login')
 
 @section('content')
-<div class="container">
-    <div class="profile">
-        @if( Request::routeIs('profile') )
+<!-- ログインユーザーのプロフィール -->
+    @if( Request::routeIs('profile') )
         <div class="my_profile">
-            <img src="{{ asset('storage/' .$user->images ) }}" alt="" width="50" height="50">
+            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="50" height="50">
         </div>
             <div class="">
                 <p>{{ Auth::user()->username }}</p>
             </div>
-        @else
+    @else
+
+<!-- 他ユーザーのプロフィール -->
+<div class="container">
+    <div class="profile">
         @foreach($posts as $post)
         <div class="images">
             <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30">
@@ -20,7 +23,6 @@
                 <p><textarea name="introduction"></textarea></p>
             </div>
         @endforeach
-        @endif
 
         <div>
             @if (auth()->user()->isFollowing($users->id))
@@ -34,18 +36,19 @@
 
         <div>
             <h2> [ 投稿一覧 ] </h2>
-                <table>
-                    @foreach($posts as $post)
-                    <tr>
-                        <td><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30"></td>
-                        <td>{{ $post->user->username }}</td>
-                        <td>{{ $post->post}}</td>
-                        <td>{{ $post->created_at }}</td>
-                        <td>{{ $post->updated_at }}</td>
-                    </tr>
-                    @endforeach
-                </table>
+            <table>
+                @foreach($posts as $post)
+                <tr>
+                    <td><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30"></td>
+                    <td>{{ $post->user->username }}</td>
+                    <td>{{ $post->post}}</td>
+                    <td>{{ $post->created_at }}</td>
+                    <td>{{ $post->updated_at }}</td>
+                </tr>
+                @endforeach
+            </table>
         </div>
     </div>
 </div>
+@endif
 @endsection

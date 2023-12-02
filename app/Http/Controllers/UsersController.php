@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
     //
-    public function profile($id)
+    public function profile()
     {
-        $user = Auth::user();
-        return view('users.profile' , compact('user'));
+        $users = Auth::user();
+        return view('users.profile' , compact('users'));
     }
 
     public function othersprofile($id)

@@ -17,7 +17,7 @@
 
 <h1>[ ユーザー 一覧表示 ]</h1>
     <table class="user_table">
-    @foreach ( $users as $user)
+    @foreach ( $users as $user )
         <tr>
             <td>{{ $user->username }}</td>
             <td>
