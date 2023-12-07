@@ -6,20 +6,21 @@
         <div class="my_profile">
             <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
         </div>
-            <div class="">
-                <p>{{ Auth::user()->username }}</p>
-            </div>
             <!-- 編集 -->
             <form action="" method="post" >
             <div class="container">
-                @foreach($users as $user)
-                <p>ID:{{ $user->id }}</p>
-                    <input type="hidden" name="id" value="{{ $user->id }}">
-                <p>名前</p>
-                    <input type="text" name="name" value="{{ $user->username }}">
-                <p>メールアドレス</p>
-                    <input type="text" name="mail" value="{{ $user->mail }}">
-                @endforeach
+                <p>user name</p>
+                    <input type="text" name="id" value="{{ Auth::user()->username }}">
+                <p>mail address</p>
+                    <input type="text" name="mail" value="{{ Auth::user()->mail }}">
+                <p>password</p>
+                    <input type="text">
+                <p>password comfirm</p>
+                    <input type="text">
+                <p>bio</p>
+                    <input type="text" name="bio" value="{{ Auth::user()->bio }}">
+                <p>icon image</p>
+                    <input type="text">
             </form>        
             </div>
     @else
@@ -34,6 +35,7 @@
             @foreach($users as $user)
                 <tr>
                     <td>{{ $users->username }}</td>
+                    <td><input type="text" name="bio" value="{{ Auth::user()->bio }}"></td>
                 </tr>
             @endforeach
             </div>
