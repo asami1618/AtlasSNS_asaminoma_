@@ -26,6 +26,7 @@ class UsersController extends Controller
         return view('users.profile' , compact('users','posts'));
     }
 
+
     public function follow($userId)
     {
         // フォローしているか

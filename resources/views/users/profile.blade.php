@@ -9,6 +9,19 @@
             <div class="">
                 <p>{{ Auth::user()->username }}</p>
             </div>
+            <!-- 編集 -->
+            <form action="" method="post" >
+            <div class="container">
+                @foreach($users as $user)
+                <p>ID:{{ $user->id }}</p>
+                    <input type="hidden" name="id" value="{{ $user->id }}">
+                <p>名前</p>
+                    <input type="text" name="name" value="{{ $user->username }}">
+                <p>メールアドレス</p>
+                    <input type="text" name="mail" value="{{ $user->mail }}">
+                @endforeach
+            </form>        
+            </div>
     @else
 
 <!-- 他ユーザーのプロフィール -->
