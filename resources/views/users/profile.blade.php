@@ -14,9 +14,9 @@
                 <p>mail address</p>
                     <input type="text" name="mail" value="{{ Auth::user()->mail }}">
                 <p>password</p>
-                    <input type="text">
+                    <input type="password" name="password" value="{{ Auth::user()->password }}">
                 <p>password comfirm</p>
-                    <input type="text">
+                    <input type="password" name="password" value="{{ Auth::user()->password }}">
                 <p>bio</p>
                     <input type="text" name="bio" value="{{ Auth::user()->bio }}">
                 <p>icon image</p>
