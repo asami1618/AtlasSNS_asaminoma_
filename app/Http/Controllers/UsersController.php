@@ -12,19 +12,34 @@ use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
-    //
+    //ログインユーザーのプロフィール
     public function profile()
     {
         $users = Auth::user();
         return view('users.profile' , compact('users'));
     }
 
+    // 他ユーザーのプロフィール
     public function othersprofile($id)
     {
         $users = User::where('id' , $id)->first();
         $posts = Post::with('user')->where('user_id' , $id)->get();
         return view('users.profile' , compact('users','posts'));
     }
+
+    // プロフィール編集
+    public function profile_update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:12|min:2',
+            'mail' => 'required|string|max:40|min:5|email|',
+            'password' => 'required|alpha_num|max:20|min:8|',
+            'password_comfirmation' => 'required|alpha_num|max:20|min:8|confirmed:password',
+            'bio' => 'min:150',
+            'images' => 'mimes:jpg,png,bmp,gif,svg',
+        ]);
+    }
+
 
 
     public function follow($userId)
