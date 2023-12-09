@@ -28,7 +28,7 @@ class UsersController extends Controller
     }
 
     // プロフィール編集
-    public function profile_update(Request $request)
+    public function profileupdate(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:12|min:2',

@@ -66,5 +66,4 @@ Route::get('/users/{user}/unfollow','FollowsController@unfollow')->name('unfollo
 Route::get('/users/profile','UsersController@profile')->name('profile'); 
 Route::get('/users/{id}/othersprofile','UsersController@othersprofile')->name('othersprofile');
 
-Route::get('/users/profile','UsersController@othersprofile')->name('profile');
 
