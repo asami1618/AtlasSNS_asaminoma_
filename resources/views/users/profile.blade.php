@@ -10,17 +10,18 @@
             <form action="" method="post" >
             <div class="container">
                 <p>user name</p>
-                    <input type="text" name="id" value="{{ Auth::user()->username }}">
+                    <input type="text" name="username" value="{{ Auth::user()->username }}">
                 <p>mail address</p>
                     <input type="text" name="mail" value="{{ Auth::user()->mail }}">
                 <p>password</p>
                     <input type="password" name="password" value="{{ Auth::user()->password }}">
                 <p>password comfirm</p>
-                    <input type="password" name="password" value="{{ Auth::user()->password }}">
+                    <input type="password" name="password_comfirm" value="{{ Auth::user()->password }}">
                 <p>bio</p>
                     <input type="text" name="bio" value="{{ Auth::user()->bio }}">
                 <p>icon image</p>
                     <input type="text">
+                <input type="submit" value="更新">
             </form>        
             </div>
     @else

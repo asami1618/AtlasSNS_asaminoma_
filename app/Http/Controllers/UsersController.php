@@ -6,6 +6,7 @@ use App\User;
 use App\Post;
 use App\Models\follows;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -28,16 +29,49 @@ class UsersController extends Controller
     }
 
     // プロフィール編集
-    public function profileupdate(Request $request)
+    public function editprofile(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:12|min:2',
-            'mail' => 'required|string|max:40|min:5|email|',
-            'password' => 'required|alpha_num|max:20|min:8|',
-            'password_comfirmation' => 'required|alpha_num|max:20|min:8|confirmed:password',
+        // 項目名 => 検証ルールを定義
+        $rules = [
+            'username' => 'required|string|min:2|max:12',
+            'mail' => 'required|string|min:5|max:40|email',
+            'password' => 'required|alpha_num|min:8|max:20',
+            'password_comfirmation' => 'required|alpha_num|min:8|max:20|confirmed:password',
             'bio' => 'min:150',
             'images' => 'mimes:jpg,png,bmp,gif,svg',
-        ]);
+        ];
+        // 項目名　検証ルール　=> メッセージ
+        $messages = [
+            'username.required' => 'ユーザー名は入力必須です。',
+            'username.min' => 'ユーザー名は2文字以上で入力してください。',
+            'username.max' => 'ユーザー名は12文字以下で入力してください。',
+
+            'mail.required' => 'メールアドレスは入力必須です。',
+            'mail.min' => 'メールアドレスは5文字以上で入力してください。',
+            'mail.max' => 'メールアドレスは40文字以下で入力してください。',
+            'mail.unique' => '登録済みのメールアドレスは使用不可です。',
+            'mail.email' => 'メールアドレスの形式で入力してください。',
+
+            'password.required' => 'パスワードは入力必須です。',
+            'password.regex' => 'パスワードは英数字のみで入力してください。',
+            'password.min' => 'パスワードは8文字以上で入力してください。',
+            'password.max' => 'パスワードは20文字以下で入力してください。',
+            'password.confirmed' => 'パスワードが一致していません。',
+
+            'bio.min' => '',
+            'images.' => '',
+        ];       
+
+        // インスタンスを作成
+        $validator = Validator::make($request->all(), $rule );
+
+        // 検証
+        if($validator->fails()) {
+            // エラー発生時の処理
+            return redirect('/top')
+            ->withErrors($validator)
+            ->withInput();
+        };
     }
 
 
