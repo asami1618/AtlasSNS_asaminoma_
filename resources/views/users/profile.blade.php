@@ -7,7 +7,7 @@
             <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
         </div>
             <!-- 編集 -->
-            <form action="" method="post" >
+            <form action="" method="get" >
             <div class="container">
                 <p>user name</p>
                     <input type="text" name="username" value="{{ Auth::user()->username }}">
@@ -20,7 +20,8 @@
                 <p>bio</p>
                     <input type="text" name="bio" value="{{ Auth::user()->bio }}">
                 <p>icon image</p>
-                    <input type="text">
+                    <form action="{{ route('editprofile') }}" method="POST" enctype="multipart/form-data"></form>
+                    <input type="file" name="img">
                 <input type="submit" value="更新">
             </form>        
             </div>

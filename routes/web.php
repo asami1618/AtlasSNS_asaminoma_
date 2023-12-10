@@ -67,6 +67,6 @@ Route::get('/users/profile','UsersController@profile')->name('profile');
 // 他ユーザープロフィール画面
 Route::get('/users/{id}/othersprofile','UsersController@othersprofile')->name('othersprofile');
 // プロフィール編集
-Route::get('/users/edit/profile','UsersController@editprofile')->name('profile'); 
+Route::get('/users/edit/profile','UsersController@editprofile')->name('editprofile'); 
 
 

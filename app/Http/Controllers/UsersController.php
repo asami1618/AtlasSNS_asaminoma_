@@ -58,22 +58,23 @@ class UsersController extends Controller
             'password.max' => 'パスワードは20文字以下で入力してください。',
             'password.confirmed' => 'パスワードが一致していません。',
 
-            'bio.min' => '',
-            'images.' => '',
+            'bio.min' => '150文字以下で入力してください。',
+            'images.' => '指定のファイル形式以外は添付できません。',
         ];       
 
         // インスタンスを作成
         $validator = Validator::make($request->all(), $rule );
 
-        // 検証
+        // 検証 failメソッドは失敗していたら"true"を返す
         if($validator->fails()) {
             // エラー発生時の処理
             return redirect('/top')
             ->withErrors($validator)
             ->withInput();
-        };
+        }
+        $inputs = $request->all();
+        return view('users.profile',['input' => $inputs]);
     }
-
 
 
     public function follow($userId)
