@@ -23,7 +23,7 @@
                     <form action="{{ route('editprofile') }}" method="POST" enctype="multipart/form-data"></form>
                     <input type="file" name="img">
                 <input type="submit" value="更新">
-            </form>        
+            </form> 
             </div>
     @else
 

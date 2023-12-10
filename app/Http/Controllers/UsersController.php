@@ -31,17 +31,18 @@ class UsersController extends Controller
     // プロフィール編集
     public function editprofile(Request $request)
     {
-        // 項目名 => 検証ルールを定義
-        $rules = [
+        // インスタンスを作成 ['値の配列'=>'検証ルールの配列']
+        // Validator::make($request->all()として入力された全ての値を取得
+        $validator = Validator::make($request->all(), [
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|min:5|max:40|email',
             'password' => 'required|alpha_num|min:8|max:20',
             'password_comfirmation' => 'required|alpha_num|min:8|max:20|confirmed:password',
             'bio' => 'min:150',
             'images' => 'mimes:jpg,png,bmp,gif,svg',
-        ];
+        ]);
         // 項目名　検証ルール　=> メッセージ
-        $messages = [
+        $message = [
             'username.required' => 'ユーザー名は入力必須です。',
             'username.min' => 'ユーザー名は2文字以上で入力してください。',
             'username.max' => 'ユーザー名は12文字以下で入力してください。',
@@ -59,38 +60,39 @@ class UsersController extends Controller
             'password.confirmed' => 'パスワードが一致していません。',
 
             'bio.min' => '150文字以下で入力してください。',
-            'images.' => '指定のファイル形式以外は添付できません。',
-        ];       
-
-        // インスタンスを作成
-        $validator = Validator::make($request->all(), $rule );
+            'images.mimes' => '指定のファイル形式以外は添付できません。',
+        ];
 
         // 検証 failメソッドは失敗していたら"true"を返す
-        if($validator->fails()) {
+        if ($validator->fails()) {
             // エラー発生時の処理
             return redirect('/top')
-            ->withErrors($validator)
+            // withErrorsは引数の値を$errors変数へ保存してリダイレクト先まで引き継ぐメソッド
+            ->withErrors($validator) 
             ->withInput();
         }
-        $inputs = $request->all();
+        // $inputs = $request->all();
+        return view('users.profile',['msg' => '正しく入力されました!']);
+    }
+
+    public function store(Request $request)
+    {
 
 
         // 画像フォームでリクエストした画像を取得
-        $img = $request->file('img_path');
+        // $img = $request->file('images');
 
         // 画像情報がセットされていれば保存処理を実行
-        if (isset($img)){
-            // storage > public　配下に亜像が保存される
-            $path = $img->store('public');
-
+        // if (isset($img)){
+            // storage > public　配下に画像が保存される
+            // $path = $img->store('public');
             // store処理が実行できたらDBに保存
-            if ($path) {
-                Item::create([
-                    'img_path' => $path,
-                ]);
-            }
-        }
-        return view('users.profile',compact('rule'));
+        //     if ($path) {
+        //         Item::create([
+        //             'images' => $path,
+        //         ]);
+        //     }
+        // }
     }
 
 

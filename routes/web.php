@@ -57,16 +57,13 @@ Route::post('/search','UsersController@search');
 // 削除機能
 Route::get('/post/{id}/delete','PostsController@delete');
 
-//　フォローする
-Route::get('/users/{user}/follow','FollowsController@follow')->name('follow');
-// フォロー解除する
-Route::get('/users/{user}/unfollow','FollowsController@unfollow')->name('unfollow');
+//　フォロー機能
+Route::get('/users/{user}/follow','FollowsController@follow')->name('follow'); //フォローする
+Route::get('/users/{user}/unfollow','FollowsController@unfollow')->name('unfollow'); //フォロー解除
 
-//　プロフィール　画面表示
-Route::get('/users/profile','UsersController@profile')->name('profile'); 
-// 他ユーザープロフィール画面
-Route::get('/users/{id}/othersprofile','UsersController@othersprofile')->name('othersprofile');
-// プロフィール編集
-Route::get('/users/edit/profile','UsersController@editprofile')->name('editprofile'); 
-
+//　プロフィール　
+Route::get('/users/profile','UsersController@profile')->name('profile'); //画面表示
+Route::get('/users/{id}/othersprofile','UsersController@othersprofile')->name('othersprofile'); //他ユーザー画面表示
+Route::get('/users/edit/profile','UsersController@editprofile')->name('editprofile'); //編集
+Route::get('/users/store/profile','UsersController@store')->name('store'); //画像アップロード
 
