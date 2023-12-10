@@ -73,7 +73,24 @@ class UsersController extends Controller
             ->withInput();
         }
         $inputs = $request->all();
-        return view('users.profile',['input' => $inputs]);
+
+
+        // 画像フォームでリクエストした画像を取得
+        $img = $request->file('img_path');
+
+        // 画像情報がセットされていれば保存処理を実行
+        if (isset($img)){
+            // storage > public　配下に亜像が保存される
+            $path = $img->store('public');
+
+            // store処理が実行できたらDBに保存
+            if ($path) {
+                Item::create([
+                    'img_path' => $path,
+                ]);
+            }
+        }
+        return view('users.profile',compact('rule'));
     }
 
 

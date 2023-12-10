@@ -7,7 +7,7 @@
             <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
         </div>
             <!-- 編集 -->
-            <form action="" method="get" >
+            <form action="{{ route('editprofile') }}" method="GET" >
             <div class="container">
                 <p>user name</p>
                     <input type="text" name="username" value="{{ Auth::user()->username }}">
