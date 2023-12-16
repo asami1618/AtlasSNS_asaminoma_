@@ -64,6 +64,6 @@ Route::get('/users/{user}/unfollow','FollowsController@unfollow')->name('unfollo
 //　プロフィール　
 Route::get('/users/profile','UsersController@profile')->name('profile'); //画面表示
 Route::get('/users/{id}/othersprofile','UsersController@othersprofile')->name('othersprofile'); //他ユーザー画面表示
-Route::get('/users/edit/profile','UsersController@editprofile')->name('editprofile'); //編集
-Route::get('/users/store/profile','UsersController@store')->name('store'); //画像アップロード
+Route::post('/users/edit/profile','UsersController@editprofile')->name('editprofile'); //編集
+Route::post('/users/store/profile','UsersController@store')->name('store'); //画像アップロード
 

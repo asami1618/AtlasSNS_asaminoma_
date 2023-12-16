@@ -7,23 +7,43 @@
             <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
         </div>
             <!-- 編集 -->
-            <form action="{{ route('editprofile') }}" method="GET" >
+            {!! Form::open([ 'url' => '/users/edit/profile' ]) !!}
+            <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
             <div class="container">
-                <p>user name</p>
+                <div class="form-group">
+                    {{ Form::label('username') }}
                     <input type="text" name="username" value="{{ Auth::user()->username }}">
-                <p>mail address</p>
+                </div>
+                
+                <div class="form-group">
+                    {{ Form::label('mail') }}
                     <input type="text" name="mail" value="{{ Auth::user()->mail }}">
-                <p>password</p>
+                </div>
+
+
+                <div class="form-group">
+                    {{ Form::label('password') }}
                     <input type="password" name="password" value="{{ Auth::user()->password }}">
-                <p>password comfirm</p>
+                </div>
+
+                <div class="form-group">
+                    {{ Form::label('password comfirm') }}
                     <input type="password" name="password_comfirm" value="{{ Auth::user()->password }}">
-                <p>bio</p>
+                </div>
+
+                <div class="form-group">
+                    {{ Form::label('bio') }}
                     <input type="text" name="bio" value="{{ Auth::user()->bio }}">
-                <p>icon image</p>
+                </div>
+
+                <div class="form-group">
+                    {{ Form::label('icon image') }}
                     <form action="{{ route('editprofile') }}" method="POST" enctype="multipart/form-data"></form>
                     <input type="file" name="img">
+                    </form> 
+                </div>
+
                 <input type="submit" value="更新">
-            </form> 
             </div>
     @else
 
@@ -69,5 +89,6 @@
         </div>
     </div>
 </div>
+{!! From::close() !!}
 @endif
 @endsection

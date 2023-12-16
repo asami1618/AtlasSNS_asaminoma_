@@ -33,7 +33,7 @@ class UsersController extends Controller
         // インスタンスを作成 ['値の配列'=>'検証ルールの配列']
         // Validator::make($request->all()として入力された全ての値を取得
         if($request->isMethod('post')){
-        $rule = [
+        $rules = [
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|min:5|max:40|email',
             'password' => 'required|alpha_num|min:8|max:20',
@@ -89,7 +89,7 @@ class UsersController extends Controller
 
         // usersテーブルの更新
         \DB::table('users')
-        ->where('id', $id)
+        ->where('id', $id) //idと指定して他のユーザー情報を上書きしないようにする
         ->update([
             'username' => $user->username,
             'mail' => $user->mail,
