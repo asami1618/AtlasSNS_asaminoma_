@@ -29,18 +29,18 @@ class UsersController extends Controller
     }
 
     // プロフィール編集
-    public function editprofile(Request $request)
-    {
+    public function editprofile(Request $request){
         // インスタンスを作成 ['値の配列'=>'検証ルールの配列']
         // Validator::make($request->all()として入力された全ての値を取得
-        $validator = Validator::make($request->all(), [
+        if($request->isMethod('post')){
+        $rule = [
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|min:5|max:40|email',
             'password' => 'required|alpha_num|min:8|max:20',
             'password_comfirmation' => 'required|alpha_num|min:8|max:20|confirmed:password',
             'bio' => 'min:150',
             'images' => 'mimes:jpg,png,bmp,gif,svg',
-        ]);
+        ];
         // 項目名　検証ルール　=> メッセージ
         $message = [
             'username.required' => 'ユーザー名は入力必須です。',
@@ -62,39 +62,45 @@ class UsersController extends Controller
             'bio.min' => '150文字以下で入力してください。',
             'images.mimes' => '指定のファイル形式以外は添付できません。',
         ];
+        $validator = Validator::make($request->all(), $rules, $message);
 
         // 検証 failメソッドは失敗していたら"true"を返す
         if ($validator->fails()) {
             // エラー発生時の処理
-            return redirect('/top')
+            return redirect('/profile')
             // withErrorsは引数の値を$errors変数へ保存してリダイレクト先まで引き継ぐメソッド
             ->withErrors($validator) 
             ->withInput();
         }
+
+        $user = Auth::user();
+        $id = Auth::id();
+        $validator->validator();
+
+        
+        // CRUD 更新処理
+        // bcrypt　ヘルパ関数　
+        // Hashファサードの代わり->パスワード保存
+        $user->username = $request->input('username');
+        $user->mail = $request->input('mail');
+        $user->password = bcrypt($request->input('newpasword'));
+        $user->bio = $request->input('bio');
+        $user->images = basename($image);
+
+        // usersテーブルの更新
+        \DB::table('users')
+        ->where('id', $id)
+        ->update([
+            'username' => $user->username,
+            'mail' => $user->mail,
+            'password' => $user->password,
+            'bio' => $user->bio,
+            'images' => $user->images
+        ]);
         // $inputs = $request->all();
-        return view('users.profile',['msg' => '正しく入力されました!']);
+        }
+        return redirect('/top');
     }
-
-    public function store(Request $request)
-    {
-
-
-        // 画像フォームでリクエストした画像を取得
-        // $img = $request->file('images');
-
-        // 画像情報がセットされていれば保存処理を実行
-        // if (isset($img)){
-            // storage > public　配下に画像が保存される
-            // $path = $img->store('public');
-            // store処理が実行できたらDBに保存
-        //     if ($path) {
-        //         Item::create([
-        //             'images' => $path,
-        //         ]);
-        //     }
-        // }
-    }
-
 
     public function follow($userId)
     {
