@@ -37,7 +37,7 @@ class UsersController extends Controller
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|min:5|max:40|email',
             'password' => 'required|alpha_num|min:8|max:20',
-            'password_confirmation' => 'required|alpha_num|min:8|max:20|confirmed:password',
+            'password_confirmation' => 'min:8|max:20|confirmed',
             'bio' => 'min:150',
             'images' => 'mimes:jpg,png,bmp,gif,svg',
         ];
@@ -54,10 +54,10 @@ class UsersController extends Controller
             'mail.email' => 'メールアドレスの形式で入力してください。',
 
             'password.required' => 'パスワードは入力必須です。',
-            'password.regex' => 'パスワードは英数字のみで入力してください。',
+            'password.alpha_num' => 'パスワードは英数字のみで入力してください。',
             'password.min' => 'パスワードは8文字以上で入力してください。',
             'password.max' => 'パスワードは20文字以下で入力してください。',
-            'password.confirmed' => 'パスワードが一致していません。',
+            'confirmed' => 'パスワードが一致していません。',
 
             'bio.min' => '150文字以下で入力してください。',
             'images.mimes' => '指定のファイル形式以外は添付できません。',
