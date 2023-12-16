@@ -4,8 +4,7 @@
 <!-- ログインユーザーのプロフィール -->
     @if( Request::routeIs('profile') )
         <div class="my_profile">
-            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
-        </div>
+            <!-- <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"> -->
             <!-- 編集 -->
             {!! Form::open([ 'url' => '/users/edit/profile' ]) !!}
             <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
@@ -20,15 +19,14 @@
                     <input type="text" name="mail" value="{{ Auth::user()->mail }}">
                 </div>
 
-
                 <div class="form-group">
                     {{ Form::label('password') }}
-                    <input type="password" name="password" value="{{ Auth::user()->password }}">
+                    <input type="password" name="password" value="">
                 </div>
 
                 <div class="form-group">
                     {{ Form::label('password comfirm') }}
-                    <input type="password" name="password_comfirm" value="{{ Auth::user()->password }}">
+                    <input type="password" name="password_comfirm" value="">
                 </div>
 
                 <div class="form-group">
@@ -42,9 +40,20 @@
                     <input type="file" name="img">
                     </form> 
                 </div>
-
                 <input type="submit" value="更新">
+                {{ Form::token() }}
+                {!! Form::close() !!}
+                @if($errors->any())
+                <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                </div>
+                @endif
             </div>
+        </div>
     @else
 
 <!-- 他ユーザーのプロフィール -->
@@ -61,7 +70,6 @@
                 </tr>
             @endforeach
             </div>
-
 
         <div>
             @if (auth()->user()->isFollowing($users->id))
@@ -89,6 +97,5 @@
         </div>
     </div>
 </div>
-{!! From::close() !!}
 @endif
 @endsection

@@ -37,7 +37,7 @@ class UsersController extends Controller
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|min:5|max:40|email',
             'password' => 'required|alpha_num|min:8|max:20',
-            'password_comfirmation' => 'required|alpha_num|min:8|max:20|confirmed:password',
+            'password_confirmation' => 'required|alpha_num|min:8|max:20|confirmed:password',
             'bio' => 'min:150',
             'images' => 'mimes:jpg,png,bmp,gif,svg',
         ];
@@ -77,9 +77,8 @@ class UsersController extends Controller
         $id = Auth::id();
         $validator->validator();
 
-        
         // CRUD 更新処理
-        // bcrypt　ヘルパ関数　
+        // bcrypt->ヘルパ関数　
         // Hashファサードの代わり->パスワード保存
         $user->username = $request->input('username');
         $user->mail = $request->input('mail');
