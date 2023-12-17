@@ -101,6 +101,24 @@ class UsersController extends Controller
         return redirect('/top');
     }
 
+    public function store(Request $request){
+
+        // 画像のオリジナルネームを取得
+        $filename = $request->images->getClientOriginalName();
+        // storeAs関数でstore/app/publicに保存しパスを$imgに入れる
+        $img = $request->images->storeAs('', $filename, 'public'); //formで設置したname名→storeメソッドの追加
+        // dd($img);
+
+        // userクラスのインスタンス化
+        $user = new User();
+        // Userテーブルのimagesカラムに画像パスを挿入
+        // $dataには画像パスを挿入したUserのレコードが取得されている
+        $users = $user->create(['images' => $img]);
+
+        // dataをcompactを使ってprofile.bladenに送る
+        return view('users.profile',compact('users'));
+    }
+
     public function follow($userId)
     {
         // フォローしているか

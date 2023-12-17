@@ -36,11 +36,12 @@
 
                 <div class="form-group">
                     {{ Form::label('icon image') }}
-                    <form action="{{ route('editprofile') }}" method="POST" enctype="multipart/form-data"></form>
-                    <input type="file" name="img">
+                    <form enctype="multipart/form-data" method="POST">
+                    <input type="file" name="images">
+                    <input type="submit" value="更新">
+                    <!-- <img src="{{ asset('storage/' .$users->images) }}"> -->
                     </form> 
                 </div>
-                <input type="submit" value="更新">
                 {{ Form::token() }}
                 {!! Form::close() !!}
                 @if($errors->any())
