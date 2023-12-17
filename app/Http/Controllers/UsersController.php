@@ -96,13 +96,9 @@ class UsersController extends Controller
             'bio' => $user->bio,
             'images' => $user->images
         ]);
-        // $inputs = $request->all();
-        }
         return redirect('/top');
-    }
 
-    public function store(Request $request){
-
+        }
         // 画像のオリジナルネームを取得
         $filename = $request->images->getClientOriginalName();
         // storeAs関数でstore/app/publicに保存しパスを$imgに入れる
@@ -118,7 +114,7 @@ class UsersController extends Controller
         // dataをcompactを使ってprofile.bladenに送る
         return view('users.profile',compact('users'));
     }
-
+    
     public function follow($userId)
     {
         // フォローしているか

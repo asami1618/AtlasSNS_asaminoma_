@@ -6,7 +6,7 @@
         <div class="my_profile">
             <!-- <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"> -->
             <!-- 編集 -->
-            {!! Form::open([ 'url' => '/users/edit/profile' ]) !!}
+            {!! Form::open([ 'url' => '/users/edit/profile', 'method' => 'post', 'files' => true ]) !!}
             <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
             <div class="container">
                 <div class="form-group">
@@ -36,14 +36,14 @@
 
                 <div class="form-group">
                     {{ Form::label('icon image') }}
-                    <form enctype="multipart/form-data" method="POST">
-                    <input type="file" name="images">
-                    <input type="submit" value="更新">
+                    {{ Form::file('file') }}
+                    {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
                     <!-- <img src="{{ asset('storage/' .$users->images) }}"> -->
-                    </form> 
                 </div>
                 {{ Form::token() }}
                 {!! Form::close() !!}
+
+                <!-- バリデーションエラーメッセージ表示 -->
                 @if($errors->any())
                 <div class="alert alert-danger">
                     <ul>
