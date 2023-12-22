@@ -7,29 +7,32 @@
 <!-- 検索フォーム -->
 <div class="search-form">
     <form action="{{ url('/search') }}">
-        <div class="form-group">
-            <input type="search" name="keyword" value="{{ $keyword }}" class="form-control" placeholder="ユーザー名">
+        <div class="form-search">
+            <input type="search" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
+            <button><a href="/search" class="search_btn"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a></button>
         </div>
-        <p class="pull-right"><a href="/search"><button><img src="{{ asset('/images/search.png') }}" width="30" height="30"></button></a></p>
     </form>
     
 </div>
 
-<h1>[ ユーザー 一覧表示 ]</h1>
+<div class="user">
+    <h1>[ ユーザー 一覧表示 ]</h1>
     <table class="user_table">
     @foreach ( $users as $user )
-        <tr>
-            <td>{{ $user->username }}</td>
-            <td>
-            @if (auth()->user()->isFollowing($user->id))
-            <!-- フォロー解除 -->
-                <a href="{{ route('unfollow' , $user->id) }}" class="btn unfollow_btn">フォロー解除</a>
-            @else
-            <!-- フォローする -->
-                <a href="{{ route('follow' , $user->id) }}" class="btn follow_btn">フォローする</a>
-            @endif
-            </td>
-        </tr>
+    <tr>
+        <td>{{ $user->username }}</td>
+        <td>
+        @if (auth()->user()->isFollowing($user->id))
+        <!-- フォロー解除 -->
+            <a href="{{ route('unfollow' , $user->id) }}" class="btn unfollow_btn">フォロー解除</a>
+        @else
+        <!-- フォローする -->
+            <a href="{{ route('follow' , $user->id) }}" class="btn follow_btn">フォローする</a>
+        @endif
+        </td>
+    </tr>
+</div>
+
     @endforeach
     </table>    
     

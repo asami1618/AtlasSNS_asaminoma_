@@ -5,7 +5,7 @@ body{
 }
 /* header */
 header{
-    background:#186AC9;
+    background:#888888;
 }
 
 /* main content */
@@ -16,6 +16,21 @@ header{
 #container{
     flex: 0 0 80%;
 }
+/* 検索フォーム */
+.form-search{
+    text-align: center;
+    height: 100px;
+
+}
+
+/* 投稿フォーム */
+.post_form-group{
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
 .side-bar{
     flex: 0 0 0 auto;
     border-left: 1px solid #727272;
@@ -89,7 +104,7 @@ header{
     border-top: solid 2ppx #fff;
 }
 
-/* button{
+.accordion_btn{
     position: relative;
     border: none;
     width: 100%;
@@ -100,12 +115,12 @@ header{
     padding: 15px 0 15px 20px;
     font-size:1em;
 }
-button:hover{
+.accordion_btn:hover{
     background-color: #fff;
 }
 
-button::before,
-button::after{
+.accordion_btn::before,
+.accordion_btn::after{
     content:"";
     position: absolute;
     top: 20px;
@@ -115,19 +130,21 @@ button::after{
     transition: .5s;
 }
 
-button::before{
+.accordion_btn::before{
     transform: rotate(-45deg);
     right: 35px;
 }
 
-button::after{
+.accordion_btn:after{
     transform: rotate(45deg);
     right: 30px;
 }
- */
 
-/* 投稿一覧 */
-#page-header
+
+
+
+
+/* 削除ボタン */
 .btn{
     position: relative;
 }
@@ -149,19 +166,33 @@ button::after{
     opacity: 1;
 }
 
+/* ユーザー一覧 */
+.user_table {
+    height: 150px;
+}
+
+
 /* フォロー機能 */
 .unfollow_btn{
     display: inline-block;
-    border: 1px solid #CFCABF;
-    border-radius: 5%;
+    background-color: #DC143C;
+    border: 1px solid #DC143C;
+    border-radius: 10px;
     padding:7px;
     cursor: pointer;    
 }
+/* ボタン内テキストマウスホバー時 */
+.unfollow_btn:hover{
+    color:#fff!important;
+    text-decoration:none;
+}
+
 
 .follow_btn{
     display: inline-block;
-    border: 1px solid #CFCABF;
-    border-radius: 5%;
+    background-color: #4169E1;
+    border: 1px solid #4169E1;
+    border-radius: 10px;
     padding:7px;
     cursor: pointer;    
 }
@@ -170,6 +201,7 @@ button::after{
     color:#fff!important;
     text-decoration:none;
     }
+
 
     
 

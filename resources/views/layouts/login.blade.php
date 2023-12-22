@@ -43,24 +43,30 @@
             </div>    
         </div>
     </header>
+</body>
+    
     <div id="row">
         <div id="container">
             @yield('content')
-        <div id="side-bar">
-            <div id="confirm">
-                <p>{{ Auth::user()->username }}さんの</p>
-                <div>
-                <p>フォロー数</p>
-                <p>{{ Auth::user()->follows()->get()->count() }}名</p>
+            <div id="side-bar">
+                <div id="confirm">
+                    <p>{{ Auth::user()->username }}さんの</p>
+
+                    <div class="follow_number">
+                        <p>フォロー数</p>
+                        <p>{{ Auth::user()->follows()->get()->count() }}名</p>
+                        <p class="btn btn-follow-list"><a href="/follow-list"><button>フォローリスト</button></a></p>
+                    </div>
+
+                    <div>
+                        <p>フォロワー数</p>
+                        <p>{{ Auth::user()->follower()->get()->count() }}名</p>
+                    </div>
+
+                    <div><p class="btn"><a href="/follower-list"><button>フォロワーリスト</button></a></p></div>
+                    <div><p class="btn"><a href="/search"><button>ユーザー検索</button></a></p></div>
+                    </form>
                 </div>
-                <p class="btn"><a href="/follow-list"><button>フォローリスト</button></a></p>
-                <div>
-                <p>フォロワー数</p>
-                <p>{{ Auth::user()->follower()->get()->count() }}名</p>
-                </div>
-                <div><p class="btn"><a href="/follower-list"><button>フォロワーリスト</button></a></p></div>
-                <div><p class="btn"><a href="/search"><button>ユーザー検索</button></a></p></div>
-                </form>
             </div>
         </div>
     </div>
@@ -68,5 +74,4 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>
-</body>
 </html>
