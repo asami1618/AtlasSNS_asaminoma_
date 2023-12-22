@@ -30,6 +30,7 @@
 
     <h2 class="page-header">[ 投稿一覧 ]</h2>
         <table class='table table-hover'>
+            <div class="btn">
             <tr>
                 <th>[ 投稿したユーザー ]</th>
                 <th>[ 投稿内容 ]</th>
@@ -49,9 +50,13 @@
                 <!-- 削除ボタン -->
                 @method('delete')
                 <td>
-                    <a class="btn btn-danger" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" ><img src="{{ asset('/images/trash.png') }}" width="30" height="30"></a>
+                    <a class="btn btn-danger" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" >
+                    <img src="{{ asset('/images/trash.png') }}" alt="1" width="30" height="30">
+                    <img src="{{ asset('/images/trash-h.png') }}" alt="2" width="30" height="30">
+                    </a>
                 </td>
             </tr>
+            </div>
             @endforeach
         </table>
     </div >

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Auth;
 
 class LoginController extends Controller
 {
@@ -54,7 +54,7 @@ class LoginController extends Controller
     // ログアウト機能
     public function logout(Request $request){
         Auth::logout();
-        return redirect('auth.login');
+        return redirect('/top');
     }
     
 }
