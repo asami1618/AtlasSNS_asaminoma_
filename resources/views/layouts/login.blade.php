@@ -21,10 +21,10 @@
     <!--OGPタグ/twitterカード-->
 </head>
 
-<body>
+    <!-- ヘッダー -->
     <header>
         <div id = "head">
-            <h1><a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" width="110" height="40"></a></h1>
+            <a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" width="110" height="40"></a>
             <div id="accordion">
                 <div class="accordion-container">
                     <div class="accordion-title js-accordion-title">
@@ -43,11 +43,11 @@
             </div>    
         </div>
     </header>
-</body>
-    
+
+<body>
     <div id="row">
         <div id="container">
-            @yield('content')
+        @yield('content')
             <div id="side-bar">
                 <div id="confirm">
                     <p>{{ Auth::user()->username }}さんの</p>
@@ -70,8 +70,8 @@
             </div>
         </div>
     </div>
-    <footer>
-    </footer>
+</body>
+    
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>
 </html>

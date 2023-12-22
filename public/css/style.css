@@ -16,17 +16,61 @@ header{
 #container{
     flex: 0 0 80%;
 }
+
+h1 {
+    text-align: center;/* 中央寄せ */
+    color: #364e96;/*文字色*/
+    /* border: solid 3px #364e96; */
+    padding: 0.5em;/*文字周りの余白*/
+    border-radius: 0.5em;
+}
+
 /* 検索フォーム */
 .form-search{
     text-align: center;
-    height: 100px;
-
 }
+
+input[type="search"]{
+    font-size: 20px;
+}
+
+/* フォローリスト */
+.follow-list {
+    text-align: center;
+}
+/* フォロワーリスト */
+.follower-list {
+    text-align: center;
+}
+
+
+
 
 /* 投稿フォーム */
 .post_form-group{
     text-align: center;
-    font-size: 50px;
+}
+
+.post_list  {
+    text-align: center;
+}
+
+input[type="text"]{
+    font-size: 20px;
+}
+
+/* プロフィール */
+input[type="password"]{
+    font-size: 20px;
+}
+
+.profile_container{
+    text-align: center;
+}
+
+/* 他ユーザーのプロフィール */
+.other_post {
+    text-align: center;
 }
 
 
@@ -58,7 +102,7 @@ header{
 }
 
 .modal__content{
-    background: #fff;
+    background: #ffffff;
     left: 50%;
     padding: 60px;
     position: absolute;

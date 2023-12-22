@@ -3,8 +3,8 @@
 @section('content')
 
 <!-- フォローされている人のアイコン一覧 -->
-<div class="">
-    <h1>[ フォロワーリスト ]</h1>
+<div class="follower-list">
+    <h1>Follower-List</h1>
     <div class="follower_icon">
         @foreach ($followed_users as $followed_user)
         <a><img src="{{ asset('storage/' .$followed_user->images) }}" alt="フォロワーアイコン"></a>
@@ -12,15 +12,13 @@
     </div>    
 </div>
 
-<div class="">
-    <h1>[ 投稿一覧 ]</h1>
+<div class="post_list">
+    <h1> Post List </h1>
     <table class='table table-hover'>
+        <div class="">
         @foreach($posts as $post)
             <tr>
                 <th><a href="{{URL::to('/users/' .$post->user_id. '/othersprofile')}}"><img src="{{ asset('storage/' .$followed_user->images) }}" alt="フォロワーアイコン"></a></th>
-                <th>[ 投稿内容 ]</th>
-                <th>[ 投稿日時 ]</th>
-                <th>[ 更新日時 ]</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -29,7 +27,9 @@
                 <td>{{ $post->post }}</td>
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
+            </tr>
         @endforeach
+        </div>
     </table>
 </div>
 
