@@ -1,11 +1,10 @@
 
 @extends('layouts.logout')
 
-
 <section>
     <div class="container">
-            @section('content')
-            <!-- 適切なURLを入力してください -->
+    @section('content')
+    <!-- 適切なURLを入力してください -->
             {!! Form::open(['url' => '/login']) !!}
 
             <div class="login_form">

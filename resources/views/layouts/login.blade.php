@@ -21,6 +21,7 @@
     <!--OGPタグ/twitterカード-->
 </head>
 
+<body>
     <!-- ヘッダー -->
     <header>
         <div id = "head">
@@ -44,34 +45,28 @@
         </div>
     </header>
 
-    <body>
+<!-- サイドバー -->
+
     <div id="row">
         <div id="container">
         @yield('content')
-            <div id="side-bar">
-                <div id="confirm">
-                    <p>{{ Auth::user()->username }}さんの</p>
-
-                    <div class="follow_number">
-                        <p>フォロー数</p>
-                        <p>{{ Auth::user()->follows()->get()->count() }}名</p>
-                        <p class="btn btn-follow-list"><a href="/follow-list"><button class="arrow-button">フォローリスト</button></a></p>
+        </div>      
+        <div id="side-bar">            
+            <div id="confirm">
+                <p>{{ Auth::user()->username }}さんの</p>
+                <div class="follow_box">
+                    <div class="confirm_follow">
+                        <p>フォロー数:{{ Auth::user()->follows()->get()->count() }}名</p>
+                        <p class="btn btn-follow-list"><a href="/follow-list">フォローリスト</a></p>
+                        <p>フォロワー数:{{ Auth::user()->follower()->get()->count() }}名</p>
+                        <p class="btn btn-follower-list" ><a href="/follower-list">フォロワーリスト</a></p>
+                        <p class="btn btn-search"><a href="/search">ユーザー検索</a></p>
                     </div>
-
-                    <div>
-                        <p>フォロワー数</p>
-                        <p>{{ Auth::user()->follower()->get()->count() }}名</p>
-                    </div>
-
-                    <div><p class="btn"><a href="/follower-list"><button class="arrow-button">フォロワーリスト</button></a></p></div>
-                    <div><p class="btn"><a href="/search"><button class="arrow-button">ユーザー検索</button></a></p></div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-</body>
-    
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+</body>
 </html>
