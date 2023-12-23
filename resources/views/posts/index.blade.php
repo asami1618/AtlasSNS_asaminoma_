@@ -1,6 +1,6 @@
 @extends('layouts.login')
-
 @section('content')
+
 <!-- 投稿フォーム -->
 <div class="container">
     {!! Form::open(['url' => '/added']) !!}
@@ -11,9 +11,10 @@
             <img src="{{ asset('/images/post.png') }}" width="30" height="30">
         </button>
     </div>
-
     {!! Form::close() !!}
 </div>
+
+
 <!-- モーダル -->
 <body>
     <!-- モーダルの中身 -->
@@ -31,30 +32,36 @@
     </div> 
 </body>
 
-    <h1> Post List </h1>
-        <table class='table table-hover'>
-            <div class="user_post">
-                @foreach ( $posts as $post )
-                <tr>
-                    <td>{{ $post->user->username}}</td>
-                    <td>{{ $post->post }}</td>
-                    <td>{{ $post->created_at }}</td>
-                    <td>{{ $post->updated_at }}</td>
+<!-- 投稿一覧 -->
+<div>
+    <ul>
+        <h1> Post List </h1>
+        @foreach ( $posts as $post )
+        <li class="post-block">
+        <figure><img src="{{ asset('storage/' .$post->user->images) }}"></figure>
+            <div class="post_content">
+                <div>
+                    <div class="post-name">{{ $post->user->username}}</div>
+                    <div class="post_content">{{ $post->post }}<br></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="post-creat">
+                    <div>{{ $post->created_at }}</div>
+                
                     <!-- 編集ボタン -->
-                    <td><a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a></td>
+                    <a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
                     <!-- 削除ボタン -->
                     @method('delete')
-                    <td>
-                        <a class="btn btn-danger" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" >
+                    <a class="btn btn-danger" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" >
                         <img src="{{ asset('/images/trash.png') }}" width="30" height="30">
                         <img src="{{ asset('/images/trash-h.png') }}"  width="30" height="30">
-                        </a>
-                    </td>
-                </tr>
+                    </a>
+                </div>
             </div>
-            @endforeach
-        </table>
-    </div >
-
-
+        </li>
+        @endforeach
+    </ul>
+</div>
 @endsection

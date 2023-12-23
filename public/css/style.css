@@ -89,6 +89,31 @@ input[type="text"]{
     font-size: 20px;
 }
 
+/* 投稿一覧 */
+.post-block {
+    list-style:none;
+    border-bottom:1px solid #000;
+    display:flex;
+}
+
+.post-content {
+    width:100%;
+    padding:15px;
+}
+
+.post-content > div{
+    display:flex;
+    justify-content:space-between;
+}
+
+.post-name{
+margin-bottom:10px;
+}
+
+.post-creat,a {
+    display: flex;
+}
+
 /* プロフィール */
 input[type="password"]{
     font-size: 20px;
