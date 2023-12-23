@@ -19,11 +19,41 @@ header{
 
 h1 {
     text-align: center;/* 中央寄せ */
+    padding: 15px 32px; /* パディング */
     color: #364e96;/*文字色*/
     /* border: solid 3px #364e96; */
     padding: 0.5em;/*文字周りの余白*/
     border-radius: 0.5em;
 }
+
+.arrow-button {
+    position: relative;
+    background-color: transparent; /* 背景色 */
+    color: #364e96; /* 文字色 */
+    padding: 15px 32px; /* パディング */
+    text-align: center; /* 文字のアライメント */
+    text-decoration: none; /* 文字装飾 */
+    display: inline-block; /* ボタンの表示方法 */
+    font-size: 16px; /* フォントサイズ */
+    font-family: Arial, sans-serif; /* フォント */
+    margin: 4px 2px; /* 外側の余白 */
+    cursor: pointer; /* カーソル */
+    border: 2px solid #364e96; /* 枠線 */
+    border-radius: 5px; /* ボタンの角丸 */
+}
+
+.arrow-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #364e96 transparent transparent transparent;
+    transform: rotate(-90deg);
+}
+
 
 /* 検索フォーム */
 .form-search{
@@ -66,7 +96,15 @@ input[type="password"]{
 
 .profile_container{
     text-align: center;
+    width: 150px;
+    padding:10px 0;
+    clear:both;
 }
+
+.form-group_profile {
+    padding:10px 0;
+}
+
 
 /* 他ユーザーのプロフィール */
 .other_post {

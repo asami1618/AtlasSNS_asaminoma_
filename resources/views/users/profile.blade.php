@@ -11,50 +11,53 @@
 
             <h1>my profile</h1>
             <div class="profile_container">
-                <div class="form-group_profile">
-                    {{ Form::label('username') }}
-                    <input type="text" name="username" value="{{ Auth::user()->username }}">
-                </div>
-                
-                <div class="form-group_profile">
-                    {{ Form::label('mail') }}
-                    <input type="text" name="mail" value="{{ Auth::user()->mail }}">
-                </div>
+                <ul>
+                    <!-- ユーザーネーム -->
+                    <li class="form-group_profile">
+                        {{ Form::label('username') }}
+                        <input type="text" name="username" value="{{ Auth::user()->username }}">
+                    </li>
+                    <!-- メール -->
+                    <li class="form-group_profile">
+                        {{ Form::label('mail') }}
+                        <input type="text" name="mail" value="{{ Auth::user()->mail }}">
+                    </li>
+                    <!-- パスワード -->
+                    <li class="form-group_profile">
+                        {{ Form::label('password') }}
+                        <input type="password" name="password" value="">
+                    </li>
+                    <!-- パスワード確認 -->
+                    <li class="form-group_profile">
+                        {{ Form::label('password comfirm') }}
+                        <input type="password" name="password_comfirm" value="">
+                    </li>
+                    <!-- 自己紹介 -->
+                    <li class="form-group_profile">
+                        {{ Form::label('bio') }}
+                        <input type="text" name="bio" value="{{ Auth::user()->bio }}">
+                    </li>
+                    <!-- アイコン画像 -->
+                    <li class="form-group_profile">
+                        {{ Form::label('icon image') }}
+                        {{ Form::file('file') }}
+                        {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
+                        <!-- <img src="{{ asset('storage/' .$users->images) }}"> -->
+                    </li>
+                    {{ Form::token() }}
+                    {!! Form::close() !!}
 
-                <div class="form-group_profile">
-                    {{ Form::label('password') }}
-                    <input type="password" name="password" value="">
-                </div>
-
-                <div class="form-group_profile">
-                    {{ Form::label('password comfirm') }}
-                    <input type="password" name="password_comfirm" value="">
-                </div>
-
-                <div class="form-group_profile">
-                    {{ Form::label('bio') }}
-                    <input type="text" name="bio" value="{{ Auth::user()->bio }}">
-                </div>
-
-                <div class="form-group_profile">
-                    {{ Form::label('icon image') }}
-                    {{ Form::file('file') }}
-                    {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
-                    <!-- <img src="{{ asset('storage/' .$users->images) }}"> -->
-                </div>
-                {{ Form::token() }}
-                {!! Form::close() !!}
-
-                <!-- バリデーションエラーメッセージ表示 -->
-                @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
+                    <!-- バリデーションエラーメッセージ表示 -->
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                </ul>
             </div>
         </div>
     @else

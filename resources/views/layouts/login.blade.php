@@ -44,7 +44,7 @@
         </div>
     </header>
 
-<body>
+    <body>
     <div id="row">
         <div id="container">
         @yield('content')
@@ -55,7 +55,7 @@
                     <div class="follow_number">
                         <p>フォロー数</p>
                         <p>{{ Auth::user()->follows()->get()->count() }}名</p>
-                        <p class="btn btn-follow-list"><a href="/follow-list"><button>フォローリスト</button></a></p>
+                        <p class="btn btn-follow-list"><a href="/follow-list"><button class="arrow-button">フォローリスト</button></a></p>
                     </div>
 
                     <div>
@@ -63,8 +63,8 @@
                         <p>{{ Auth::user()->follower()->get()->count() }}名</p>
                     </div>
 
-                    <div><p class="btn"><a href="/follower-list"><button>フォロワーリスト</button></a></p></div>
-                    <div><p class="btn"><a href="/search"><button>ユーザー検索</button></a></p></div>
+                    <div><p class="btn"><a href="/follower-list"><button class="arrow-button">フォロワーリスト</button></a></p></div>
+                    <div><p class="btn"><a href="/search"><button class="arrow-button">ユーザー検索</button></a></p></div>
                     </form>
                 </div>
             </div>
