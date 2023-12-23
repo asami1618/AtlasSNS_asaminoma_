@@ -14,8 +14,8 @@
 @endif
 
 <section>
+@section('content')
     <div class="container">
-        @section('content')
         <!-- 適切なURLを入力してください -->
         {!! Form::open(['url' => '/register']) !!}
 

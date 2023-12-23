@@ -39,17 +39,19 @@
         @foreach ( $posts as $post )
         <li class="post-block">
         <figure><img src="{{ asset('storage/' .$post->user->images) }}"></figure>
+
+        <!-- 投稿左側 -->
             <div class="post_content">
                 <div>
-                    <div class="post-name">{{ $post->user->username}}</div>
-                    <div class="post_content">{{ $post->post }}<br></div>
+                    <div class="post-name">{{ $post->user->username}} さん</div>
+                    <div>{{ $post->created_at }}</div>
                 </div>
+                <div class="post_content">{{ $post->post }}<br></div>
             </div>
 
-            <div>
-                <div class="post-creat">
-                    <div>{{ $post->created_at }}</div>
-                
+        <!-- 投稿右側 -->
+            <div class="post_right">
+                <div class="post_button">
                     <!-- 編集ボタン -->
                     <a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
                     <!-- 削除ボタン -->

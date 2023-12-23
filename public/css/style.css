@@ -96,22 +96,27 @@ input[type="text"]{
     display:flex;
 }
 
+/* 投稿左側 */
 .post-content {
     width:100%;
     padding:15px;
 }
-
 .post-content > div{
     display:flex;
     justify-content:space-between;
 }
-
 .post-name{
 margin-bottom:10px;
 }
 
-.post-creat,a {
+/* 投稿右側 */
+.post_right {
     display: flex;
+}
+
+.post_button {
+    width:100%;
+    padding:15px;
 }
 
 /* プロフィール */
