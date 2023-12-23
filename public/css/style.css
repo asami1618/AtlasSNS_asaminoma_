@@ -155,8 +155,12 @@ margin-bottom:10px;
 }
 
 /* 検索フォーム */
+.search-form {
+}
+
 .search-area {
     text-align: center;
+    size: 15px;
 }
 
 
@@ -301,6 +305,12 @@ input[type="password"]{
 
 
 /* ユーザー一覧 */
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .user_table {
     height: 150px;
 }
