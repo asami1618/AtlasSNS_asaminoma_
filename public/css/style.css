@@ -158,6 +158,11 @@ margin-bottom:10px;
     opacity: 1;
 }
 
+/* 検索フォーム */
+.search-area {
+    text-align: center;
+}
+
 
 /* プロフィール */
 input[type="password"]{
@@ -292,7 +297,6 @@ input[type="password"]{
 
 
 
-
 /* ユーザー一覧 */
 .user_table {
     height: 150px;
@@ -300,6 +304,8 @@ input[type="password"]{
 
 
 /* フォロー機能 */
+
+/* フォロー解除ボタン */
 .unfollow_btn{
     display: inline-block;
     background-color: #DC143C;
@@ -313,8 +319,12 @@ input[type="password"]{
     color:#fff!important;
     text-decoration:none;
 }
+/* フォロワーリスト */
+.follower_icon {
+    text-align: center;/* 中央寄せ */
+}
 
-
+/* フォローボタン */
 .follow_btn{
     display: inline-block;
     background-color: #4169E1;
@@ -327,7 +337,13 @@ input[type="password"]{
 .follow_btn:hover{
     color:#fff!important;
     text-decoration:none;
-    }
+}
+
+/* フォローリスト */
+.follow_icon {
+    text-align: center;/* 中央寄せ */
+}
+
 
 
     

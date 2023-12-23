@@ -6,7 +6,7 @@
         <!-- 検索フォーム -->
         <div class="search-form">
             <form action="{{ url('/search') }}">
-                <div class="form-search">
+                <div class="search-area">
                     <input type="search" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
                     <button><a href="/search" class="search_btn"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a></button>
                 </div>
