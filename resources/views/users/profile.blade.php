@@ -10,54 +10,56 @@
             <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
 
             <h1>my profile</h1>
-            <div class="profile_container">
-                <ul>
-                    <!-- ユーザーネーム -->
-                    <li class="form-group_profile">
-                        {{ Form::label('username') }}
-                        <input type="text" name="username" value="{{ Auth::user()->username }}">
-                    </li>
-                    <!-- メール -->
-                    <li class="form-group_profile">
-                        {{ Form::label('mail') }}
-                        <input type="text" name="mail" value="{{ Auth::user()->mail }}">
-                    </li>
-                    <!-- パスワード -->
-                    <li class="form-group_profile">
-                        {{ Form::label('password') }}
-                        <input type="password" name="password" value="">
-                    </li>
-                    <!-- パスワード確認 -->
-                    <li class="form-group_profile">
-                        {{ Form::label('password comfirm') }}
-                        <input type="password" name="password_comfirm" value="">
-                    </li>
-                    <!-- 自己紹介 -->
-                    <li class="form-group_profile">
-                        {{ Form::label('bio') }}
-                        <input type="text" name="bio" value="{{ Auth::user()->bio }}">
-                    </li>
-                    <!-- アイコン画像 -->
-                    <li class="form-group_profile">
-                        {{ Form::label('icon image') }}
-                        {{ Form::file('file') }}
-                        {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
-                        <!-- <img src="{{ asset('storage/' .$users->images) }}"> -->
-                    </li>
-                    {{ Form::token() }}
-                    {!! Form::close() !!}
+            <div class="prpfile_form_input">
+                <div class="profile_container">
+                    <ul>
+                        <!-- ユーザーネーム -->
+                        <li class="form-group_profile">
+                            {{ Form::label('username') }}
+                            <input type="text" name="username" value="{{ Auth::user()->username }}">
+                        </li>
+                        <!-- メール -->
+                        <li class="form-group_profile">
+                            {{ Form::label('mail') }}
+                            <input type="text" name="mail" value="{{ Auth::user()->mail }}">
+                        </li>
+                        <!-- パスワード -->
+                        <li class="form-group_profile">
+                            {{ Form::label('password') }}
+                            <input type="password" name="password" value="">
+                        </li>
+                        <!-- パスワード確認 -->
+                        <li class="form-group_profile">
+                            {{ Form::label('password comfirm') }}
+                            <input type="password" name="password_comfirm" value="">
+                        </li>
+                        <!-- 自己紹介 -->
+                        <li class="form-group_profile">
+                            {{ Form::label('bio') }}
+                            <input type="text" name="bio" value="{{ Auth::user()->bio }}">
+                        </li>
+                        <!-- アイコン画像 -->
+                        <li class="form-group_profile">
+                            {{ Form::label('icon image') }}
+                            {{ Form::file('file') }}
+                            {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
+                            <!-- <img src="{{ asset('storage/' .$users->images) }}"> -->
+                        </li>
+                        {{ Form::token() }}
+                        {!! Form::close() !!}
 
-                    <!-- バリデーションエラーメッセージ表示 -->
-                    @if($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
-                </ul>
+                        <!-- バリデーションエラーメッセージ表示 -->
+                        @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
     @else

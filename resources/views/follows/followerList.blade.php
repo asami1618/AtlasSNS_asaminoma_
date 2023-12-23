@@ -12,10 +12,10 @@
     </div>    
 </div>
 
-<div class="post_list">
-    <h1> Post List </h1>
+<h1> Post List </h1>
+<div class="followerlist_post">
     <table class='table table-hover'>
-        <div class="">
+        <div>
         @foreach($posts as $post)
             <tr>
                 <th><a href="{{URL::to('/users/' .$post->user_id. '/othersprofile')}}"><img src="{{ asset('storage/' .$followed_user->images) }}" alt="フォロワーアイコン"></a></th>

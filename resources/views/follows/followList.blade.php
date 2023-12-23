@@ -13,8 +13,8 @@
 </div>
 
 
-<div class="">
-    <h1> Post List </h1>
+<h1> Post List </h1>
+<div class="followlist_post">
     <table class='table table-hover'>
         
         <div>

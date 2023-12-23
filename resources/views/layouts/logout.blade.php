@@ -21,13 +21,15 @@
 </head>
 <body>
   <header>
-    <h1><img src="images/atlas.png"></h1>
-    <p class="new_user">Social Network Service</p>
-  </header>
+      <div class="container">
+        <div class="atlas_logo"><img src="images/atlas.png" width="110" height="40"></div>
+        <p class="words">Social Network Service</p>
+          <div id="container">
+            @yield('content')
+          </div>
+      </div>
+</header>
 
-  <div id="container">
-    @yield('content')
-  </div>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="{{ asset('js/script.js') }}"></script>
 </body>

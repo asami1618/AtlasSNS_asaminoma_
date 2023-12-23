@@ -99,10 +99,6 @@ h1 {
     text-align: center;
 }
 
-.post_list  {
-    text-align: center;
-}
-
 input[type="text"]{
     font-size: 20px;
 }
@@ -169,6 +165,12 @@ input[type="password"]{
     font-size: 20px;
 }
 
+.prpfile_form_input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile_container{
     text-align: center;
     width: 150px;
@@ -177,6 +179,7 @@ input[type="password"]{
 }
 
 .form-group_profile {
+    text-align: center;
     padding:10px 0;
 }
 
@@ -323,6 +326,13 @@ input[type="password"]{
 .follower_icon {
     text-align: center;/* 中央寄せ */
 }
+.followerlist_post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 /* フォローボタン */
 .follow_btn{
@@ -342,6 +352,11 @@ input[type="password"]{
 /* フォローリスト */
 .follow_icon {
     text-align: center;/* 中央寄せ */
+}
+.followlist_post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
