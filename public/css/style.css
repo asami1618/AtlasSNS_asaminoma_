@@ -229,75 +229,55 @@ input[type="password"]{
 
 
 /* アコーディオンメニュー */
-.accordion-container {
-    display: flex;
-    width: 100%;
-    text-align:center;
-    border-top: none;
-    outline: 0;
-    cursor: pointer;
-}
-
-.accordion-container .accordion-title {
-    display: flex;
-    color: #fff;
+.accordion {
     margin-left: auto;
-    margin-right: 0px;
-    font-size: 1.25rem;
-    font-weight: normal;
-    cursor: pointer;
-}
-
-/* .accordion-title .menu{
-    margin: 0 auto;
-    display: none;
-} */
-
-/* 閉じた状態 */
-.accordion-title.menu:after {
-    content: "";
-    position: absolute;
-    right: 40px;
-    top: 3px;
-    width: 8px;
-    height: 8px;
-    border-top: solid 2ppx #fff;
-}
-
-.accordion_btn{
+    margin-right: auto;
+    margin-top: 30px;
+    max-width: 300px;
     position: relative;
-    border: none;
     width: 100%;
-    background-color: inherit;
+}
+.accordion-title {
     color: #fff;
     cursor: pointer;
-    text-align: left;
-    padding: 15px 0 15px 20px;
-    font-size:1em;
+    font-size: 16px;
+    padding: 10px 20px;
 }
-.accordion_btn:hover{
-    background-color: #fff;
+.accordion-content {
+    padding: 10px 20px;
+}
+.accordion-content ul {
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-.accordion_btn::before,
-.accordion_btn::after{
-    content:"";
-    position: absolute;
-    top: 20px;
-    width: 1.5px;
+/* 矢印 */
+.accordion-title {
+    position: relative;
+}
+
+.accordion-title::after {
+    /* 矢印の色 */
+    border-right: solid 2px #fff; 
+    border-top: solid 2px #fff;
+
+    content: "";
+    display: block;
     height: 8px;
-    background-color: #fff;
-    transition: .5s;
-}
+    position: absolute;
+    right: 25px;
+    top: 38%;
 
-.accordion_btn::before{
+    /* 最初の矢印は下向き */
+    transform: rotate(135deg); 
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
+    width: 8px;
+}
+.accordion-title.open::after {
+    /* 矢印の向きを少し変える */
+    top: 45%;
+    /* 矢印を上向きに変える */
     transform: rotate(-45deg);
-    right: 35px;
-}
-
-.accordion_btn:after{
-    transform: rotate(45deg);
-    right: 30px;
 }
 
 

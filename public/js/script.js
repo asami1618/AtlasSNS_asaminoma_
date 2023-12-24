@@ -20,9 +20,9 @@
 jQuery(function ($) {
     $('.js-accordion-title').on('click' ,function () {
         // クリックでコンテンツを開閉
-        $(".menu").children().slideToggle(200);
+        $(this).next('.accordion-content').slideToggle(300);
         // 矢印の向きを変更
-        $(this).toggleClass('open', 200);
+        $(this).toggleClass('open', 300);
     }).next().hide();
 });
 

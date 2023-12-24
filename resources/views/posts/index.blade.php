@@ -25,9 +25,9 @@
                 <textarea name="upPost" class="modal_post"></textarea>
                 <input type="hidden" name="id" class="modal_id" value="UPDATE">
                 <input type="submit" href="/top" value="更新">
+                {{ csrf_field() }}
             </form>
             <a class="js-modal-close" href="">閉じる</a>
-                <!-- {!! Form::close() !!} -->
         </div>
     </div> 
 </body>
