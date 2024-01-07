@@ -74,23 +74,27 @@ class UsersController extends Controller
             ->withInput();
         }
         
+        // 画像の更新処理
         $user = Auth::user();
         $id = Auth::id();
         // $validator->validator();
-        // 画像のオリジナルネームを取得
+
+        // ①画像の名前を取得 file('name属性')
         $image = $request->file('file')->getClientOriginalName();
-        // storeAs関数でstore/app/publicに保存しパスを$imgに入れる
+        // ②画像をファイルに保存する
+        // (storeAs関数でstore/app/publicに保存しパスを$imgに入れる)
         $img = $request->file('file')->storeAs('public', $image); //formで設置したname名→storeメソッドの追加
         // dd($img);
 
-        // CRUD 更新処理
+        // CRUD 更新処理  ③$imageで保存した情報をDBに保存
         // bcrypt->ヘルパ関数　
         // Hashファサードの代わり->パスワード保存
         $user->username = $request->input('username');
         $user->mail = $request->input('mail');
-        $user->password = bcrypt($request->input('newpasword'));
+        $user->password = bcrypt($request->input('password'));
         $user->bio = $request->input('bio');
-        $user->images = basename($image);
+        //97行目と108行目でDBに保存する
+        $user->images = basename($image); 
 
         // usersテーブルの更新
         \DB::table('users')
@@ -100,6 +104,7 @@ class UsersController extends Controller
             'mail' => $user->mail,
             'password' => $user->password,
             'bio' => $user->bio,
+            // ④$imageで保存した情報をDBに保存
             'images' => $user->images
         ]);
         return redirect('/top');

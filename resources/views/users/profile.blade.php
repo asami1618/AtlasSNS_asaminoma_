@@ -41,7 +41,8 @@
                         <!-- アイコン画像 -->
                         <li class="form-group_profile">
                             {{ Form::label('icon image') }}
-                            {{ Form::file('file') }}
+                            <!-- Form::file('name属性')-->
+                            {{ Form::file('file') }} 
                             {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
                             <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
                         </li>
