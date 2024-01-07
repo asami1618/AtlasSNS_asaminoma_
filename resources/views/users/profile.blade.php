@@ -43,7 +43,7 @@
                             {{ Form::label('icon image') }}
                             {{ Form::file('file') }}
                             {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
-                            <!-- <img src="{{ asset('storage/' .$users->images) }}"> -->
+                            <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
                         </li>
                         {{ Form::token() }}
                         {!! Form::close() !!}

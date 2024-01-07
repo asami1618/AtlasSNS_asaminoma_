@@ -52,5 +52,16 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
+    public function followList()
+    {   
+        //Postモデル経由でpostsテーブルのレコードを取得
+        $posts = Post::get();
+        // フォローしているユーザーのidを取得
+        $following_id = Auth::user()->follows()->pluck('followed_id');
+        // フォローしているユーザーのidを元に投稿内容を取得
+        $posts = Post::with('user')->whereIn('user_id', $following_id)->get();
+        return view('/follows/followList', compact('posts'))->with('posts',$posts);
+    }
+
 }
 

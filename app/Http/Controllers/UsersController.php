@@ -7,6 +7,7 @@ use App\Post;
 use App\Models\follows;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -38,7 +39,7 @@ class UsersController extends Controller
             'mail' => 'required|string|min:5|max:40|email',
             'password' => 'required|alpha_num|min:8|max:20',
             'password_confirmation' => 'min:8|max:20|confirmed',
-            'bio' => 'min:150',
+            'bio' => 'max:150',
             'images' => 'mimes:jpg,png,bmp,gif,svg',
         ];
         // 項目名　検証ルール　=> メッセージ
@@ -59,7 +60,7 @@ class UsersController extends Controller
             'password.max' => 'パスワードは20文字以下で入力してください。',
             'confirmed' => 'パスワードが一致していません。',
 
-            'bio.min' => '150文字以下で入力してください。',
+            'bio.min' => '自己紹介は150文字以内で入力してください。',
             'images.mimes' => '指定のファイル形式以外は添付できません。',
         ];
         $validator = Validator::make($request->all(), $rules, $message);
@@ -67,15 +68,20 @@ class UsersController extends Controller
         // 検証 failメソッドは失敗していたら"true"を返す
         if ($validator->fails()) {
             // エラー発生時の処理
-            return redirect('/profile')
+            return redirect('/users/profile') // 戻したいURLを設定する
             // withErrorsは引数の値を$errors変数へ保存してリダイレクト先まで引き継ぐメソッド
             ->withErrors($validator) 
             ->withInput();
         }
-
+        
         $user = Auth::user();
         $id = Auth::id();
-        $validator->validator();
+        // $validator->validator();
+        // 画像のオリジナルネームを取得
+        $image = $request->file('file')->getClientOriginalName();
+        // storeAs関数でstore/app/publicに保存しパスを$imgに入れる
+        $img = $request->file('file')->storeAs('public', $image); //formで設置したname名→storeメソッドの追加
+        // dd($img);
 
         // CRUD 更新処理
         // bcrypt->ヘルパ関数　
@@ -99,11 +105,6 @@ class UsersController extends Controller
         return redirect('/top');
 
         }
-        // 画像のオリジナルネームを取得
-        $filename = $request->images->getClientOriginalName();
-        // storeAs関数でstore/app/publicに保存しパスを$imgに入れる
-        $img = $request->images->storeAs('', $filename, 'public'); //formで設置したname名→storeメソッドの追加
-        // dd($img);
 
         // userクラスのインスタンス化
         $user = new User();
@@ -111,7 +112,7 @@ class UsersController extends Controller
         // $dataには画像パスを挿入したUserのレコードが取得されている
         $users = $user->create(['images' => $img]);
 
-        // dataをcompactを使ってprofile.bladenに送る
+        // dataをcompactを使ってprofile.bladeに送る
         return view('users.profile',compact('users'));
     }
     
