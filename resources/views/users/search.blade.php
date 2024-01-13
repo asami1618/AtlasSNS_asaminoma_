@@ -7,8 +7,8 @@
         <div class="search-form">
             <form action="{{ url('/search') }}">
                 <div class="search-area">
-                    <input type="search" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
-                    <button><a href="/search" class="search_btn"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a></button>
+                    <input type="search" class="search_box" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
+                    <a href="/search" class="search_btn"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a>
                 </div>
             </form>
         </div>

@@ -5,7 +5,7 @@ body{
 }
 /* header */
 header{
-    background:#888888;
+    background:#186AC9;
 }
 
 /* main content */
@@ -16,6 +16,7 @@ header{
     flex: 0 0 80%;
     z-index: 2;
 }
+
 #side-bar{
     position: relative;
     flex: 0 0 0 auto;
@@ -98,9 +99,24 @@ h1 {
 .post_form-group{
     text-align: center;
 }
+input.form-control{
+    border:none;
+    outline:0;
+    width: 50%;
+    margin: 40px 550px 40px 150px;
+}
 
 input[type="text"]{
-    font-size: 20px;
+    font-size: 15px;
+    color: #000000;
+}
+
+::placeholder{
+    color: #dddddd;
+}
+
+img.submit_button{
+    margin: 15px 50px 15px 750px;
 }
 
 /* 投稿一覧 */
@@ -158,9 +174,17 @@ margin-bottom:10px;
 .search-form {
 }
 
+.search_box{
+    width: 30%;
+}
+
 .search-area {
     text-align: center;
-    size: 15px;
+    size: 30px;
+}
+
+input.keyword{
+    size: 30px;
 }
 
 

@@ -6,10 +6,12 @@
     {!! Form::open(['url' => '/added']) !!}
     {{Form::token()}}
     <div class="post_form-group">
-        {!! Form::input('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容' ]) !!}
-        <button type="submit">
-            <img src="{{ asset('/images/post.png') }}" width="30" height="30">
-        </button>
+        {!! Form::input('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容を入力してください' ]) !!}
+        <div class="post_bnt">
+            <img src="{{ asset('/images/post.png') }}" class="submit_button" width="42" height="42">
+        </div>
+        <div class="post_icon">
+        </div>
     </div>
     {!! Form::close() !!}
 </div>
