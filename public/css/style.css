@@ -22,6 +22,7 @@ header{
     flex: 0 0 0 auto;
     border-left: 1px solid #727272;
     z-index: 2;
+    padding: 20px;
 }
 
 
@@ -35,6 +36,14 @@ h1 {
 }
 
 /* サイドバーボタン */
+.list_user_name,
+.list_area1,
+.list_area2,
+.follows_count,
+.follower_count{
+    margin: 20px;
+}
+
 .btn-follow-list,
 .btn-follower-list,
 .btn-search
@@ -103,16 +112,20 @@ input.form-control{
     border:none;
     outline:0;
     width: 50%;
-    margin: 40px 550px 40px 150px;
+    padding:  40px 0px 40px 50px;
+}
+.post_bnt{
+    border-bottom: 7px solid #DDD;
 }
 
 input[type="text"]{
-    font-size: 15px;
-    color: #000000;
+    /* フォーム内のフォントサイズ */
+    font-size: 20px;
+    color: #555;
 }
 
 ::placeholder{
-    color: #dddddd;
+    color: #ddd;
 }
 
 img.submit_button{
@@ -122,8 +135,9 @@ img.submit_button{
 /* 投稿一覧 */
 .post-block {
     list-style:none;
-    border-bottom:1px solid #000;
+    border-bottom:1px solid #727272;
     display:flex;
+    padding: 30px 0px 30px 70px;
 }
 
 /* 投稿左側 */
@@ -171,9 +185,6 @@ margin-bottom:10px;
 }
 
 /* 検索フォーム */
-.search-form {
-}
-
 .search_box{
     width: 30%;
 }
@@ -185,6 +196,14 @@ margin-bottom:10px;
 
 input.keyword{
     size: 30px;
+}
+
+.search_area{
+    border-top: 1px solid #727272;
+}
+
+p.btn.btn-search{
+    padding: 20px;
 }
 
 
@@ -253,6 +272,16 @@ input[type="password"]{
 
 
 /* アコーディオンメニュー */
+.accordion_area{
+    margin: 20px 50px 20px 100px;
+}
+img.title{
+    margin: 25px 100px 25px 25px;
+}
+img.login_icon{
+    margin: 25px 25px 25px 100px;
+}
+
 .accordion {
     margin-left: auto;
     margin-right: auto;

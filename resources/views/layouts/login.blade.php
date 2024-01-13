@@ -34,13 +34,11 @@
 <header>
     <!-- アコーディオンメニュー -->
         <div id = "head">
-            <a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" width="110" height="40"></a>
-            <div class="login_user_icon">
-                <img src="{{ asset('/images/icon1.png') }}" width="50" height="50">
-            </div>
+            <a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" class="title" width="110" height="40"></a>
             <div class="accordion_area">
                 <div class="accordion"> 
-                    <div class="accordion-container">
+                <div class="accordion-container">
+                <a><img src="{{ asset('/images/icon1.png') }}" class="login_icon" width="50" height="50"></a>
                     <h3 class="accordion-title js-accordion-title">{{ Auth::user()->username }} さん</h3>
                         <div class="accordion-content">
                             <ul class="menu">
@@ -63,14 +61,22 @@
         </div>      
         <div id="side-bar">            
             <div id="confirm">
-                <p>{{ Auth::user()->username }}さんの</p>
+                <p class="list_user_name">{{ Auth::user()->username }}さんの</p>
                 <div class="follow_box">
                     <div class="confirm_follow">
-                        <p>フォロー数:{{ Auth::user()->follows()->get()->count() }}名</p>
-                        <p class="btn btn-follow-list"><a href="/follow-list">フォローリスト</a></p>
-                        <p>フォロワー数:{{ Auth::user()->follower()->get()->count() }}名</p>
-                        <p class="btn btn-follower-list" ><a href="/follower-list">フォロワーリスト</a></p>
-                        <p class="btn btn-search"><a href="/search">ユーザー検索</a></p>
+                        <p class="follows_count">
+                            <a class="count1">フォロー数:{{ Auth::user()->follows()->get()->count() }}名</a>
+                        </p>
+                        <div class="list_area1">
+                            <p class="btn btn-follow-list"><a href="/follow-list">フォローリスト</a></p>
+                        </div>
+                        <p class="follower_count"><a class="count2">フォロワー数:{{ Auth::user()->follower()->get()->count() }}名</a></p>
+                        <div class="list_area2">
+                            <p class="btn btn-follower-list" ><a href="/follower-list">フォロワーリスト</a></p>
+                        </div>
+                        <div class="search_area">
+                            <p class="btn btn-search"><a href="/search">ユーザー検索</a></p>
+                        </div>
                     </div>
                 </div>
             </div>

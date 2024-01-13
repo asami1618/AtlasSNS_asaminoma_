@@ -5,13 +5,13 @@
 <div class="container">
     {!! Form::open(['url' => '/added']) !!}
     {{Form::token()}}
-    <div class="post_form-group">
+    <div>
         {!! Form::input('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容を入力してください' ]) !!}
         <div class="post_bnt">
             <img src="{{ asset('/images/post.png') }}" class="submit_button" width="42" height="42">
         </div>
-        <div class="post_icon">
-        </div>
+        <!-- <div class="post_icon">
+        </div> -->
     </div>
     {!! Form::close() !!}
 </div>
@@ -37,7 +37,6 @@
 <!-- 投稿一覧 -->
 <div>
     <ul>
-        <h1> Post List </h1>
         @foreach ( $posts as $post )
         <li class="post-block">
         <figure><img src="{{ asset('storage/' .$post->user->images) }}"></figure>
