@@ -43,9 +43,9 @@
 
         <!-- 投稿左側 -->
             <div class="post_content">
-                <div>
+                <div class="post_left">
                     <div class="post-name">{{ $post->user->username}} さん</div>
-                    <div>{{ $post->created_at }}</div>
+                    <div class="post-day">{{ $post->created_at }}</div>
                 </div>
                 <div class="post_content">{{ $post->post }}<br></div>
             </div>

@@ -21,8 +21,8 @@ header{
     position: relative;
     flex: 0 0 0 auto;
     border-left: 1px solid #727272;
-    z-index: 2;
-    padding: 20px;
+    /* z-index: 2; */
+    /* padding: 20px; */
 }
 
 
@@ -42,6 +42,10 @@ h1 {
 .follows_count,
 .follower_count{
     margin: 20px;
+}
+
+.count1 {
+    
 }
 
 .btn-follow-list,
@@ -141,6 +145,19 @@ img.submit_button{
 }
 
 /* 投稿左側 */
+.post_left {
+    display: flex;
+}
+
+.post-name{
+    margin-bottom:10px;
+}
+
+.post-day {
+    margin-left: 100px;
+}
+
+
 .post-content {
     width:100%;
     padding:15px;
@@ -148,9 +165,6 @@ img.submit_button{
 .post-content > div{
     display:flex;
     justify-content:space-between;
-}
-.post-name{
-margin-bottom:10px;
 }
 
 /* 投稿右側 */
@@ -160,7 +174,8 @@ margin-bottom:10px;
 
 .post_button {
     width:100%;
-    padding:15px;
+    padding: 15px;
+    margin-left:auto
 }
 /* 削除ボタン */
 .btn{
@@ -200,10 +215,11 @@ input.keyword{
 
 .search_area{
     border-top: 1px solid #727272;
+    text-align: center;
+    padding-top: 20px;
 }
 
 p.btn.btn-search{
-    padding: 20px;
 }
 
 
@@ -273,13 +289,17 @@ input[type="password"]{
 
 /* アコーディオンメニュー */
 .accordion_area{
-    margin: 20px 50px 20px 100px;
+    margin: 20px 50px 0px 100px;
 }
 img.title{
     margin: 25px 100px 25px 25px;
 }
 img.login_icon{
     margin: 25px 25px 25px 100px;
+}
+
+.accordion_container {
+    
 }
 
 .accordion {
@@ -342,10 +362,15 @@ img.login_icon{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 100px;
 }
 
 .user_table {
     height: 150px;
+}
+
+.user_item {
+    padding: 20px 100px;
 }
 
 
