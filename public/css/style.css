@@ -393,6 +393,7 @@ img.login_icon{
 /* フォロワーリスト */
 .follower_icon {
     text-align: center;/* 中央寄せ */
+    border-bottom: 7px solid #DDD;
 }
 .followerlist_post {
     display: flex;
@@ -418,15 +419,21 @@ img.login_icon{
 }
 
 /* フォローリスト */
+h1.follow-List{
+}
 .follow_icon {
     text-align: center;/* 中央寄せ */
+    border-bottom: 7px solid #DDD;
 }
 .followlist_post {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
+.followlist_box{
+    list-style:none;
+    border-bottom:1px solid #727272;
+    display:flex;
+    padding: 30px 0px 30px 70px;
+}
 
 
     
