@@ -12,13 +12,12 @@
     </div>    
 </div>
 
-
-<h1> Post List </h1>
+<!-- 投稿一覧 -->
 <div>
     <ul>
         @foreach($posts as $post)
-        <li class="followlist_post">
-            <div class="followlist_box">
+        <li class="followlist_post_area">
+            <!-- <div class="followlist_box"> -->
             <a href="{{URL::to('/users/' .$post->user_id.'/othersprofile')}}"><img src="{{ asset('storage/' .$following->images) }}" alt="フォローアイコン"></a>
 
                 <!-- 投稿左側 -->
@@ -33,7 +32,7 @@
                 <div class="followlist_light">
                     <div class="followlist_post_day">{{ $post->created_at }}</div>
                 </div>
-            </div>
+            <!-- </div> -->
         </li>
         @endforeach
     </ul>

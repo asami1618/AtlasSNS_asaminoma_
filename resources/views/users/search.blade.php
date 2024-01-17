@@ -19,7 +19,6 @@
     </div>        
 
     <!-- ユーザー一覧 -->
-    <h1>User List</h1>
     <div class="user">
         <table class="user_table">
         @foreach ( $users as $user )

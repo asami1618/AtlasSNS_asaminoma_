@@ -200,8 +200,15 @@ img.submit_button{
 }
 
 /* 検索フォーム */
+.search_content{
+    border-bottom: 7px solid #DDD;
+}
+
 .search_box{
-    width: 30%;
+    padding: 10px 60px;
+}
+.search_box::placeholder{
+    font-size: 100%;
 }
 
 .search-area {
@@ -219,7 +226,7 @@ input.keyword{
     padding-top: 20px;
 }
 
-p.btn.btn-search{
+.search_btn{
 }
 
 
@@ -390,16 +397,30 @@ img.login_icon{
     color:#fff!important;
     text-decoration:none;
 }
+
+
 /* フォロワーリスト */
+.followerlist_post_area{
+    border-bottom:1px solid #727272;
+}
+
+.followerlist_box{
+    list-style:none;
+    display:flex;
+    padding: 30px 0px 30px 70px;
+}
+
+
 .follower_icon {
     text-align: center;/* 中央寄せ */
     border-bottom: 7px solid #DDD;
+    margin: 20px 0px 20px 20px;
 }
 .followerlist_post {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
+
+
 
 
 
@@ -419,20 +440,18 @@ img.login_icon{
 }
 
 /* フォローリスト */
-h1.follow-List{
+.followlist_post_area{
+    border-bottom:1px solid #727272;
+    list-style:none;
+    display:flex;
+    padding: 30px 0px 30px 70px;
 }
+
 .follow_icon {
     text-align: center;/* 中央寄せ */
     border-bottom: 7px solid #DDD;
-}
-.followlist_post {
-    display: flex;
-}
-.followlist_box{
-    list-style:none;
-    border-bottom:1px solid #727272;
-    display:flex;
-    padding: 30px 0px 30px 70px;
+    margin: 20px 0px 20px 20px;
+
 }
 
 
