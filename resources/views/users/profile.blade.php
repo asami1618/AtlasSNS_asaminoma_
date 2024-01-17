@@ -16,27 +16,27 @@
                         <!-- ユーザーネーム -->
                         <li class="form-group_profile">
                             {{ Form::label('username') }}
-                            <input type="text" name="username" value="{{ Auth::user()->username }}">
+                            <input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}">
                         </li>
                         <!-- メール -->
                         <li class="form-group_profile">
                             {{ Form::label('mail') }}
-                            <input type="text" name="mail" value="{{ Auth::user()->mail }}">
+                            <input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}">
                         </li>
                         <!-- パスワード -->
                         <li class="form-group_profile">
                             {{ Form::label('password') }}
-                            <input type="password" name="password" value="">
+                            <input type="password" class="form-group_box" name="password" value="">
                         </li>
                         <!-- パスワード確認 -->
                         <li class="form-group_profile">
                             {{ Form::label('password comfirm') }}
-                            <input type="password" name="password_comfirm" value="">
+                            <input type="password" class="form-group_box" name="password_comfirm" value="">
                         </li>
                         <!-- 自己紹介 -->
                         <li class="form-group_profile">
                             {{ Form::label('bio') }}
-                            <input type="text" name="bio" value="{{ Auth::user()->bio }}">
+                            <input type="text" class="form-group_box" name="bio" value="{{ Auth::user()->bio }}">
                         </li>
                         <!-- アイコン画像 -->
                         <li class="form-group_profile">

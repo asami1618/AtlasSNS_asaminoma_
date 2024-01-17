@@ -253,6 +253,10 @@ input[type="password"]{
     padding:10px 0;
 }
 
+.form-group_box{
+    padding: 10px 100px;
+}
+
 
 /* 他ユーザーのプロフィール */
 .other_post {
@@ -450,8 +454,7 @@ img.login_icon{
 .follow_icon {
     text-align: center;/* 中央寄せ */
     border-bottom: 7px solid #DDD;
-    margin: 20px 0px 20px 20px;
-
+        margin: 20px 0px 20px 20px;
 }
 
 
