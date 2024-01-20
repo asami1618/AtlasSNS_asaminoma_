@@ -27,12 +27,6 @@ header{
 
 
 h1 {
-    text-align: center;/* 中央寄せ */
-    padding: 15px 32px; /* パディング */
-    color: #364e96;/*文字色*/
-    /* border: solid 3px #364e96; */
-    padding: 0.5em;/*文字周りの余白*/
-    border-radius: 0.5em;
 }
 
 /* サイドバーボタン */
@@ -201,6 +195,7 @@ img.submit_button{
 
 /* 検索フォーム */
 .search_content{
+    display: flex;
     margin: 50px;
 }
 
@@ -247,17 +242,19 @@ input[type="password"]{
 .profile_container{
     text-align: center;
     width: 150px;
-    padding:10px 0;
     clear:both;
 }
 
 .form-group_profile {
-    text-align: center;
+    /* text-align: center; */
     padding:10px 0;
 }
 
 .form-group_box{
     padding: 10px 100px;
+}
+
+.box-name{
 }
 
 
@@ -407,11 +404,17 @@ img.login_icon{
 
 
 /* フォロワーリスト */
+h1.follower-List{
+    padding: 20px;
+    font-size: 25px;
+}
+
 .follower-list{
     border-bottom: 7px solid #DDD;
 }
 
 .followerlist_post_area{
+    display: flex;
     border-bottom:1px solid #727272;
 }
 
@@ -422,8 +425,11 @@ img.login_icon{
 }
 
 .follower_icon {
-    text-align: center;/* 中央寄せ */
+    display: flex;
     margin: 20px 0px 20px 20px;
+}
+.Follower-List-icon{
+    padding: 5px;
 }
 .followerlist_post {
     display: flex;
@@ -449,6 +455,10 @@ img.login_icon{
 }
 
 /* フォローリスト */
+h1.follow-List{
+    padding: 20px;
+    font-size: 25px;
+}
 .follow-list{
     border-bottom: 7px solid #DDD;
 }
@@ -460,9 +470,17 @@ img.login_icon{
     padding: 30px 0px 30px 70px;
 }
 
+.followerlist_post_day{
+    text-align: right;
+}
+
 .follow_icon {
-    text-align: center;/* 中央寄せ */
+    display: flex;
     margin: 20px 0px 20px 20px;
+}
+
+.Follow-List-icon{
+    padding: 5px;
 }
 
 

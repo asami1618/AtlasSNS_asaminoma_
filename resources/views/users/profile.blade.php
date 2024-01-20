@@ -9,38 +9,37 @@
             {!! Form::open([ 'url' => '/users/edit/profile', 'method' => 'post', 'files' => true ]) !!}
             <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
 
-            <h1>my profile</h1>
             <div class="prpfile_form_input">
                 <div class="profile_container">
                     <ul>
                         <!-- ユーザーネーム -->
                         <li class="form-group_profile">
-                            {{ Form::label('username') }}
+                            <h1 class="box-name">user name</h1>
                             <input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}">
                         </li>
                         <!-- メール -->
                         <li class="form-group_profile">
-                            {{ Form::label('mail') }}
+                            <h1 class="box-name">mail adress</h1>
                             <input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}">
                         </li>
                         <!-- パスワード -->
                         <li class="form-group_profile">
-                            {{ Form::label('password') }}
+                            <h1 class="box-name">password</h1>
                             <input type="password" class="form-group_box" name="password" value="">
                         </li>
                         <!-- パスワード確認 -->
                         <li class="form-group_profile">
-                            {{ Form::label('password comfirm') }}
+                            <h1 class="box-name">password comfirm</h1>
                             <input type="password" class="form-group_box" name="password_comfirm" value="">
                         </li>
                         <!-- 自己紹介 -->
                         <li class="form-group_profile">
-                            {{ Form::label('bio') }}
+                        <h1 class="box-name">bio</h1>
                             <input type="text" class="form-group_box" name="bio" value="{{ Auth::user()->bio }}">
                         </li>
                         <!-- アイコン画像 -->
                         <li class="form-group_profile">
-                            {{ Form::label('icon image') }}
+                            <h1 class="box-name">icon image</h1>
                             <!-- Form::file('name属性')-->
                             {{ Form::file('file') }} 
                             {{ Form::submit('更新', ['class' => 'btn btn-default']) }}

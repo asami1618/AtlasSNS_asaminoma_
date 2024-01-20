@@ -4,10 +4,10 @@
 
 <!-- フォローされている人のアイコン一覧 -->
 <div class="follower-list">
-    <h1>Follower-List</h1>
     <div class="follower_icon">
+    <h1 class="follower-List">Follower List</h1>
         @foreach ($followed_users as $followed_user)
-        <a><img src="{{ asset('storage/' .$followed_user->images) }}" alt="フォロワーアイコン"></a>
+        <a><img src="{{ asset('storage/' .$followed_user->images) }}" class="Follower-List-icon" alt="フォロワーアイコン"></a>
         @endforeach
     </div>    
 </div>

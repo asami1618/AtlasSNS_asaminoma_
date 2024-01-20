@@ -9,8 +9,8 @@
                 <div class="search-area">
                     <div class="search_content">
                             <input type="search" class="search_box" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
-                        <button>
-                            <a href="/search" class="search_btn"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a>
+                        <button class="search_btn">
+                            <a href="/search"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a>
                         </button>
                     </div>
                 </div>
