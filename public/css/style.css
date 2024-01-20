@@ -201,23 +201,26 @@ img.submit_button{
 
 /* 検索フォーム */
 .search_content{
-    border-bottom: 7px solid #DDD;
+    margin: 50px;
 }
 
 .search_box{
-    padding: 10px 60px;
+    padding: 15px 80px;
 }
+
 .search_box::placeholder{
     font-size: 100%;
+    margin: 25px;
 }
 
 .search-area {
-    text-align: center;
+    /* text-align: center; */
+    border-bottom: 7px solid #DDD;
     size: 30px;
 }
 
 input.keyword{
-    size: 30px;
+    font-size: 50px;
 }
 
 .search_area{
@@ -404,6 +407,10 @@ img.login_icon{
 
 
 /* フォロワーリスト */
+.follower-list{
+    border-bottom: 7px solid #DDD;
+}
+
 .followerlist_post_area{
     border-bottom:1px solid #727272;
 }
@@ -414,10 +421,8 @@ img.login_icon{
     padding: 30px 0px 30px 70px;
 }
 
-
 .follower_icon {
     text-align: center;/* 中央寄せ */
-    border-bottom: 7px solid #DDD;
     margin: 20px 0px 20px 20px;
 }
 .followerlist_post {
@@ -444,6 +449,10 @@ img.login_icon{
 }
 
 /* フォローリスト */
+.follow-list{
+    border-bottom: 7px solid #DDD;
+}
+
 .followlist_post_area{
     border-bottom:1px solid #727272;
     list-style:none;
@@ -453,8 +462,7 @@ img.login_icon{
 
 .follow_icon {
     text-align: center;/* 中央寄せ */
-    border-bottom: 7px solid #DDD;
-        margin: 20px 0px 20px 20px;
+    margin: 20px 0px 20px 20px;
 }
 
 
