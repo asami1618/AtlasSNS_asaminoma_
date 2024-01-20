@@ -66,44 +66,38 @@
 
 <!-- 他ユーザーのプロフィール -->
 <div class="container">
-    <div class="other_profile">
-        <div class="images">
-            <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
-        </div>
-            <div class="othersProfile">
-            @foreach($users as $user)
-                <tr>
-                    <td>{{ $users->username }}</td>
-                    <td><input type="text" name="bio" value="{{ Auth::user()->bio }}"></td>
-                </tr>
-            @endforeach
+    <ul>
+        <li class="other_profile">
+            <div class="images">
+                <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60">
+            </div>
+            <div>
+                    @if (auth()->user()->isFollowing($users->id))
+                    <!-- フォロー解除 -->
+                        <a href="{{ route('unfollow' , $users->id) }}" class="btn unfollow_btn">フォロー解除</a>
+                    @else
+                    <!-- フォローする -->
+                        <a href="{{ route('follow' , $users->id) }}" class="btn follow_btn">フォローする</a>
+                    @endif
+                </div>
             </div>
 
-        <div>
-            @if (auth()->user()->isFollowing($users->id))
-            <!-- フォロー解除 -->
-                <a href="{{ route('unfollow' , $users->id) }}" class="btn unfollow_btn">フォロー解除</a>
-            @else
-            <!-- フォローする -->
-                <a href="{{ route('follow' , $users->id) }}" class="btn follow_btn">フォローする</a>
-            @endif
-        </div>
-
-        <div class="other_post">
-            <h1> Post List </h1>
-            <table>
-                @foreach($posts as $post)
-                <tr>
-                    <td><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30"></td>
-                    <td>{{ $post->user->username }}</td>
-                    <td>{{ $post->post}}</td>
-                    <td>{{ $post->created_at }}</td>
-                    <td>{{ $post->updated_at }}</td>
-                </tr>
-                @endforeach
-            </table>
-        </div>
-    </div>
+            <!-- 投稿一覧 -->
+            <div class="other_post">
+            @foreach($posts as $post)
+                <div class="othersProfile">
+                    <div class="post_area">
+                        <div class="post_left">
+                            <div><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30"></div>
+                            <div class="post-name">{{ $post->user->username }}</div>
+                            <div class="post-day">{{ $post->created_at }}</div>
+                            <div class="post_content">{{ $post->post }}</div>
+                        </div>
+                    </div>
+                </div>  
+            @endforeach
+        </li>
+    </ul>
 </div>
 @endif
 @endsection

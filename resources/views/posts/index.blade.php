@@ -42,12 +42,12 @@
         <figure><img src="{{ asset('storage/' .$post->user->images) }}"></figure>
 
         <!-- 投稿左側 -->
-            <div class="post_content">
+            <div class="post_area">
                 <div class="post_left">
                     <div class="post-name">{{ $post->user->username}} さん</div>
                     <div class="post-day">{{ $post->created_at }}</div>
                 </div>
-                <div class="post_content">{{ $post->post }}<br></div>
+                <div class="post_content">{{ $post->post }}</div>
             </div>
 
         <!-- 投稿右側 -->
