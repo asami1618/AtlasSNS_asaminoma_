@@ -90,8 +90,8 @@
                         <div class="post_left">
                             <div><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="30" height="30"></div>
                             <div class="post-name">{{ $post->user->username }}</div>
-                            <div class="post-day">{{ $post->created_at }}</div>
                             <div class="post_content">{{ $post->post }}</div>
+                            <div class="post-day">{{ $post->created_at }}</div>
                         </div>
                     </div>
                 </div>  

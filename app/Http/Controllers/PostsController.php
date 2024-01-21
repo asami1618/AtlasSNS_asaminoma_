@@ -13,7 +13,8 @@ class PostsController extends Controller
     //　投稿表示
     public function index()
     {
-        $post = Post::get(); //postモデル(postsテーブル)からレコード情報を取得
+        // 例) $fruits = Fruit::latest()->get();で新しい順に
+        $post = Post::latest()->get(); //postモデル(postsテーブル)からレコード情報を取得
         return view('posts.index',['posts' => $post]); 
         //viewヘルパを使用し、()の中に画面表示したいファイル名と受け渡したい変数名を記述
     }

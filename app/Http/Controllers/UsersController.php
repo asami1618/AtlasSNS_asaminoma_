@@ -25,7 +25,7 @@ class UsersController extends Controller
     public function othersprofile($id)
     {
         $users = User::where('id' , $id)->first();
-        $posts = Post::with('user')->where('user_id' , $id)->get();
+        $posts = Post::with('user')->where('user_id' , $id)->latest()->get();
         return view('users.profile' , compact('users','posts'));
     }
 
