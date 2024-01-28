@@ -66,9 +66,18 @@
 
 <!-- 他ユーザーのプロフィール -->
 <div>
-    <ul>
-        <li class="other-post-area">
-            <figure><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"></figure>
+    <ul class="other-post-area">
+        <!-- 1ブロック目　アイコン -->
+        <li><figure><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"></figure></li>
+
+        <!-- 2ブロック目　名前&自己紹介エリア -->
+        <li>
+            <div>name {{ $users->username }}</div>
+            <div>bio {{ $users->bio}}</div>
+        </li>
+
+        <!-- 3ブロック目　ボタンエリア -->
+        <li>
             <div>
                 @if (auth()->user()->isFollowing($users->id))
                 <!-- フォロー解除 -->
@@ -79,22 +88,21 @@
                 @endif
             </div>            
         </li>
-
+    </ul>
 
         <!-- 投稿一覧 -->
-        <div>
-            @foreach($posts as $post)
-            <li class="other-post-block">
-                <div class="post_left">
-                    <div><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="45" height="45"></div>
-                    <div class="post-name">{{ $post->user->username }}</div>
-                    <div class="post_content">{{ $post->post }}</div>
-                </div>
-                <div class="post-day">{{ $post->created_at }}</div>
-            </li>
-            @endforeach
-        </div>
-    </ul>
+    <div>
+        @foreach($posts as $post)
+        <li class="other-post-block">
+            <div class="post_left">
+                <div><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="45" height="45"></div>
+                <div class="post-name">{{ $post->user->username }}</div>
+                <div class="post_content">{{ $post->post }}</div>
+            </div>
+            <div class="post-day">{{ $post->created_at }}</div>
+        </li>
+        @endforeach
+    </div>
 </div>
 @endif
 @endsection
