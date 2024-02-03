@@ -132,14 +132,15 @@ img.submit_button{
 
 /* 投稿一覧 */
 .post_area {
-    margin: 0px 200px 0px 10px;
+    margin-right: 100px;
 }
 
 .post-block {
     list-style:none;
     border-bottom:1px solid #727272;
     display:flex;
-    padding: 30px 70px;
+    justify-content: space-between;
+    padding: 20px 80px;
 }
 
 /* 投稿左側 */
