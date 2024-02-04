@@ -14,25 +14,20 @@
 
 <!-- 投稿一覧 -->
 <div>
-    <ul>
+    <ul class="post-area">
+        <!-- 投稿アイコン -->
         @foreach($posts as $post)
-        <li class="followlist_post_area">
-            <!-- <div class="followlist_box"> -->
+        <li class="post-block">
             <a href="{{URL::to('/users/' .$post->user_id.'/othersprofile')}}"><img src="{{ asset('storage/' .$following->images) }}" alt="フォローアイコン"></a>
 
-                <!-- 投稿左側 -->
-                <div class="followlist_content">
-                    <div class="followlist_left">
-                        <div class="followlist_name">{{ $post->user->username }}</div>
-                        <div class="followlist_post">{{ $post->post }}</div>
-                    </div>
+            <!-- 投稿エリア -->
+            <div class="post_area">
+                <div class="post_left">
+                    <div class="followlist_name">{{ $post->user->username }}</div>
+                    <div class="followlist_post">{{ $post->post }}</div>
                 </div>
-
-                <!-- 投稿右側 -->
-                <div class="followlist_light">
-                    <div class="followlist_post_day">{{ $post->created_at }}</div>
-                </div>
-            <!-- </div> -->
+            </div>
+            <div class="followlist_post_day">{{ $post->created_at }}</div>
         </li>
         @endforeach
     </ul>
