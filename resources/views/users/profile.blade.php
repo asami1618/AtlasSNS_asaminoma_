@@ -68,40 +68,49 @@
 <div>
     <ul class="other-post-area">
         <!-- 1ブロック目　アイコン -->
-        <li><figure><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"></figure></li>
-
-        <!-- 2ブロック目　名前&自己紹介エリア -->
         <li>
-            <div>name {{ $users->username }}</div>
-            <div>bio {{ $users->bio}}</div>
-        </li>
+            <li><figure><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"></figure></li>
 
-        <!-- 3ブロック目　ボタンエリア -->
-        <li>
-            <div>
-                @if (auth()->user()->isFollowing($users->id))
-                <!-- フォロー解除 -->
-                    <a href="{{ route('unfollow' , $users->id) }}" class="btn unfollow_btn">フォロー解除</a>
-                @else
-                <!-- フォローする -->
-                    <a href="{{ route('follow' , $users->id) }}" class="btn follow_btn">フォローする</a>
-                @endif
-            </div>            
+            <!-- 2ブロック目　名前&自己紹介エリア -->
+            <li>
+                <div>name {{ $users->username }}</div>
+                <div>bio {{ $users->bio}}</div>
+            </li>
+
+            <!-- 3ブロック目　ボタンエリア -->
+            <li>
+                <div>
+                    @if (auth()->user()->isFollowing($users->id))
+                    <!-- フォロー解除 -->
+                        <a href="{{ route('unfollow' , $users->id) }}" class="btn unfollow_btn">フォロー解除</a>
+                    @else
+                    <!-- フォローする -->
+                        <a href="{{ route('follow' , $users->id) }}" class="btn follow_btn">フォローする</a>
+                    @endif
+                </div>
+            </li>
         </li>
     </ul>
 
         <!-- 投稿一覧 -->
     <div>
-        @foreach($posts as $post)
-        <li class="other-post-block">
-            <div class="post_left">
+        <ul class="post-area">
+            <!-- 投稿アイコン -->
+            @foreach($posts as $post)
+            <li class="post-block">
                 <div><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="45" height="45"></div>
-                <div class="post-name">{{ $post->user->username }}</div>
-                <div class="post_content">{{ $post->post }}</div>
-            </div>
-            <div class="post-day">{{ $post->created_at }}</div>
-        </li>
-        @endforeach
+
+            <!-- 投稿エリア -->
+                <div class="post_area">
+                    <div class="post_left">
+                        <div class="post-name">{{ $post->user->username }}</div>
+                        <div class="post_content">{{ $post->post }}</div>
+                    </div>
+                </div>
+                <div class="post-day">{{ $post->created_at }}</div>
+            </li>
+            @endforeach
+        </ul>
     </div>
 </div>
 @endif

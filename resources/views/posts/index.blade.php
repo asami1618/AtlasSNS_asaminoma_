@@ -36,7 +36,7 @@
 
 <!-- 投稿一覧 -->
 <div>
-    <ul class ="post-area">
+    <ul class="post-area">
         <!-- 投稿アイコン -->
         @foreach ( $posts as $post )
         <li class="post-block">
