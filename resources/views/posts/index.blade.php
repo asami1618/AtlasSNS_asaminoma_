@@ -58,7 +58,7 @@
                     <a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
                     <!-- 削除ボタン -->
                     @method('delete')
-                    <a class="btn btn-danger" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" >
+                    <a class="delete-btn" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" >
                         <img src="{{ asset('/images/trash.png') }}" width="30" height="30">
                         <img src="{{ asset('/images/trash-h.png') }}"  width="30" height="30">
                     </a>

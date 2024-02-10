@@ -73,11 +73,17 @@
 
             <!-- 2ブロック目　名前&自己紹介エリア -->
             <li>
-                <div>name {{ $users->username }}</div>
-                <div>bio {{ $users->bio}}</div>
+                <div>name</div>
+                <div>bio</div>
             </li>
 
-            <!-- 3ブロック目　ボタンエリア -->
+            <!-- 3ブロック目　ユーザー名&自己紹介内容 -->
+            <li>
+                <div>{{ $users->username }}</div>
+                <div>{{ $users->bio}}</div>
+            </li>
+
+            <!-- 4ブロック目　ボタンエリア -->
             <li>
                 <div>
                     @if (auth()->user()->isFollowing($users->id))

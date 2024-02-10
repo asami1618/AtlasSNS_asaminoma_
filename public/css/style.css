@@ -139,7 +139,7 @@ img.submit_button{
     list-style:none;
     border-bottom:1px solid #727272;
     display:flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 20px 80px;
 }
 
@@ -173,24 +173,24 @@ img.submit_button{
     padding: 15px 50px;
 }
 /* 削除ボタン */
-.btn{
+.delete-btn{
     position: relative;
 }
 
 .btn img {
-    transition: opacity 0.5s;
+    /* transition: opacity 0.5s; */
 }
 
-.btn:hover img:first-of-type {
+.delete-btn:hover img:first-of-type {
     position: absolute;
 	opacity: 0;
 }
 
-.btn img:last-of-type{
+.delete-btn img:last-of-type{
     opacity: 0;
 }
 
-.btn:hover img:last-of-type{
+.delete-btn:hover img:last-of-type{
     opacity: 1;
 }
 
