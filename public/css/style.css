@@ -133,14 +133,14 @@ img.submit_button{
 /* 投稿一覧 */
 .post_area {
     margin-right: 100px;
+    margin: 0% 40% 0% 2.5%;
 }
 
 .post-block {
     list-style:none;
     border-bottom:1px solid #727272;
     display:flex;
-    /* justify-content: space-between; */
-    padding: 20px 80px;
+    padding: 10px 0px 10px 150px;
 }
 
 /* 投稿左側 */
@@ -152,6 +152,7 @@ img.submit_button{
 }
 
 .post-day {
+    font-size: 25%;
 }
 
 
