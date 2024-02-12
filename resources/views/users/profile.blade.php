@@ -72,19 +72,19 @@
             <li><figure><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"></figure></li>
 
             <!-- 2ブロック目　名前&自己紹介エリア -->
-            <li>
-                <div>name</div>
-                <div>bio</div>
+            <li class="name-area">
+                <div class="">name</div>
+                <div class="bio-area">bio</div>
             </li>
 
             <!-- 3ブロック目　ユーザー名&自己紹介内容 -->
-            <li>
+            <li class="content-area">
                 <div>{{ $users->username }}</div>
                 <div>{{ $users->bio}}</div>
             </li>
 
             <!-- 4ブロック目　ボタンエリア -->
-            <li>
+            <li class="button-area">
                 <div>
                     @if (auth()->user()->isFollowing($users->id))
                     <!-- フォロー解除 -->

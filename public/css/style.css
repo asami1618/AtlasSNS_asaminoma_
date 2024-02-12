@@ -276,6 +276,28 @@ input[type="password"]{
 }
 
 
+/* 2ブロック目 */
+.name-area{
+    padding: 0% 10% 0% 2%;
+}
+
+.bio-area{
+    padding: 45% 0% 0% 0%;
+}
+
+/* 3ブロック目 */
+.content-area{
+    padding: 0% 0% 0% 5%;
+}
+
+/* 4ブロック目 */
+.button-area{
+    padding: 5% 0% 0% 40%;
+}
+
+
+
+
 
 /* モーダルの中身 */
 .content{
