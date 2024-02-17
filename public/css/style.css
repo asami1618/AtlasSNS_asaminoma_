@@ -238,7 +238,6 @@ input[type="password"]{
 .prpfile_form_input {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .profile_container{
@@ -247,16 +246,16 @@ input[type="password"]{
     clear:both;
 }
 
-.form-group_profile {
-    /* text-align: center; */
-    padding:10px 0;
-}
-
 .form-group_box{
-    padding: 10px 100px;
+    padding:7px 80px;
+    margin: 10% 0% 0% 110%;
 }
 
 .box-name{
+    position: relative;
+    padding-right: 4em;
+    padding: 15px;
+    text-align: left;
 }
 
 
@@ -292,7 +291,7 @@ input[type="password"]{
 
 /* 4ブロック目 */
 .button-area{
-    padding: 5% 0% 0% 40%;
+    padding: 3% 0% 0% 55%;
 }
 
 

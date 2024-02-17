@@ -9,57 +9,60 @@
             {!! Form::open([ 'url' => '/users/edit/profile', 'method' => 'post', 'files' => true ]) !!}
             <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
 
-            <div class="prpfile_form_input">
-                <div class="profile_container">
-                    <ul>
-                        <!-- ユーザーネーム -->
-                        <li class="form-group_profile">
-                            <h1 class="box-name">user name</h1>
-                            <input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}">
-                        </li>
-                        <!-- メール -->
-                        <li class="form-group_profile">
-                            <h1 class="box-name">mail adress</h1>
-                            <input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}">
-                        </li>
-                        <!-- パスワード -->
-                        <li class="form-group_profile">
-                            <h1 class="box-name">password</h1>
-                            <input type="password" class="form-group_box" name="password" value="">
-                        </li>
-                        <!-- パスワード確認 -->
-                        <li class="form-group_profile">
-                            <h1 class="box-name">password comfirm</h1>
-                            <input type="password" class="form-group_box" name="password_comfirm" value="">
-                        </li>
-                        <!-- 自己紹介 -->
-                        <li class="form-group_profile">
-                        <h1 class="box-name">bio</h1>
-                            <input type="text" class="form-group_box" name="bio" value="{{ Auth::user()->bio }}">
-                        </li>
-                        <!-- アイコン画像 -->
-                        <li class="form-group_profile">
-                            <h1 class="box-name">icon image</h1>
-                            <!-- Form::file('name属性')-->
-                            {{ Form::file('file') }} 
-                            {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
-                            <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
-                        </li>
-                        {{ Form::token() }}
-                        {!! Form::close() !!}
+            <div class="profile_container">
+                    <!-- ユーザーネーム -->
+                    <tr class="box-name">
+                        <th><label>ユーザー名</label></th>
+                        <td><input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}"></td>
+                    </tr>
 
-                        <!-- バリデーションエラーメッセージ表示 -->
-                        @if($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        @endif
-                    </ul>
-                </div>
+                    <!-- メール -->
+                    <tr>
+                    <th><label>メールアドレス</label></th>
+                        <td><input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}"></td>
+                    </tr>
+
+                    <!-- パスワード -->
+                    <tr>
+                        <th><label>パスワード</label></th>
+                        <input type="password" class="form-group_box" name="password" value="">
+                    </tr>
+
+                    <!-- パスワード確認 -->
+                    <tr>
+                        <th><label>パスワード確認</label></th>
+                        <input type="password" class="form-group_box" name="password_comfirm" value="">
+                    </tr>
+
+                    <!-- 自己紹介 -->
+                    <tr>
+                        <th>自己紹介</th><th><label></label></th>
+                        <input type="text" class="form-group_box" name="bio" value="{{ Auth::user()->bio }}">
+                    </tr>
+
+                    <!-- アイコン画像 -->
+                    <tr>
+                        <th>アイコン画像</th><th><label></label></th>
+                        <!-- Form::file('name属性')-->
+                        <td>
+                        {{ Form::file('file') }} 
+                        {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
+                        <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
+                        </td>
+                    </tr>
+                    {{ Form::token() }}
+                    {!! Form::close() !!}
+
+                    <!-- バリデーションエラーメッセージ表示 -->
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
             </div>
         </div>
     @else
