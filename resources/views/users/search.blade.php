@@ -26,7 +26,7 @@
             <tr>
                 <td class="user_item"></td>
                 <td class="user_item">{{ $user->username }}</td>
-                <td class="user_item">
+                <td class="user_item"></td>
                 @if (auth()->user()->isFollowing($user->id))
                 <!-- フォロー解除 -->
                     <a href="{{ route('unfollow' , $user->id) }}" class="btn unfollow_btn">フォロー解除</a>
