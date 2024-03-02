@@ -27,10 +27,10 @@
             {{ Form::text('mail',null,['class' => 'input']) }}
 
             {{ Form::label('password') }}
-            {{ Form::text('password',null,['class' => 'input']) }}
+            {{ Form::password('password',null,['class' => 'input']) }}
 
             {{ Form::label('password confirm') }}
-            {{ Form::text('password_confirmation',null,['class' => 'input']) }}
+            {{ Form::password('password_confirmation',null,['class' => 'input']) }}
 
             {{ Form::submit('Register') }}
             <p><a href="/login">ログイン画面へ戻る</a></p>
