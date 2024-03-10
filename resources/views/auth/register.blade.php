@@ -1,5 +1,6 @@
 @extends('layouts.logout')
-
+@section('content')
+<section>
 
 
 <!-- バリデーションメッセージ -->
@@ -13,29 +14,33 @@
     </div>
 @endif
 
-<section>
-@section('content')
     <div class="container">
         <!-- 適切なURLを入力してください -->
         {!! Form::open(['url' => '/register']) !!}
         <div class="login_form">
-            <h1>新規ユーザー登録</h1>
-            {{ Form::label('username') }}
-            {{ Form::text('username',null,['class' => 'input']) }}
+            <p class="form">新規ユーザー登録</p>
 
-            {{ Form::label('mail') }}
-            {{ Form::text('mail',null,['class' => 'input']) }}
+            <div class="form_input">
+                {{ Form::label('username') }}
+                {{ Form::text('username',null,['class' => 'input']) }}
 
-            {{ Form::label('password') }}
-            {{ Form::password('password',null,['class' => 'input']) }}
+                {{ Form::label('mail') }}
+                {{ Form::text('mail',null,['class' => 'input']) }}
 
-            {{ Form::label('password confirm') }}
-            {{ Form::password('password_confirmation',null,['class' => 'input']) }}
+                {{ Form::label('password') }}
+                {{ Form::password('password',['class' => 'input']) }}
 
-            {{ Form::submit('Register') }}
+                {{ Form::label('password confirm') }}
+                {{ Form::password('password_confirmation',['class' => 'input']) }}
+            </div>
+
+            <div class="form_submit">
+                {{ Form::submit('Register') }}
+            </div>
+
             <p><a href="/login">ログイン画面へ戻る</a></p>
-            {!! Form::close() !!}
         </div>
+        {!! Form::close() !!}
     </div>
 </section>
 @endsection

@@ -10,13 +10,18 @@
         <div class="login_form">
             <p class="form">AtlasSNSへようこそ</p>
 
-            {{ Form::label('e-mail') }}
-            {{ Form::text('mail',null,['class' => 'input' ]) }}
+            <div class="form_input">
+                {{ Form::label('e-mail') }}
+                {{ Form::text('mail',null,['class' => 'input' ]) }}
 
-            {{ Form::label('password') }}
-            {{ Form::password('password',['class' => 'input']) }}
+                {{ Form::label('password') }}
+                {{ Form::password('password',['class' => 'input']) }}
+            </div>
 
-            {{ Form::submit('Login') }}
+            <div class="form_submit">
+                {{ Form::submit('Login') }}
+            </div>
+
             <p class="form"><a href="/register">新規ユーザーの方はこちら</a></p>
 
             {!! Form::close() !!}

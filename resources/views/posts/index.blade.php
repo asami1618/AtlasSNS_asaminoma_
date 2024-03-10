@@ -6,14 +6,13 @@
     {!! Form::open(['url' => '/added']) !!}
     {{Form::token()}}
     <div>
-        {!! Form::input('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容を入力してください' ]) !!}
+        <!-- {!! Form::input ('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容を入力してください' ]) !!} -->
+        <textarea name="newPost" required class="form-control" placeholder="投稿内容を入力してください" cols="30" rows="10"></textarea>        
         <div class="post_bnt">
             <div>
                 <button class="submit_button"><img src="{{ asset('/images/post.png') }}" width="42" height="42"></button>
             </div>
         </div>
-        <!-- <div class="post_icon">
-        </div> -->
     </div>
     {!! Form::close() !!}
 </div>
@@ -48,7 +47,7 @@
             <div class="post_area">
                 <div class="post_left">
                     <div class="post-name">{{ $post->user->username}} さん</div>
-                    <div class="post_content">{{ $post->post }}</div>
+                    <div class="post_content">{!! nl2br($post->post) !!}</div>
                 </div>
             </div>
 
