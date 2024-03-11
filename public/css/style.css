@@ -132,8 +132,9 @@ input[type="text"]{
 
 /* 投稿一覧 */
 .post_area {
-    margin-right: 100px;
-    margin: 0% 40% 0% 2.5%;
+    /* margin-right: 100px; */
+    margin: 0% 2.5%;
+    width: 70%;
 }
 
 .post-block {
@@ -141,6 +142,12 @@ input[type="text"]{
     border-bottom:1px solid #727272;
     display:flex;
     padding: 10px 0px 10px 150px;
+}
+
+.form-control{
+    border: none;
+    width: 1148px;
+    height: 139px;
 }
 
 /* 投稿左側 */
@@ -171,7 +178,7 @@ input[type="text"]{
 }
 
 .post_button {
-    padding: 15px 50px;
+    /* padding: 15px 50px; */
 }
 /* 削除ボタン */
 .delete-btn{

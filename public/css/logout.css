@@ -13,7 +13,8 @@ body{
 }
 
 #container{
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.25); 
+    /* 赤（R）緑（G）青（B）アルファ(透過度) A(アルファ)は0（完全に透明）~1（不透明）という数値で指定 */
     border-radius: 5px;    
     color: #fff;
     width: 30%;
