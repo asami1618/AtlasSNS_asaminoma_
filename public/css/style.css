@@ -409,18 +409,18 @@ img.login_icon{
 
 /* ユーザー一覧 */
 .user {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     padding: 20px 100px;
 }
 
 .user_table {
-    height: 150px;
+    /* height: 150px; */
 }
 
 .user_item {
-    padding: 20px 100px;
+    /* padding: 20px 100px; */
 }
 
 
