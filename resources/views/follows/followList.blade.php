@@ -7,7 +7,7 @@
     <div class="follow_icon">
     <h1 class="follow-List">Follow List</h1>
         @foreach ($followings as $following)
-        <a><img src="{{ asset('storage/' .$following->images) }}" class="Follow-List-icon" alt="フォローアイコン"></a>
+        <figure><img src="{{ asset('storage/' .$following->images) }}" class="Follow-List-icon" alt="フォローアイコン"></figure>
         @endforeach
     </div>    
 </div>
@@ -27,7 +27,7 @@
                     <div class="followlist_post">{{ $post->post }}</div>
                 </div>
             </div>
-            <div class="followlist_post_day">{{ $post->created_at }}</div>
+            <div class="followlist_post_day">{{ $post->created_at->format('Y/m/d') }}</div>
         </li>
         @endforeach
     </ul>
