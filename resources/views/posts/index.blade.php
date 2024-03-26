@@ -53,7 +53,7 @@
 
             <!-- 投稿日時 ボタンエリア -->
             <div class="post_right">
-                <div class="post-day">{{ $post->created_at }}</div>
+                <div class="post-day">{{ $post->created_at->format('Y/m/d') }}</div>
                 <div class="post_button">
                     <!-- 編集ボタン -->
                     <a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
