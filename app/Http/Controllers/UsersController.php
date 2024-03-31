@@ -79,12 +79,19 @@ class UsersController extends Controller
         $id = Auth::id();
         // $validator->validator();
 
+        // 画像があった場合の条件
+        if (!empty($request->file('file'))){
+        //$requsetからファイルだけを取り出す　空ではない　〜だったら　    
+
+        // 画像を更新する場合のみ
         // ①画像の名前を取得 file('name属性')
         $image = $request->file('file')->getClientOriginalName();
         // ②画像をファイルに保存する
         // (storeAs関数でstore/app/publicに保存しパスを$imgに入れる)
         $img = $request->file('file')->storeAs('public', $image); //formで設置したname名→storeメソッドの追加
         // dd($img);
+        $user->images = basename($image); 
+        }
 
         // CRUD 更新処理  ③$imageで保存した情報をDBに保存
         // bcrypt->ヘルパ関数　
@@ -94,7 +101,6 @@ class UsersController extends Controller
         $user->password = bcrypt($request->input('password'));
         $user->bio = $request->input('bio');
         //97行目と108行目でDBに保存する
-        $user->images = basename($image); 
 
         // usersテーブルの更新
         \DB::table('users')

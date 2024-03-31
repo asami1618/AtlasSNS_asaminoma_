@@ -27,6 +27,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/follower-list','FollowsController@followerList'); //フォロワーリスト
 });
 
+// 新規登録後後
+Route::get('/added', 'Auth\RegisterController@added');
+
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login')->name('login'); //->name('login')　追記
 Route::post('/login', 'Auth\LoginController@login');
