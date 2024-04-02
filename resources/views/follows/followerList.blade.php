@@ -27,7 +27,7 @@
                     <div class="followerlist_post">{{ $post->post }}</div>
                 </div>
             </div>
-            <div class="followerlist_post_day">{{ $post->created_at->format('Y/m/d') }}</div>
+            <div class="followerlist_post_day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
         </li>
         @endforeach
     </ul>
