@@ -24,7 +24,7 @@
             <div class="post_area">
                 <div class="post_left">
                     <div class="followerlist_name">{{ $post->user->username }}</div>
-                    <div class="followerlist_post">{{ $post->post }}</div>
+                    <div class="followerlist_post">{!! nl2br($post->post) !!}</div>
                 </div>
             </div>
             <div class="followerlist_post_day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
