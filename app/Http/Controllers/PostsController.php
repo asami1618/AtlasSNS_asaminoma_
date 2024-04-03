@@ -21,16 +21,6 @@ class PostsController extends Controller
     // 新規投稿
     public function added(Request $request)
     {        
-        if ($request->isMethod('post')){
-        $rules = [
-            'post' => 'required|string|min:1|max:150',
-        ];
-        $message = [
-            'post.required' => 'ユーザー名は入力必須です。',
-            'post.min' => 'ユーザー名は1文字以上で入力してください。',
-            'post.max' => 'ユーザー名は150文字以下で入力してください。',
-        ];
-
         // $id = $request->input('id');←新規登録の際は$id不要
         // $user_id = $request->input('userId');
         $post = $request->input('newPost');// $request内にフォームで入力した内容が入る→$post
@@ -42,10 +32,19 @@ class PostsController extends Controller
             ]);
         return back();
     }
-    }
     // 投稿の更新　
     public function update(Request $request)
     {
+        if ($request->isMethod('post')){
+            $rules = [
+                'post' => 'required|string|min:1|max:150',
+            ];
+            $message = [
+                'post.required' => 'ユーザー名は入力必須です。',
+                'post.min' => 'ユーザー名は1文字以上で入力してください。',
+                'post.max' => 'ユーザー名は150文字以下で入力してください。',
+            ];        
+        }
         // 1つ目の処理
         $id = $request->input('id');
         $up_post = $request->input('upPost');
@@ -58,8 +57,19 @@ class PostsController extends Controller
         // 3つ目の処理
         return redirect('/top'); // ←/indexだとエラーになる
     }
+
     public function delete($id)
     {
+        if ($request->isMethod('post')){
+            $rules = [
+                'post' => 'required|string|min:1|max:150',
+            ];
+            $message = [
+                'post.required' => 'ユーザー名は入力必須です。',
+                'post.min' => 'ユーザー名は1文字以上で入力してください。',
+                'post.max' => 'ユーザー名は150文字以下で入力してください。',
+            ];
+    }
         Post::where('id',$id)->delete();
         return redirect('/top');
     }
