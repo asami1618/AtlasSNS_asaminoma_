@@ -26,7 +26,7 @@
         <div class="modal__content">
             <form action="/post/update" method="POST">
                 <textarea name="upPost" class="modal_post"></textarea>
-                <input type="hidden" name="upPost" class="modal_id" value="UPDATE">
+                <input type="hidden" name="id" class="modal_id" value="UPDATE">
                 <input type="submit" href="/top" value="更新">
                 {{ csrf_field() }}
             </form>
