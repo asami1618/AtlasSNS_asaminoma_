@@ -32,6 +32,16 @@
             </form>
             <a class="js-modal-close" href="">閉じる</a>
         </div>
+        <!-- バリデーションエラーメッセージ表示 -->
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </div> 
 </body>
 

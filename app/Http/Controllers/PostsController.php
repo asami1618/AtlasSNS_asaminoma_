@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\post;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -43,19 +44,29 @@ class PostsController extends Controller
                 'post.required' => 'ユーザー名は入力必須です。',
                 'post.min' => 'ユーザー名は1文字以上で入力してください。',
                 'post.max' => 'ユーザー名は150文字以下で入力してください。',
-            ];        
-        }
-        // 1つ目の処理
-        $id = $request->input('id');
-        $up_post = $request->input('upPost');
+            ];
+            $validator = Validator::make($request->all(), $rules, $message);
 
-        // 2つ目の処理
-        Post::where('id',$id)->update([
-            'user_id' => Auth::id(),
-            'post' => $up_post
-        ]);
-        // 3つ目の処理
-        return redirect('/top'); // ←/indexだとエラーになる
+            // 検証 failメソッドは失敗していたら"true"を返す
+            if ($validator->fails()) {
+                // エラー発生時の処理
+                return redirect('/top') // 戻したいURLを設定する
+                // withErrorsは引数の値を$errors変数へ保存してリダイレクト先まで引き継ぐメソッド
+                ->withErrors($validator) 
+                ->withInput();
+            }
+            // 1つ目の処理
+            $id = $request->input('id');
+            $up_post = $request->input('upPost');
+
+            // 2つ目の処理
+            Post::where('id',$id)->update([
+                'user_id' => Auth::id(),
+                'post' => $up_post
+            ]);
+            // 3つ目の処理
+            return redirect('/top'); // ←/indexだとエラーになる
+        }
     }
 
     public function delete($id)
