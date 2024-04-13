@@ -7,7 +7,7 @@
     {{Form::token()}}
     <div>
         <!-- {!! Form::input ('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容を入力してください' ]) !!} -->
-        <textarea name="newPost" required class="form-control" placeholder="投稿内容を入力してください" cols="30" rows="10"></textarea>        
+        <textarea name="post" required class="form-control" placeholder="投稿内容を入力してください" cols="30" rows="10"></textarea>        
         <div class="post_bnt">
             <div>
                 <button class="submit_button"><img src="{{ asset('/images/post.png') }}" width="42" height="42"></button>
@@ -16,22 +16,6 @@
     </div>
     {!! Form::close() !!}
 </div>
-
-
-<!-- モーダル -->
-<body>
-    <!-- モーダルの中身 -->
-    <div class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
-        <div class="modal__content">
-            <form action="/post/update" method="POST">
-                <textarea name="upPost" class="modal_post"></textarea>
-                <input type="hidden" name="id" class="modal_id" value="UPDATE">
-                <input type="submit" href="/top" value="更新">
-                {{ csrf_field() }}
-            </form>
-            <a class="js-modal-close" href="">閉じる</a>
-        </div>
         <!-- バリデーションエラーメッセージ表示 -->
         @if($errors->any())
         <div class="alert alert-danger">
@@ -42,6 +26,22 @@
             </ul>
         </div>
         @endif
+
+
+<!-- モーダル -->
+<body>
+    <!-- モーダルの中身 -->
+    <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+            <form action="/post/update" method="POST">
+                <textarea name="post" class="modal_post"></textarea>
+                <input type="hidden" name="id" class="modal_id" value="UPDATE">
+                <input type="submit" href="/top" value="更新">
+                {{ csrf_field() }}
+            </form>
+            <a class="js-modal-close" href="">閉じる</a>
+        </div>
     </div> 
 </body>
 

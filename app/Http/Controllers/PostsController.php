@@ -21,10 +21,31 @@ class PostsController extends Controller
     }
     // 新規投稿
     public function added(Request $request)
-    {        
-        // $id = $request->input('id');←新規登録の際は$id不要
+    {    
+        $rules = [
+            'post' => 'required|string|min:1|max:150',
+        ];
+        $message = [
+            'post.required' => '投稿は入力必須です。',
+            'post.min' => '投稿は1文字以上で入力してください。',
+            'post.max' => '投稿は150文字以下で入力してください。',
+        ];
+        // //デバック関数
+        // dd($request);
+
+        $validator = Validator::make($request->all(), $rules, $message);
+
+        // 検証 failメソッドは失敗していたら"true"を返す
+        if ($validator->fails()) {
+            // エラー発生時の処理
+            return redirect('/top') // 戻したいURLを設定する
+            // withErrorsは引数の値を$errors変数へ保存してリダイレクト先まで引き継ぐメソッド
+            ->withErrors($validator) 
+            ->withInput();
+        }
+    // $id = $request->input('id');←新規登録の際は$id不要
         // $user_id = $request->input('userId');
-        $post = $request->input('newPost');// $request内にフォームで入力した内容が入る→$post
+        $post = $request->input('post');// $request内にフォームで入力した内容が入る→$post
 
         Post::create([
             // 'id' => Auth::user()->id,
@@ -41,10 +62,13 @@ class PostsController extends Controller
                 'post' => 'required|string|min:1|max:150',
             ];
             $message = [
-                'post.required' => 'ユーザー名は入力必須です。',
-                'post.min' => 'ユーザー名は1文字以上で入力してください。',
-                'post.max' => 'ユーザー名は150文字以下で入力してください。',
+                'post.required' => '投稿は入力必須です。',
+                'post.min' => '投稿は1文字以上で入力してください。',
+                'post.max' => '投稿は150文字以下で入力してください。',
             ];
+            // //デバック関数
+            // dd($request);
+
             $validator = Validator::make($request->all(), $rules, $message);
 
             // 検証 failメソッドは失敗していたら"true"を返す
@@ -55,9 +79,10 @@ class PostsController extends Controller
                 ->withErrors($validator) 
                 ->withInput();
             }
+
             // 1つ目の処理
             $id = $request->input('id');
-            $up_post = $request->input('upPost');
+            $up_post = $request->input('post');
 
             // 2つ目の処理
             Post::where('id',$id)->update([
