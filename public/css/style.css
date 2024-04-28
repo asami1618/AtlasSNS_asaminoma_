@@ -233,7 +233,10 @@ input.keyword{
     padding-top: 20px;
 }
 
-.search_btn{
+.search-post-name{
+    font-size: 20px;
+    margin: 0% 2.5%;
+    width: 75%;
 }
 
 

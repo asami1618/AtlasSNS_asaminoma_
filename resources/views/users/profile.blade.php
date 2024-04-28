@@ -116,7 +116,7 @@
                         <div class="post_content">{{ $post->post }}</div>
                     </div>
                 </div>
-                <div class="post-day">{{ $post->created_at }}</div>
+                <div class="post-day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
             </li>
             @endforeach
         </ul>
