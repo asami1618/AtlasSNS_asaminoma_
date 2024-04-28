@@ -33,13 +33,15 @@
                 <td class="user_item"><img src="{{ asset('storage/' .$user->images) }}" width="40" height="40"></td>
                 <td class="user_item">{{ $user->username }}</td>
                 <td class="user_item"></td>
-                @if (auth()->user()->isFollowing($user->id))
-                <!-- フォロー解除 -->
-                    <a href="{{ route('unfollow' , $user->id) }}" class="btn unfollow_btn">フォロー解除</a>
-                @else
-                <!-- フォローする -->
-                    <a href="{{ route('follow' , $user->id) }}" class="btn follow_btn">フォローする</a>
-                @endif
+
+                <td>
+                    @if (auth()->user()->isFollowing($user->id))
+                    <!-- フォロー解除 -->
+                        <a href="{{ route('unfollow' , $user->id) }}" class="btn unfollow_btn">フォロー解除</a>
+                    @else
+                    <!-- フォローする -->
+                        <a href="{{ route('follow' , $user->id) }}" class="btn follow_btn">フォローする</a>
+                    @endif
                 </td>
             </tr>
         </div>

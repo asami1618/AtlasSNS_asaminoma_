@@ -181,9 +181,9 @@ input[type="text"]{
     /* padding: 15px 50px; */
 }
 /* 削除ボタン */
-.delete-btn{
+/* .delete-btn{
     position: relative;
-}
+} */
 
 .btn img {
     /* transition: opacity 0.5s; */
