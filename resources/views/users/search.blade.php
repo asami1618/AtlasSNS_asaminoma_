@@ -12,10 +12,16 @@
                         <button class="search_btn">
                             <a href="/search"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a>
                         </button>
+                        <!--　検索ワード表示 -->
+                        <div>
+                            @if(!empty($keyword))
+                            <p>検索ワード:{{ $keyword }}</p>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </form>
-        </div>                    
+        </div>
     </div>        
 
     <!-- ユーザー一覧 -->
@@ -43,11 +49,5 @@
 </head>
     
     
-<!--　検索ワード表示 -->
-<div>
-    @if(!empty($keyword))
-    <p>検索ワード:{{ $keyword }}</p>
-    @endif
-</div>
 @endsection
 
