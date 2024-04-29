@@ -107,16 +107,18 @@
             <!-- 投稿アイコン -->
             @foreach($posts as $post)
             <li class="post-block">
-                <div><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="45" height="45"></div>
+                <div class="post-contents">
+                    <div><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="45" height="45"></div>
 
-            <!-- 投稿エリア -->
-                <div class="post_area">
-                    <div class="post_left">
-                        <div class="post-name">{{ $post->user->username }}</div>
-                        <div class="post_content">{{ $post->post }}</div>
+                <!-- 投稿エリア -->
+                    <div class="post_area">
+                        <div class="post_left">
+                            <div class="post-name">{{ $post->user->username }}</div>
+                            <div class="post_content">{{ $post->post }}</div>
+                        </div>
                     </div>
+                    <div class="post-day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
                 </div>
-                <div class="post-day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
             </li>
             @endforeach
         </ul>

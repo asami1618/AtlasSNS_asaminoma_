@@ -18,16 +18,18 @@
         <!-- 投稿アイコン -->
         @foreach($posts as $post)
         <li class="post-block">
-            <a href="{{URL::to('/users/' .$post->user_id.'/othersprofile')}}"><img src="{{ asset('storage/' .$following->images) }}" alt="フォローアイコン"></a>
+            <div class="post-contents">
+                <a href="{{URL::to('/users/' .$post->user_id.'/othersprofile')}}"><img src="{{ asset('storage/' .$following->images) }}" alt="フォローアイコン"></a>
 
-            <!-- 投稿エリア -->
-            <div class="post_area">
-                <div class="post_left">
-                    <div class="followlist_name">{{ $post->user->username }}</div>
-                    <div class="followlist_post">{!! nl2br($post->post) !!}</div>
+                <!-- 投稿エリア -->
+                <div class="post_area">
+                    <div class="post_left">
+                        <div class="followlist_name">{{ $post->user->username }}</div>
+                        <div class="followlist_post">{!! nl2br($post->post) !!}</div>
+                    </div>
                 </div>
+                <div class="followlist_post_day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
             </div>
-            <div class="followlist_post_day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
         </li>
         @endforeach
     </ul>
