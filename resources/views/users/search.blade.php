@@ -10,7 +10,7 @@
                     <div class="search_content">
                             <input type="search" class="search_box" name="keyword" value="{{ $keyword }}" placeholder="ユーザー名">
                         <button class="search_btn">
-                            <a href="/search"><img src="{{ asset('/images/search.png') }}" width="30" height="30"></a>
+                            <a href="/search"><img src="{{ asset('/images/search.png') }}" class="search_btn" width="50" height="50"></a>
                         </button>
                         <!--　検索ワード表示 -->
                         <div>

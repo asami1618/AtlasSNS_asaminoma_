@@ -10,7 +10,7 @@
         <a><img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50"></a>
         <textarea name="post" required class="form-control" placeholder="投稿内容を入力してください" cols="30" rows="10"></textarea>        
         <div class="post_bnt">
-            <button class="submit_button"><img src="{{ asset('/images/post.png') }}" width="42" height="42"></button>
+            <button class="submit_button"><img src="{{ asset('/images/post.png') }}" class="post_bnt" width="42" height="42"></button>
         </div>
     </div>
     {!! Form::close() !!}
