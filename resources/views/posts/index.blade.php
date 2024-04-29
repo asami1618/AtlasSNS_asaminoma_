@@ -51,29 +51,32 @@
         <!-- 投稿アイコン -->
         @foreach ( $posts as $post )
         <li class="post-block">
-        <figure><img src="{{ asset('storage/' .$post->user->images) }}"></figure>
+            <div class="post-contents">
+                <figure><img src="{{ asset('storage/' .$post->user->images) }}"></figure>
 
-        <!-- 投稿エリア -->
-            <div class="post_area">
-                <div class="post_left">
-                    <div class="post-name">{{ $post->user->username}} さん</div>
-                    <div class="post_content">{!! nl2br($post->post) !!}</div>
+                <!-- 投稿エリア -->
+                <div class="post_area">
+                    <div class="post_left">
+                        <div class="post-name">{{ $post->user->username}} さん</div>
+                        <div class="post_content">{!! nl2br($post->post) !!}</div>
+                    </div>
+                </div>
+
+                <!-- 投稿日時 ボタンエリア -->
+                <div class="post_right">
+                    <div class="post-day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
                 </div>
             </div>
 
-            <!-- 投稿日時 ボタンエリア -->
-            <div class="post_right">
-                <div class="post-day">{{ $post->created_at->format('Y-m-d H:i') }}</div>
-                <div class="post_button">
-                    <!-- 編集ボタン -->
-                    <a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
-                    <!-- 削除ボタン -->
-                    @method('delete')
-                    <a class="delete-btn" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" >
-                        <img src="{{ asset('/images/trash.png') }}" width="30" height="30">
-                        <img src="{{ asset('/images/trash-h.png') }}"  width="30" height="30">
-                    </a>
-                </div>
+            <div class="post_button">
+                <!-- 編集ボタン -->
+                <a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
+                <!-- 削除ボタン -->
+                @method('delete')
+                <a class="delete-btn" href="/post/{{ $post->id }}/delete" post="{{ $post->post }}" onclick="return confirm('投稿を削除してもよろしいでしょうか？')" >
+                    <img src="{{ asset('/images/trash.png') }}" width="30" height="30">
+                    <img src="{{ asset('/images/trash-h.png') }}"  width="30" height="30">
+                </a>
             </div>
         </li>
         @endforeach

@@ -6,6 +6,8 @@ body{
 /* header */
 header{
     background:#186AC9;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* main content */
@@ -140,7 +142,7 @@ input[type="text"]{
 .post-block {
     list-style:none;
     border-bottom:1px solid #727272;
-    display:flex;
+    /* display:flex; */
     padding: 10px 0px 10px 150px;
 }
 
@@ -148,6 +150,10 @@ input[type="text"]{
     border: none;
     width: 1148px;
     height: 139px;
+}
+
+.post-contents{
+    display: flex;
 }
 
 /* 投稿左側 */
@@ -178,6 +184,8 @@ input[type="text"]{
 }
 
 .post_button {
+    margin: 0 0 0 auto;
+    width: 150px;
     /* padding: 15px 50px; */
 }
 /* 削除ボタン */
@@ -235,8 +243,9 @@ input.keyword{
 
 .search-post-name{
     font-size: 20px;
-    margin: 0% 2.5%;
+    padding: 0% 2.5%;
     width: 75%;
+    /* display: inline-block; */
 }
 
 
@@ -348,20 +357,20 @@ img.title{
     margin: 25px 100px 25px 25px;
 }
 img.login_icon{
-    margin: 25px 25px 25px 100px;
+    margin: 10px;
 }
 
-.accordion_container {
-    
+.accordion-container {
+    display: flex;
 }
 
 .accordion {
-    margin-left: auto;
+    /* margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    max-width: 300px;
-    position: relative;
-    width: 100%;
+    max-width: 300px; */
+    /* position: relative; */
+    /* width: 100%; */
 }
 .accordion-title {
     color: #fff;
@@ -371,6 +380,10 @@ img.login_icon{
 }
 .accordion-content {
     padding: 10px 20px;
+    position: absolute;
+    right: 0 ;
+    top: 20%;
+    margin: 0 0 0 auto;
 }
 .accordion-content ul {
     font-size: 13px;
@@ -418,8 +431,8 @@ img.login_icon{
     padding: 20px 100px;
 }
 
-.user_table {
-    /* height: 150px; */
+.user_table td{
+    vertical-align: middle;
 }
 
 .user_item {

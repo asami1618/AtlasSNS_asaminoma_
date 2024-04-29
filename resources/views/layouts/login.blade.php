@@ -33,24 +33,20 @@
         /.accordion-item -->
 <header>
     <!-- アコーディオンメニュー -->
-        <div id = "head">
-            <a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" class="title" width="110" height="40"></a>
-            <div class="accordion_area">
-                <div class="accordion"> 
-                <div class="accordion-container">
-                <a><img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50"></a>
-                    <h3 class="accordion-title js-accordion-title">{{ Auth::user()->username }} さん</h3>
-                        <div class="accordion-content">
-                            <ul class="menu">
-                                <li><a class="home" href="{{ URL::to('/top') }}">HOME</a></li>
-                                <li><a class="profile" href="{{ URL::to('/users/profile') }}">PROFILE</a></li>
-                                <li><a class="center" href="{{ URL::to('/logout') }}">LOGOUT</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> 
+    <a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" class="title" width="110" height="40"></a>
+    <div class="accordion_area">
+        <div class="accordion-container">
+            <h3 class="accordion-title js-accordion-title">{{ Auth::user()->username }} さん</h3>
+            <div class="accordion-content">
+                <ul class="menu">
+                    <li><a class="home" href="{{ URL::to('/top') }}">HOME</a></li>
+                    <li><a class="profile" href="{{ URL::to('/users/profile') }}">PROFILE</a></li>
+                    <li><a class="center" href="{{ URL::to('/logout') }}">LOGOUT</a></li>
+                </ul>
             </div>
-        </div>
+            <a><img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50"></a>
+        </div> 
+    </div>
 </header>
 
 <!-- サイドバー -->
