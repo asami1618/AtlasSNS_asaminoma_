@@ -90,10 +90,10 @@
                 <div>
                     @if (auth()->user()->isFollowing($users->id))
                     <!-- フォロー解除 -->
-                        <a href="{{ route('unfollow' , $users->id) }}" class="btn unfollow_btn">フォロー解除</a>
+                        <button type="button" href="{{ route('unfollow' , $users->id) }}" class="btn btn-primary">フォロー解除</button>
                     @else
                     <!-- フォローする -->
-                        <a href="{{ route('follow' , $users->id) }}" class="btn follow_btn">フォローする</a>
+                        <button type="button" href="{{ route('follow' , $users->id) }}" class="btn btn-danger">フォローする</button>
                     @endif
                 </div>
             </li>

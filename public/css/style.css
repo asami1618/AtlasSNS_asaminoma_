@@ -266,7 +266,6 @@ input.keyword{
 
 .search_btn {
     border-radius: 5px;
-    
 }
 
 
@@ -491,16 +490,14 @@ img.login_icon{
 /* フォロー機能 */
 
 /* フォロー解除ボタン */
-.unfollow_btn{
+.btn-primary{
     display: inline-block;
-    background-color: #DC143C;
-    border: 1px solid #DC143C;
     border-radius: 10px;
     padding:7px;
     cursor: pointer;    
 }
 /* ボタン内テキストマウスホバー時 */
-.unfollow_btn:hover{
+.btn-primary:hover{
     color:#fff!important;
     text-decoration:none;
 }
@@ -543,16 +540,14 @@ h1.follower-List{
 
 
 /* フォローボタン */
-.follow_btn{
+.btn-danger{
     display: inline-block;
-    background-color: #4169E1;
-    border: 1px solid #4169E1;
     border-radius: 10px;
     padding:7px;
     cursor: pointer;    
 }
 /* ボタン内テキストマウスホバー時 */
-.follow_btn:hover{
+.btn-danger:hover{
     color:#fff!important;
     text-decoration:none;
 }
