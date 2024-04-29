@@ -149,7 +149,10 @@ input[type="text"]{
 .form-control{
     border: none;
     width: 1148px;
-    height: 139px;
+    height: 100px;
+}
+
+.form-post {
 }
 
 .post-contents{
@@ -246,6 +249,10 @@ input.keyword{
     padding: 0% 2.5%;
     width: 75%;
     /* display: inline-block; */
+}
+
+.img-search-icon {
+    padding: 20px;
 }
 
 
@@ -383,7 +390,7 @@ img.login_icon{
     padding: 10px 20px;
     position: absolute;
     right: 0 ;
-    top: 20%;
+    top: 13%;
     margin: 0 0 0 auto;
 }
 .accordion-content ul {
@@ -437,7 +444,7 @@ img.login_icon{
 }
 
 .user_item {
-    /* padding: 20px 100px; */
+    /* margin-bottom: 10px; */
 }
 
 

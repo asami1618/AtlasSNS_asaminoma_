@@ -30,7 +30,7 @@
             <table class="user_table">
             @foreach ( $users as $user )
                 <tr>
-                    <td class="user_item"><img src="{{ asset('storage/' .$user->images) }}" width="50" height="50"></td>
+                    <td class="user_item"><img src="{{ asset('storage/' .$user->images) }}" class="img-search-icon" width="50" height="50"></td>
                     <td class="search-post-name">{{ $user->username }}</td>
 
                     <td>

@@ -5,8 +5,9 @@
 <div class="container">
     {!! Form::open(['url' => '/added']) !!}
     {{Form::token()}}
-    <div>
+    <div class="form-post">
         <!-- {!! Form::input ('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容を入力してください' ]) !!} -->
+        <a><img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50"></a>
         <textarea name="post" required class="form-control" placeholder="投稿内容を入力してください" cols="30" rows="10"></textarea>        
         <div class="post_bnt">
             <div>
