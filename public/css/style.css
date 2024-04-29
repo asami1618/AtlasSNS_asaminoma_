@@ -261,7 +261,7 @@ input.keyword{
 }
 
 .img-search-icon {
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .search_btn {
@@ -497,10 +497,10 @@ img.login_icon{
     cursor: pointer;    
 }
 /* ボタン内テキストマウスホバー時 */
-.btn-primary:hover{
+/* .btn-primary:hover{
     color:#fff!important;
     text-decoration:none;
-}
+} */
 
 
 /* フォロワーリスト */
