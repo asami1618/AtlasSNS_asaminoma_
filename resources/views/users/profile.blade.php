@@ -2,70 +2,70 @@
 
 @section('content')
 <!-- ログインユーザーのプロフィール -->
-    @if( Request::routeIs('profile') )
-        <div class="my_profile">
-            <!-- <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"> -->
-            <!-- 編集 -->
-            {!! Form::open([ 'url' => '/users/edit/profile', 'method' => 'post', 'files' => true ]) !!}
-            <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
+@if( Request::routeIs('profile') )
+    <div class="my_profile">
+        <!-- <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"> -->
+        <!-- 編集 -->
+        {!! Form::open([ 'url' => '/users/edit/profile', 'method' => 'post', 'files' => true ]) !!}
+        <!-- <form action="{{ route('editprofile') }}" method="GET" > -->
 
-            <div class="profile_container">
-                <!-- ユーザーネーム -->
-                <tr class="box-name">
-                    <th><label>ユーザー名</label></th>
-                    <td><input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}"></td>
-                </tr>
+        <div class="profile_container">
+            <!-- ユーザーネーム -->
+            <tr class="box-name">
+                <th><label>ユーザー名</label></th>
+                <td><input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}"></td>
+            </tr>
 
-                <!-- メール -->
-                <tr>
-                <th><label>メールアドレス</label></th>
-                    <td><input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}"></td>
-                </tr>
+            <!-- メール -->
+            <tr>
+            <th><label>メールアドレス</label></th>
+                <td><input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}"></td>
+            </tr>
 
-                <!-- パスワード -->
-                <tr>
-                    <th><label>パスワード</label></th>
-                    <input type="password" class="form-group_box" name="password" value="">
-                </tr>
+            <!-- パスワード -->
+            <tr>
+                <th><label>パスワード</label></th>
+                <input type="password" class="form-group_box" name="password" value="">
+            </tr>
 
-                <!-- パスワード確認 -->
-                <tr>
-                    <th><label>パスワード確認</label></th>
-                    <input type="password" class="form-group_box" name="password_comfirm" value="">
-                </tr>
+            <!-- パスワード確認 -->
+            <tr>
+                <th><label>パスワード確認</label></th>
+                <input type="password" class="form-group_box" name="password_comfirm" value="">
+            </tr>
 
-                <!-- 自己紹介 -->
-                <tr>
-                    <th>自己紹介</th><th><label></label></th>
-                    <input type="text" class="form-group_box" name="bio" value="{{ Auth::user()->bio }}">
-                </tr>
+            <!-- 自己紹介 -->
+            <tr>
+                <th>自己紹介</th><th><label></label></th>
+                <input type="text" class="form-group_box" name="bio" value="{{ Auth::user()->bio }}">
+            </tr>
 
-                <!-- アイコン画像 -->
-                <tr>
-                    <th>アイコン画像</th><th><label></label></th>
-                    <!-- Form::file('name属性')-->
-                    <td>
-                    {{ Form::file('file') }} 
-                    {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
-                    <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
-                    </td>
-                </tr>
-                {{ Form::token() }}
-                {!! Form::close() !!}
+            <!-- アイコン画像 -->
+            <tr>
+                <th>アイコン画像</th><th><label></label></th>
+                <!-- Form::file('name属性')-->
+                <td>
+                {{ Form::file('file') }} 
+                {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
+                <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
+                </td>
+            </tr>
+            {{ Form::token() }}
+            {!! Form::close() !!}
 
-                <!-- バリデーションエラーメッセージ表示 -->
-                @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
+            <!-- バリデーションエラーメッセージ表示 -->
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
+            @endif
         </div>
-    @else
+    </div>
+@else
 
 <!-- 他ユーザーのプロフィール -->
 <div>

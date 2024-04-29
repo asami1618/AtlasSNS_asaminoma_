@@ -149,10 +149,12 @@ input[type="text"]{
 .form-control{
     border: none;
     width: 1148px;
-    height: 100px;
+    height: 60px;
 }
 
 .form-post {
+    /* display: flex; */
+    justify-content: space-around;
 }
 
 .post-contents{
@@ -396,6 +398,10 @@ img.login_icon{
 .accordion-content ul {
     font-size: 13px;
     line-height: 1.5;
+}
+
+.accordion-title js-accordion-title {
+    display: flex;
 }
 
 /* 矢印 */

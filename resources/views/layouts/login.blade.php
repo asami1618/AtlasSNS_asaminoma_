@@ -36,7 +36,7 @@
     <a href="{{ URL::to('/top') }}"><img src="{{ asset('/images/atlas.png') }}" class="title" width="110" height="40"></a>
     <div class="accordion_area">
         <div class="accordion-container">
-            <h3 class="accordion-title js-accordion-title">{{ Auth::user()->username }} さん</h3>
+            <div class="accordion-title js-accordion-title">{{ Auth::user()->username }} さん</div>
             <div class="accordion-content">
                 <ul class="menu">
                     <li><a class="home" href="{{ URL::to('/top') }}">HOME</a></li>
