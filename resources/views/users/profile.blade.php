@@ -4,6 +4,7 @@
 <!-- ログインユーザーのプロフィール -->
 @if( Request::routeIs('profile') )
     <div class="my_profile">
+        <img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50">
         <!-- <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"> -->
         <!-- 編集 -->
         {!! Form::open([ 'url' => '/users/edit/profile', 'method' => 'post', 'files' => true ]) !!}
@@ -11,45 +12,43 @@
 
         <div class="profile_container">
             <!-- ユーザーネーム -->
-            <tr class="box-name">
-                <th><label>ユーザー名</label></th>
-                <td><input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}"></td>
-            </tr>
+            <div class="box-name">
+                <label>ユーザー名</label>
+                <input type="text" class="form-group_box" name="username" value="{{ Auth::user()->username }}">
+            </div>
 
             <!-- メール -->
-            <tr>
-            <th><label>メールアドレス</label></th>
-                <td><input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}"></td>
-            </tr>
+            <div class="box-name">
+                <label>メールアドレス</label>
+                <input type="text" class="form-group_box" name="mail" value="{{ Auth::user()->mail }}">
+            </div>
 
             <!-- パスワード -->
-            <tr>
-                <th><label>パスワード</label></th>
+            <div class="box-name">
+                <label>パスワード</label>
                 <input type="password" class="form-group_box" name="password" value="">
-            </tr>
+            </div>
 
             <!-- パスワード確認 -->
-            <tr>
-                <th><label>パスワード確認</label></th>
+            <div class="box-name">
+                <label>パスワード確認</label>
                 <input type="password" class="form-group_box" name="password_comfirm" value="">
-            </tr>
+            </div>
 
             <!-- 自己紹介 -->
-            <tr>
-                <th>自己紹介</th><th><label></label></th>
+            <div class="box-name">
+                <label>自己紹介</label>
                 <input type="text" class="form-group_box" name="bio" value="{{ Auth::user()->bio }}">
-            </tr>
+            </div>
 
             <!-- アイコン画像 -->
-            <tr>
-                <th>アイコン画像</th><th><label></label></th>
+            <div class="box-name">
+                <label>アイコン画像</label>
                 <!-- Form::file('name属性')-->
-                <td>
                 {{ Form::file('file') }} 
-                {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
                 <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
-                </td>
-            </tr>
+            </div>
+            {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
             {{ Form::token() }}
             {!! Form::close() !!}
 

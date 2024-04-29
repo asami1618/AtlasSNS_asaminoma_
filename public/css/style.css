@@ -10,6 +10,11 @@ header{
     justify-content: space-between;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+}
+
 /* main content */
 #row{
     display: flex;
@@ -105,6 +110,10 @@ h1 {
 
 
 /* 投稿フォーム */
+.post-form-container {
+
+}
+
 .post_form-group{
     text-align: center;
 }
@@ -115,7 +124,6 @@ input.form-control{
     padding:  40px 0px 40px 50px;
 }
 .post_bnt{
-    border-bottom: 7px solid #DDD;
 }
 
 input[type="text"]{
@@ -129,7 +137,7 @@ input[type="text"]{
 }
 
 .submit_button{
-    margin: 15px 50px 15px 750px;
+    margin: 30px 50px 0px 150px;
 }
 
 /* 投稿一覧 */
@@ -148,13 +156,15 @@ input[type="text"]{
 
 .form-control{
     border: none;
-    width: 1148px;
+    width: 50%;
     height: 60px;
 }
 
 .form-post {
-    /* display: flex; */
-    justify-content: space-around;
+    display: flex;
+    border-bottom: 7px solid #DDD;
+    padding: 2% 5%;
+    /* width: 100%; */
 }
 
 .post-contents{
@@ -263,6 +273,11 @@ input[type="password"]{
     font-size: 20px;
 }
 
+.my_profile {
+    display: flex;
+    margin: 5% 20%;
+}
+
 .prpfile_form_input {
     display: flex;
     align-items: center;
@@ -270,20 +285,26 @@ input[type="password"]{
 
 .profile_container{
     text-align: center;
-    width: 150px;
+    /* width: 150px; */
     clear:both;
 }
 
 .form-group_box{
-    padding:7px 80px;
-    margin: 10% 0% 0% 110%;
+    padding:7px 30px;
+    margin: 0 0 0 30px;
 }
 
 .box-name{
-    position: relative;
-    padding-right: 4em;
+    /* position: relative; */
+    /* padding-right: 4em; */
     padding: 15px;
     text-align: left;
+    display: flex;
+}
+
+.box-name label {
+    width: 30%;
+    display: block
 }
 
 
@@ -319,7 +340,7 @@ input[type="password"]{
 
 /* 4ブロック目 */
 .button-area{
-    padding: 3% 0% 0% 55%;
+    padding: 3% 0% 0% 50%;
 }
 
 
@@ -360,17 +381,19 @@ input[type="password"]{
 
 /* アコーディオンメニュー */
 .accordion_area{
-    margin: 20px 50px 0px 100px;
+    width: 20%;
 }
+
 img.title{
     margin: 25px 100px 25px 25px;
 }
 img.login_icon{
-    margin: 10px;
+    margin: 20px;
 }
 
 .accordion-container {
     display: flex;
+    vertical-align: middle;
 }
 
 .accordion {
@@ -386,7 +409,8 @@ img.login_icon{
     color: #fff;
     cursor: pointer;
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 38px 20px;
+    width: 60%;
 }
 .accordion-content {
     padding: 10px 20px;
@@ -413,14 +437,12 @@ img.login_icon{
     /* 矢印の色 */
     border-right: solid 2px #fff; 
     border-top: solid 2px #fff;
-
     content: "";
     display: block;
     height: 8px;
     position: absolute;
     right: 25px;
-    top: 38%;
-
+    top: 40%;
     /* 最初の矢印は下向き */
     transform: rotate(135deg); 
     transition: transform .3s ease-in-out, top .3s ease-in-out;
@@ -428,7 +450,7 @@ img.login_icon{
 }
 .accordion-title.open::after {
     /* 矢印の向きを少し変える */
-    top: 45%;
+    top: 47%;
     /* 矢印を上向きに変える */
     transform: rotate(-45deg);
 }
