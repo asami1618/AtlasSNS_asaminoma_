@@ -420,14 +420,15 @@ img.login_icon{
     right: 0 ;
     top: 10%;
     margin: 0 0 0 auto;
+    z-index:1;
 }
 
 .accordion-content ul {
     font-size: 20px;
     line-height: 1.5;
-    background-color: #111;
+    background-color: #fff;
     border: solid;
-    padding: 3.5em;
+    padding: 1.5em;
     margin: 2em 0;
 }
 

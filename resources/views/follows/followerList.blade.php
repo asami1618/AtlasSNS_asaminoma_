@@ -7,7 +7,7 @@
     <div class="follower_icon">
     <h1 class="follower-List">Follower List</h1>
         @foreach ($followed_users as $followed_user)
-        <a href="{{URL::to('/users/' .$followed_user->user_id.'othersprofile')}}"><img src="{{ asset('storage/' .$followed_user->images) }}" class="Follower-List-icon" alt="フォロワーアイコン"></a>
+        <a href="{{URL::to('/users/' .$followed_user->id.'/othersprofile')}}"><img src="{{ asset('storage/' .$followed_user->images) }}" class="Follower-List-icon" alt="フォロワーアイコン"></a>
         @endforeach
     </div>    
 </div>

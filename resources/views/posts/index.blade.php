@@ -68,7 +68,7 @@
             </div>
 
             <div class="post_button">
-                @auth
+                @if(Auth::user()->id == $post->user_id)
                 <!-- 編集ボタン -->
                 <a class="js-modal-open" href="/post/{{ $post->id }}/update" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
                 <!-- 削除ボタン -->
@@ -77,7 +77,7 @@
                     <img src="{{ asset('/images/trash.png') }}" width="30" height="30">
                     <img src="{{ asset('/images/trash-h.png') }}"  width="30" height="30">
                 </a>
-                @endauth
+                @endif
             </div>
         </li>
         @endforeach
