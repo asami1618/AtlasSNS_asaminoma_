@@ -48,7 +48,7 @@
                 {{ Form::file('file') }} 
                 <!-- <img src="{{ asset('storage/' .Auth::user()->images) }}"> -->
             </div>
-            {{ Form::submit('更新', ['class' => 'btn btn-default']) }}
+            {{ Form::submit('更新', ['class' => 'btn btn-danger']) }}
             {{ Form::token() }}
             {!! Form::close() !!}
 
