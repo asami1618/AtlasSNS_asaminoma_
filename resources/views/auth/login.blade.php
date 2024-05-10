@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
     <!-- 適切なURLを入力してください -->
-            {!! Form::open(['url' => '/login']) !!}
+            {!! Form::open(['url' => '/login']) !!} 
 
         <div class="login_form">
             <p class="form">AtlasSNSへようこそ</p>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="form_submit">
-                {{ Form::submit('Login') }}
+                {{ Form::submit('ログイン', ['class' => 'btn btn-danger']) }}
             </div>
 
             <p class="form"><a href="/register">新規ユーザーの方はこちら</a></p>

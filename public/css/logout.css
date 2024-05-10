@@ -9,7 +9,7 @@ body{
     padding:50px 0;
     /* height:100vh; */
     background-color: #D9AFD9;
-    background-image: linear-gradient(0deg,  #e2faaa 0% , #475dee 100%);
+    background-image: linear-gradient(0deg,  #e3ff85 0% , #369bf4 100%);
 }
 
 #container{
@@ -35,7 +35,7 @@ h1 {
 .words {
     text-align: center;/* 中央寄せ */
     margin-bottom: 20px;
-    color: #ffffff;
+    color: #fff;
 }
 
 

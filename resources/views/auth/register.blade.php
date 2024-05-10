@@ -35,7 +35,7 @@
             </div>
 
             <div class="form_submit">
-                {{ Form::submit('Register') }}
+                {{ Form::submit('新規登録' , ['class' => 'btn btn-danger']) }}
             </div>
 
             <p><a href="/login">ログイン画面へ戻る</a></p>

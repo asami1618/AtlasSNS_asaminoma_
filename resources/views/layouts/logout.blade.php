@@ -4,8 +4,10 @@
   <meta charset="utf-8" />
   <!--IEブラウザ対策-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="ページの内容を表す文章" />
+  <meta name="description" content="width=device-width, initial-scale=1" />
   <title></title>
+  <!-- BootstrapのCSS読み込み -->
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
   <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
   <link rel="stylesheet" href="{{ asset('css/logout.css') }} ">
   <!--スマホ,タブレット対応-->
@@ -31,6 +33,10 @@
 </header>
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <!-- jQuery読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="{{ asset('js/script.js') }}"></script>
+  <!-- BootstrapのJS読み込み -->
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
