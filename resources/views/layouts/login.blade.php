@@ -62,18 +62,22 @@
                 <p class="list_user_name">{{ Auth::user()->username }}さんの</p>
                 <div class="follow_box">
                     <div class="confirm_follow">
-                        <p class="follows_count">
-                            <a class="count1">フォロー数:{{ Auth::user()->follows()->get()->count() }}名</a>
-                        </p>
+
+                        <!-- フォロー -->
+                        <div class="count1">フォロー数</div>
+                            <p>{{ Auth::user()->follows()->get()->count() }}人</p>
                         <div class="list_area1">
-                            <p class="btn btn-follow-list"><a href="/follow-list">フォローリスト</a></p>
+                            <p><a href="/follow-list" class="btn btn-primary">フォローリスト</a></p>
                         </div>
-                        <p class="follower_count"><a class="count2">フォロワー数:{{ Auth::user()->follower()->get()->count() }}名</a></p>
+                        <!-- フォロワー -->
+                        <div class="count2">フォロワー数</div>
+                            <p>{{ Auth::user()->follower()->get()->count() }}人</p>
                         <div class="list_area2">
-                            <p class="btn btn-follower-list" ><a href="/follower-list">フォロワーリスト</a></p>
+                            <p><a href="/follower-list" class="btn btn-primary">フォロワーリスト</a></p>
                         </div>
+                        <!-- 検索 -->
                         <div class="search_area">
-                            <p class="btn btn-search"><a href="/search">ユーザー検索</a></p>
+                            <p><a href="/search" class="btn btn-primary">ユーザー検索</a></p>
                         </div>
                     </div>
                 </div>
