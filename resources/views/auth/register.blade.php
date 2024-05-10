@@ -38,7 +38,7 @@
                 {{ Form::submit('新規登録' , ['class' => 'btn btn-danger']) }}
             </div>
 
-            <p><a href="/login">ログイン画面へ戻る</a></p>
+            <p><a href="/login" class="form">ログイン画面へ戻る</a></p>
         </div>
         {!! Form::close() !!}
     </div>

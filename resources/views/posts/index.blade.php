@@ -36,7 +36,7 @@
             <form action="/post/update" method="POST">
                 <textarea name="post" class="modal_post"></textarea>
                 <input type="hidden" name="id" class="modal_id" value="UPDATE">
-                <input type="submit" href="/top" value="更新">
+                <input type="submit" href="/top" class="btn btn-danger" value="更新">
                 {{ csrf_field() }}
             </form>
             <a class="js-modal-close" href="">閉じる</a>

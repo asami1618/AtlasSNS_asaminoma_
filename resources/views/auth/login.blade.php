@@ -22,7 +22,7 @@
                 {{ Form::submit('ログイン', ['class' => 'btn btn-danger']) }}
             </div>
 
-            <p class="form"><a href="/register">新規ユーザーの方はこちら</a></p>
+            <p><a href="/register" class="form">新規ユーザーの方はこちら</a></p>
 
             {!! Form::close() !!}
         </div>
