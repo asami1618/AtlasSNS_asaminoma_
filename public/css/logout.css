@@ -60,28 +60,8 @@ section{
 
 .form{
     margin-bottom: 20px;
-    color: #fff;
     /* display: block; */
-}
 
-/* 新規登録後の画面 */
-.login-name{
-    text-align: center;
-    padding: 3px 10px 3px;
-}
-
-.login-comment{
-    text-align: center;
-}
-
-.login-subcomment01{
-    text-align: center;
-    padding: 20px 10px 3px;
-}
-
-.login-subcomment02{
-    text-align: center;
-    padding: 3px 10px 20px;
 }
 
 .input{
