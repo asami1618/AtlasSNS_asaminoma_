@@ -4,7 +4,7 @@
 <!-- ログインユーザーのプロフィール -->
 @if( Request::routeIs('profile') )
     <div class="my_profile">
-        <img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50">
+        <img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="60" height="60">
         <!-- <img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"> -->
         <!-- 編集 -->
         {!! Form::open([ 'url' => '/users/edit/profile', 'method' => 'post', 'files' => true ]) !!}
@@ -71,7 +71,7 @@
     <ul class="other-post-area">
         <!-- 1ブロック目　アイコン -->
         <li>
-            <li><figure><img src="{{ asset('storage/' .$users->images ) }}" alt="" width="60" height="60"></figure></li>
+            <li><figure><img src="{{ asset('storage/' .$users->images ) }}" class="login_icon" width="60" height="60"></figure></li>
 
             <!-- 2ブロック目　名前&自己紹介エリア -->
             <li class="name-area">

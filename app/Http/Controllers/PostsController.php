@@ -15,7 +15,9 @@ class PostsController extends Controller
     public function index()
     {
         // 例) $fruits = Fruit::latest()->get();で新しい順に
-        $post = Post::latest()->get(); //postモデル(postsテーブル)からレコード情報を取得
+        // $post = Post::latest()->get(); //postモデル(postsテーブル)からレコード情報を取得
+        $following_id = Auth::user()->follows()->pluck('followed_id');
+        $post = Post::with('user')->whereIn('user_id' , $following_id)->orWhere('user_id' , Auth::user()->id)->latest()->get();
         return view('posts.index',['posts' => $post]); 
         //viewヘルパを使用し、()の中に画面表示したいファイル名と受け渡したい変数名を記述
     }

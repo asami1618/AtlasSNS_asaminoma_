@@ -7,7 +7,7 @@
     {{Form::token()}}
     <div class="form-post">
         <!-- {!! Form::input ('text','newPost', null, ['required','class' => 'form-control','placeholder' => '投稿内容を入力してください' ]) !!} -->
-        <a><img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50"></a>
+        <a><img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="60" height="60"></a>
         <textarea name="post" required class="form-control" placeholder="投稿内容を入力してください" cols="30" rows="10"></textarea>        
         <div class="post_bnt">
             <button class="submit_button"><img src="{{ asset('/images/post.png') }}" class="post_bnt" width="42" height="42"></button>
@@ -50,7 +50,7 @@
         @foreach ( $posts as $post )
         <li class="post-block">
             <div class="post-contents">
-                <figure><img src="{{ asset('storage/' .$post->user->images) }}"></figure>
+                <figure><img src="{{ asset('storage/' .$post->user->images) }}" class="login_icon" width="60" height="60"></figure>
 
                 <!-- 投稿エリア -->
                 <div class="post_area">

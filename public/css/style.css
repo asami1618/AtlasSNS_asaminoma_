@@ -32,17 +32,21 @@ button {
     /* padding: 20px; */
 }
 
-
-h1 {
+a:hover{
+    text-decoration: none;
+    color: #fff;
 }
-
 /* サイドバーボタン */
 .list_user_name,
-.list_area1,
-.list_area2,
 .follows_count,
 .follower_count{
     margin: 20px;
+}
+
+.list_area1,
+.list_area2{
+    margin: 20px 0px 20px auto;
+    width: 70%;
 }
 
 .login_back{
@@ -588,9 +592,11 @@ h1.follower-List{
 h1.follow-List{
     padding: 20px;
     font-size: 25px;
+    width: 18%;
 }
-.follow-list{
+.follow-list-wrapper{
     border-bottom: 7px solid #DDD;
+    display: flex;
 }
 
 .followlist_post_area{
@@ -607,7 +613,7 @@ h1.follow-List{
 .follow_icon {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px 0px 20px 20px;
+    margin: 15px 0px 10px 5px;
 }
 
 .Follow-List-icon{
