@@ -96,16 +96,6 @@ class PostsController extends Controller
 
     public function delete($id)
     {
-        if ($request->isMethod('post')){
-            $rules = [
-                'post' => 'required|string|min:1|max:150',
-            ];
-            $message = [
-                'post.required' => 'ユーザー名は入力必須です。',
-                'post.min' => 'ユーザー名は1文字以上で入力してください。',
-                'post.max' => 'ユーザー名は150文字以下で入力してください。',
-            ];
-    }
         Post::where('id',$id)->delete();
         return redirect('/top');
     }

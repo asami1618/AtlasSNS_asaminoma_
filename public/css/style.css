@@ -26,7 +26,7 @@ button {
 
 #side-bar{
     position: relative;
-    flex: 0 0 0 auto;
+    flex: 0 0 20%;
     border-left: 1px solid #727272;
     /* z-index: 2; */
     /* padding: 20px; */
@@ -45,12 +45,27 @@ h1 {
     margin: 20px;
 }
 
-.count1 {
-    padding: 10px 20px;
+.login_back{
+    color: #fff;
 }
 
-.count2 {
-    padding: 10px 20px;
+.side-bar01,
+.side-bar02{
+    display: flex;
+}
+
+.count01{
+    font-size: 12px;
+    padding: 0px 30px 0px 5px;
+}
+
+.count02{
+    font-size: 12px;
+    padding: 0px 20px 0px 5px;
+}
+
+.follow-count{
+    font-size: 12px;
 }
 
 .btn-follow-list,
@@ -419,9 +434,9 @@ img.login_icon{
     width: 60%;
 }
 .accordion-content {
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     position: absolute;
-    right: 0 ;
+    /* right: 0 ; */
     top: 10%;
     margin: 0 0 0 auto;
     z-index:1;
@@ -432,13 +447,21 @@ img.login_icon{
     line-height: 1.5;
     background-color: #fff;
     border: solid;
-    padding: 1.5em;
-    margin: 2em 0;
+    /* padding: 1.5em; */
+    /* margin: 2em 0; */
 }
 
-.profile{
+.menu-content{
+    padding: 30px 100px;
+    text-align: center;
+    border-bottom: 1px solid #727272;
+    color: #727272;
+}
+
+.menu-content:hover{
     background-color: #186AC9;
 }
+
 
 
 .accordion-title js-accordion-title {
@@ -532,11 +555,14 @@ h1.follower-List{
 
 .follower_icon {
     display: flex;
+    flex-wrap: wrap;
     margin: 20px 0px 20px 20px;
 }
+
 .Follower-List-icon{
     padding: 5px;
 }
+
 .followerlist_post {
     display: flex;
 }
@@ -580,6 +606,7 @@ h1.follow-List{
 
 .follow_icon {
     display: flex;
+    flex-wrap: wrap;
     margin: 20px 0px 20px 20px;
 }
 

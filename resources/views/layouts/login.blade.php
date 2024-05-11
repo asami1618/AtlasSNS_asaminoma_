@@ -41,9 +41,9 @@
             <div class="accordion-title js-accordion-title">{{ Auth::user()->username }} さん</div>
             <div class="accordion-content">
                 <ul class="menu">
-                    <li><a class="home" href="{{ URL::to('/top') }}">HOME</a></li>
-                    <li><a class="profile" href="{{ URL::to('/users/profile') }}">PROFILE</a></li>
-                    <li><a class="center" href="{{ URL::to('/logout') }}">LOGOUT</a></li>
+                    <li class="menu-content"><a href="{{ URL::to('/top') }}">HOME</a></li>
+                    <li class="menu-content"><a href="{{ URL::to('/users/profile') }}">PROFILE</a></li>
+                    <li class="menu-content"><a href="{{ URL::to('/logout') }}">LOGOUT</a></li>
                 </ul>
             </div>
             <a><img src="{{ asset('storage/' .Auth::user()->images ) }}" class="login_icon" width="50" height="50"></a>
@@ -64,17 +64,23 @@
                     <div class="confirm_follow">
 
                         <!-- フォロー -->
-                        <div class="count1">フォロー数</div>
-                            <p>{{ Auth::user()->follows()->get()->count() }}人</p>
+                        <div class="side-bar01">
+                            <div class="count01">フォロー数</div>
+                                <p class="follow-count">{{ Auth::user()->follows()->get()->count() }}人</p>
+                        </div>
                         <div class="list_area1">
                             <p><a href="/follow-list" class="btn btn-primary">フォローリスト</a></p>
                         </div>
+
                         <!-- フォロワー -->
-                        <div class="count2">フォロワー数</div>
-                            <p>{{ Auth::user()->follower()->get()->count() }}人</p>
+                        <div class="side-bar02">
+                            <div class="count02">フォロワー数</div>
+                                <p class="follow-count">{{ Auth::user()->follower()->get()->count() }}人</p>
+                        </div>
                         <div class="list_area2">
                             <p><a href="/follower-list" class="btn btn-primary">フォロワーリスト</a></p>
                         </div>
+
                         <!-- 検索 -->
                         <div class="search_area">
                             <p><a href="/search" class="btn btn-primary">ユーザー検索</a></p>
