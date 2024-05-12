@@ -36,10 +36,11 @@
             <form action="/post/update" method="POST">
                 <textarea name="post" class="modal_post"></textarea>
                 <input type="hidden" name="id" class="modal_id" value="UPDATE">
+                <input type="submit" href="/top" value="更新">
                 {{ csrf_field() }}
             </form>
-            <a class="js-modal-close" href=""><img src="{{ asset('/images/edit.png') }}" alt="modal01" width="30" height="30"></a>
         </div>
+        <input type="image" src="{{ asset('/images/edit.png') }}" value="更新" width="50" height="40">
     </div> 
 </body>
 
