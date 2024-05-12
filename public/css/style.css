@@ -403,6 +403,10 @@ input[type="password"]{
     width: 60%;
 }
 
+.modal__content input{
+    display: block;
+}
+
 
 /* アコーディオンメニュー */
 .accordion_area{
